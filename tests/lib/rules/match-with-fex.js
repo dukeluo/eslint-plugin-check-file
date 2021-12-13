@@ -14,23 +14,23 @@ ruleTester.run('match-with-fex', rule, {
     {
       code: "var foo = 'bar';",
       filename: '/__tests__/foo.test.js',
-      options: ['always', { '.js': '*/__tests__/' }],
+      options: ['always', { '.js': '**/__tests__/' }],
     },
-    // {
-    //   code: "var foo = 'bar';",
-    //   filename: '__tests__/foo.test.js',
-    //   options: ['always', { '.js': '*/__tests__/' }],
-    // },
+    {
+      code: "var foo = 'bar';",
+      filename: '__tests__/foo.test.js',
+      options: ['always', { '.js': '**/__tests__/' }],
+    },
     {
       code: "var foo = 'bar';",
       filename: 'bar/__tests__/foo.test.js',
-      options: ['always', { '.js': '*/__tests__/' }],
+      options: ['always', { '.js': '**/__tests__/' }],
     },
-    // {
-    //   code: "var foo = 'bar';",
-    //   filename: '/bar/__tests__/foo.test.js',
-    //   options: ['always', { '.js': '*/__tests__/' }],
-    // },
+    {
+      code: "var foo = 'bar';",
+      filename: '/bar/__tests__/foo.test.js',
+      options: ['always', { '.js': '**/__tests__/' }],
+    },
   ],
 
   invalid: [
