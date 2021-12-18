@@ -188,3 +188,17 @@ ruleTester.run(
     ],
   }
 );
+
+ruleTester.run('fex that has not been set', rule, {
+  valid: [
+    {
+      code: "var foo = 'bar';",
+      filename: '/bar/__test__/foo.test.ts',
+      options: [
+        'always',
+        { '*.js': '**/__tests__/', '*.jsx': '**/__tests__/' },
+      ],
+    },
+  ],
+  invalid: [],
+});
