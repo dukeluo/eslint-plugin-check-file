@@ -1,4 +1,4 @@
-# eslint-plugin-checkfolder
+# eslint-plugin-check-folder
 
 Allows you to enforce a consistent naming pattern for the folder of the specified file.
 
@@ -10,20 +10,21 @@ You'll first need to install [ESLint](https://eslint.org/):
 npm i eslint --save-dev
 ```
 
-Next, install `eslint-plugin-checkfolder`:
+Next, install
+`eslint-plugin-check-folder`:
 
 ```sh
-npm install eslint-plugin-checkfolder --save-dev
+npm install eslint-plugin-check-folder --save-dev
 ```
 
 ## Usage
 
-Add `checkfolder` to the plugins section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
+Add `check-folder` to the plugins section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
 
 ```json
 {
     "plugins": [
-        "checkfolder"
+        "check-folder"
     ]
 }
 ```
@@ -34,7 +35,7 @@ Then configure the rules you want to use under the rules section.
 ```json
 {
    "rules":{
-      "checkfolder/match-with-fex":[
+      "check-folder/match-with-fex":[
          "error",
          {
             "*.test.{js,jsx,ts,tsx}":"**/__tests__/",
@@ -47,6 +48,6 @@ Then configure the rules you want to use under the rules section.
 
 ## Supported Rules
 
-- [checkfolder/match-with-fex](docs/rules/match-with-fex.md): Enforce a consistent naming pattern for the folder of the specified file
+- [check-folder/match-with-fex](docs/rules/match-with-fex.md): Enforce a consistent naming pattern for the folder of the specified file
 
 

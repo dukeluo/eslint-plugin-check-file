@@ -9,7 +9,7 @@ This rule aims to format the folder of the specified file. This rule uses the gl
 If the rule had been set as follows:
 ```js
 ...
-'checkfolder/match-with-fex': ['error', {'*.test.js': '**/__tests__/'}],
+'check-folder/match-with-fex': ['error', {'*.test.js': '**/__tests__/'}],
 ...
 ```
 
@@ -29,10 +29,10 @@ You need to specify a different naming pattern for different file extensions. Th
 ```js
 module.exports = {
   plugins: [
-    'checkfolder',
+    'check-folder',
   ],
   rules: {
-    'checkfolder/match-with-fex': ['error', {
+    'check-folder/match-with-fex': ['error', {
       '*.test.{js,jsx,ts,tsx}': '**/__tests__/',
       '*.styled.{jsx,tsx}': '**/pages/',
     }],
