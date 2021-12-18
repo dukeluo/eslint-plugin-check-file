@@ -1,35 +1,45 @@
-# The folder should match the rules specified by the file extension (match-with-fex)
+# The folder should match the naming pattern specified by the file extension (match-with-fex)
 
-Please describe the origin of the rule here.
+Allows you to enforce a consistent naming pattern for the folder of the specified file.
 
 ## Rule Details
 
-This rule aims to...
+This rule aims to format the folder of the specified file. This rule uses the glob match syntax to match a file and declare the naming pattern for the folder.
 
-Examples of **incorrect** code for this rule:
-
+If the rule had been set as follows:
 ```js
-
-// fill me in
-
+...
+'checkfolder/match-with-fex': ['error', {'*.test.js': '**/__tests__/'}],
+...
 ```
 
-Examples of **correct** code for this rule:
+For the file `foo.test.js`, examples of **incorrect** folder for this rule:
+```sh
+bar/_tests_/foo.test.js
+```
 
-```js
-
-// fill me in
-
+For the file `foo.test.js`, examples of **correct** folder for this rule:
+```sh
+bar/__tests__/foo.test.js
 ```
 
 ### Options
+You need to specify a different naming pattern for different file extensions. The plugin will only check files with extensions you explicitly provided:
 
-If there are any options, describe them here. Otherwise, delete this section.
-
-## When Not To Use It
-
-Give a short description of when it would be appropriate to turn off this rule.
+```js
+module.exports = {
+  plugins: [
+    'checkfolder',
+  ],
+  rules: {
+    'checkfolder/match-with-fex': ['error', {
+      '*.test.{js,jsx,ts,tsx}': '**/__tests__/',
+      '*.styled.{jsx,tsx}': '**/pages/',
+    }],
+  },
+};
+```
 
 ## Further Reading
-
-If there are other links that describe the issue this rule addresses, please include them here in a bulleted list.
+- [micromatch](https://github.com/micromatch/micromatch)
+- [glob](https://en.wikipedia.org/wiki/Glob_(programming))

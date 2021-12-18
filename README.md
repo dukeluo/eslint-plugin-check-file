@@ -1,6 +1,6 @@
 # eslint-plugin-checkfolder
 
-check the file folder
+Allows you to enforce a consistent naming pattern for the folder of the specified file.
 
 ## Installation
 
@@ -33,14 +33,20 @@ Then configure the rules you want to use under the rules section.
 
 ```json
 {
-    "rules": {
-        "checkfolder/rule-name": 2
-    }
+   "rules":{
+      "checkfolder/match-with-fex":[
+         "error",
+         {
+            "*.test.{js,jsx,ts,tsx}":"**/__tests__/",
+            "*.styled.{jsx,tsx}":"**/pages/"
+         }
+      ]
+   }
 }
 ```
 
 ## Supported Rules
 
-* Fill in provided rules here
+- [checkfolder/match-with-fex](docs/rules/match-with-fex.md): Enforce a consistent naming pattern for the folder of the specified file
 
 
