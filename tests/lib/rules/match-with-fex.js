@@ -189,6 +189,65 @@ ruleTester.run(
   }
 );
 
+ruleTester.run(
+  "['always', { '*.test.js': '*/__tests__/', '*.test.ts': '*/__tests__/' }]",
+  rule,
+  {
+    valid: [
+      {
+        code: "var foo = 'bar';",
+        filename: 'bar/__tests__/foo.test.js',
+        options: [
+          'always',
+          { '*.test.js': '*/__tests__/', '*.test.ts': '*/__tests__/' },
+        ],
+      },
+      {
+        code: "var foo = 'bar';",
+        filename: 'bar/__tests__/foo.test.ts',
+        options: [
+          'always',
+          { '*.test.js': '*/__tests__/', '*.test.ts': '*/__tests__/' },
+        ],
+      },
+    ],
+    invalid: [
+      {
+        code: "var foo = 'bar';",
+        filename: 'bar/_tests_/foo.test.js',
+        options: [
+          'always',
+          { '*.test.js': '*/__tests__/', '*.test.ts': '*/__tests__/' },
+        ],
+        errors: [
+          {
+            message:
+              'The folder of the file "bar/_tests_/foo.test.js" does not match "*/__tests__/"',
+            column: 1,
+            line: 1,
+          },
+        ],
+      },
+      {
+        code: "var foo = 'bar';",
+        filename: 'bar/_tests_/foo.test.ts',
+        options: [
+          'always',
+          { '*.test.js': '*/__tests__/', '*.test.ts': '*/__tests__/' },
+        ],
+        errors: [
+          {
+            message:
+              'The folder of the file "bar/_tests_/foo.test.ts" does not match "*/__tests__/"',
+            column: 1,
+            line: 1,
+          },
+        ],
+      },
+    ],
+  }
+);
+
 ruleTester.run('fex that has not been set', rule, {
   valid: [
     {
