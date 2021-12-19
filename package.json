@@ -1,5 +1,5 @@
 {
-  "name": "eslint-plugin-check-folder",
+  "name": "eslint-plugin-check-file",
   "version": "0.0.0",
   "description": "Check the file folder",
   "keywords": [

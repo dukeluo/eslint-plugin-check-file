@@ -4,7 +4,7 @@
  */
 'use strict';
 
-const rule = require('../../../lib/rules/match-with-fex');
+const rule = require('../../../lib/rules/folder-match-with-fex');
 const RuleTester = require('eslint').RuleTester;
 
 const ruleTester = new RuleTester();

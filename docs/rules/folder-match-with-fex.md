@@ -1,4 +1,4 @@
-# The folder should match the naming pattern specified by the file extension (match-with-fex)
+# The folder should match the naming pattern specified by the file extension (folder-match-with-fex)
 
 Allows you to enforce a consistent naming pattern for the folder of the specified file.
 
@@ -9,7 +9,7 @@ This rule aims to format the folder of the specified file. This rule uses the gl
 If the rule had been set as follows:
 ```js
 ...
-'check-folder/match-with-fex': ['error', {'*.test.js': '**/__tests__/'}],
+'check-file/folder-match-with-fex': ['error', {'*.test.js': '**/__tests__/'}],
 ...
 ```
 
@@ -29,10 +29,10 @@ You need to specify a different naming pattern for different file extensions. Th
 ```js
 module.exports = {
   plugins: [
-    'check-folder',
+    'check-file',
   ],
   rules: {
-    'check-folder/match-with-fex': ['error', {
+    'check-file/folder-match-with-fex': ['error', {
       '*.test.{js,jsx,ts,tsx}': '**/__tests__/',
       '*.styled.{jsx,tsx}': '**/pages/',
     }],
