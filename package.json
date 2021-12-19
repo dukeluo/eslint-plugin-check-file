@@ -1,13 +1,17 @@
 {
   "name": "eslint-plugin-check-file",
   "version": "0.0.0",
-  "description": "Check the file folder",
+  "description": "ESLint rules for consistent filename and folder",
   "keywords": [
     "eslint",
     "eslintplugin",
-    "eslint-plugin"
+    "eslint-plugin",
+    "folder",
+    "path",
+    "file",
+    "filename"
   ],
-  "author": "Duke Luo",
+  "author": "Duke Luo <dukeluo@outlook.com>",
   "main": "lib/index.js",
   "scripts": {
     "lint": "eslint .",

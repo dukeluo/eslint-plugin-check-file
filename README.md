@@ -1,6 +1,6 @@
 # eslint-plugin-check-file
 
-Allows you to enforce a consistent naming pattern for the folder of the specified file.
+ESLint rules for consistent filename and folder. Allows you to enforce a consistent naming pattern for the filename and folder.
 
 ## Installation
 
@@ -48,6 +48,6 @@ Then configure the rules you want to use under the rules section.
 
 ## Supported Rules
 
-- [check-file/folder-match-with-fex](docs/rules/folder-match-with-fex.md): Enforce a consistent naming pattern for the folder of the specified file
+- [check-file/folder-match-with-fex](docs/rules/folder-match-with-fex.md): Enforce a consistent naming pattern for the folder of the specified file extension
 
 
