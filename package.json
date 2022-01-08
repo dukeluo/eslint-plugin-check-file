@@ -18,6 +18,7 @@
     "test": "mocha tests --recursive"
   },
   "dependencies": {
+    "is-glob": "^4.0.3",
     "micromatch": "^4.0.4",
     "requireindex": "^1.2.0"
   },

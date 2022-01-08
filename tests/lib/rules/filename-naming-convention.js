@@ -504,3 +504,136 @@ ruleTester.run(
     ],
   }
 );
+
+ruleTester.run(
+  "filename-naming-convention with option: [{ '*.js': '__+([a-z])', '*.jsx': '__+([a-z])' }]",
+  rule,
+  {
+    valid: [
+      {
+        code: "var foo = 'bar';",
+        filename: 'src/components/__login.jsx',
+        options: [{ '*.js': '__+([a-z])', '*.jsx': '__+([a-z])' }],
+      },
+      {
+        code: "var foo = 'bar';",
+        filename: 'src/utils/__calculateprice.js',
+        options: [{ '*.js': '__+([a-z])', '*.jsx': '__+([a-z])' }],
+      },
+    ],
+
+    invalid: [
+      {
+        code: "var foo = 'bar';",
+        filename: 'src/utils/calculatePrice.js',
+        options: [{ '*.js': '__+([a-z])', '*.jsx': '__+([a-z])' }],
+        errors: [
+          {
+            message:
+              'The filename "calculatePrice.js" does not match the "__+([a-z])" style',
+            column: 1,
+            line: 1,
+          },
+        ],
+      },
+      {
+        code: "var foo = 'bar';",
+        filename: 'src/utils/CalculatePrice.js',
+        options: [{ '*.js': '__+([a-z])', '*.jsx': '__+([a-z])' }],
+        errors: [
+          {
+            message:
+              'The filename "CalculatePrice.js" does not match the "__+([a-z])" style',
+            column: 1,
+            line: 1,
+          },
+        ],
+      },
+      {
+        code: "var foo = 'bar';",
+        filename: 'src/utils/calculate_price.js',
+        options: [{ '*.js': '__+([a-z])', '*.jsx': '__+([a-z])' }],
+        errors: [
+          {
+            message:
+              'The filename "calculate_price.js" does not match the "__+([a-z])" style',
+            column: 1,
+            line: 1,
+          },
+        ],
+      },
+      {
+        code: "var foo = 'bar';",
+        filename: 'src/utils/calculate-price.js',
+        options: [{ '*.js': '__+([a-z])', '*.jsx': '__+([a-z])' }],
+        errors: [
+          {
+            message:
+              'The filename "calculate-price.js" does not match the "__+([a-z])" style',
+            column: 1,
+            line: 1,
+          },
+        ],
+      },
+      {
+        code: "var foo = 'bar';",
+        filename: 'src/utils/CALCULATE_PRICE.js',
+        options: [{ '*.js': '__+([a-z])', '*.jsx': '__+([a-z])' }],
+        errors: [
+          {
+            message:
+              'The filename "CALCULATE_PRICE.js" does not match the "__+([a-z])" style',
+            column: 1,
+            line: 1,
+          },
+        ],
+      },
+    ],
+  }
+);
+
+ruleTester.run(
+  "filename-naming-convention with option: [{ '*.js': 'FOO', '.jsx': 'FLAT_CASE' }]",
+  rule,
+  {
+    valid: [],
+
+    invalid: [
+      {
+        code: "var foo = 'bar';",
+        filename: 'src/utils/calculatePrice.js',
+        options: [{ '*.js': 'FOO', '.jsx': 'FLAT_CASE' }],
+        errors: [
+          {
+            message: 'There is an invalid pattern "FOO", please check it',
+            column: 1,
+            line: 1,
+          },
+        ],
+      },
+    ],
+  }
+);
+
+ruleTester.run(
+  "filename-naming-convention with option: [{ '*.js': 'CAMEL_CASE', '.jsx': 'FLAT_CASE' }]",
+  rule,
+  {
+    valid: [],
+
+    invalid: [
+      {
+        code: "var foo = 'bar';",
+        filename: 'src/utils/calculatePrice.js',
+        options: [{ '*.js': 'CAMEL_CASE', '.jsx': 'FLAT_CASE' }],
+        errors: [
+          {
+            message: 'There is an invalid pattern ".jsx", please check it',
+            column: 1,
+            line: 1,
+          },
+        ],
+      },
+    ],
+  }
+);
