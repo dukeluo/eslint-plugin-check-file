@@ -1,35 +1,21 @@
-# A file cannot be named &#39;index&#39; (no-index)
+# A file cannot be named "index" (no-index)
 
-Please describe the origin of the rule here.
+Prevents files from being named "index".
 
 ## Rule Details
 
-This rule aims to...
+This rule aims to prevent files from being named "index", which will lead to files having meaningful names.
 
-Examples of **incorrect** code for this rule:
+Examples of **incorrect** filename for this rule:
 
-```js
-
-// fill me in
-
+```sh
+index.js
+index.ts
 ```
 
-Examples of **correct** code for this rule:
+Examples of **correct** filename for this rule:
 
-```js
-
-// fill me in
-
+```sh
+calculatePrice.js
+login.tsx
 ```
-
-### Options
-
-If there are any options, describe them here. Otherwise, delete this section.
-
-## When Not To Use It
-
-Give a short description of when it would be appropriate to turn off this rule.
-
-## Further Reading
-
-If there are other links that describe the issue this rule addresses, please include them here in a bulleted list.

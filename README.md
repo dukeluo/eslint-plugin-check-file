@@ -41,7 +41,15 @@ Then configure the rules you want to use under the rules section.
             "*.test.{js,jsx,ts,tsx}":"**/__tests__/",
             "*.styled.{jsx,tsx}":"**/pages/"
          }
-      ]
+      ],
+      "check-file/filename-naming-convention":[
+         "error",
+         {
+            "*.{js,jsx,ts,tsx}":"CAMEL_CASE",
+            "*.json":"KEBAB_CASE"
+         }
+      ],
+      "check-file/no-index":"error"
    }
 }
 ```
@@ -50,3 +58,4 @@ Then configure the rules you want to use under the rules section.
 
 - [check-file/folder-match-with-fex](docs/rules/folder-match-with-fex.md): Enforce a consistent naming pattern for the folder of the specified file extension
 - [check-file/filename-naming-convention](docs/rules/filename-naming-convention.md): Enforce a consistent naming pattern for the filename of the specified file extension
+- [check-file/no-index](docs/rules/no-index.md): A file cannot be named "index"
