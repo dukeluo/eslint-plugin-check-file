@@ -258,3 +258,49 @@ ruleTester.run('folder-match-with-fex with fex that has not been set', rule, {
 
   invalid: [],
 });
+
+ruleTester.run(
+  "folder-match-with-fex with option: [{ '*.test.js': 'FOO', '*.test.ts': '*/__tests__/' }]",
+  rule,
+  {
+    valid: [],
+
+    invalid: [
+      {
+        code: "var foo = 'bar';",
+        filename: 'bar/__tests__/foo.test.js',
+        options: [{ '*.test.js': 'FOO', '*.test.ts': '*/__tests__/' }],
+        errors: [
+          {
+            message: 'There is an invalid pattern "FOO", please check it',
+            column: 1,
+            line: 1,
+          },
+        ],
+      },
+    ],
+  }
+);
+
+ruleTester.run(
+  "folder-match-with-fex with option: [{ '*.test.js': '*/__tests__/', '.test.ts': '*/__tests__/' }]",
+  rule,
+  {
+    valid: [],
+
+    invalid: [
+      {
+        code: "var foo = 'bar';",
+        filename: 'bar/__tests__/foo.test.js',
+        options: [{ '*.test.js': '*/__tests__/', '.test.ts': '*/__tests__/' }],
+        errors: [
+          {
+            message: 'There is an invalid pattern ".test.ts", please check it',
+            column: 1,
+            line: 1,
+          },
+        ],
+      },
+    ],
+  }
+);
