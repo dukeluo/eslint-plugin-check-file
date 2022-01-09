@@ -593,6 +593,22 @@ ruleTester.run(
 );
 
 ruleTester.run(
+  'filename-naming-convention with fex that has not been set',
+  rule,
+  {
+    valid: [
+      {
+        code: "var foo = 'bar';",
+        filename: 'src/utils/CalculatePrice.ts',
+        options: [{ '*.js': 'CAMEL_CASE', '*.jsx': 'CAMEL_CASE' }],
+      },
+    ],
+
+    invalid: [],
+  }
+);
+
+ruleTester.run(
   "filename-naming-convention with option: [{ '*.js': 'FOO', '.jsx': 'FLAT_CASE' }]",
   rule,
   {
