@@ -4,8 +4,9 @@
  */
 'use strict';
 
-const rule = require('../../../lib/rules/filename-naming-convention'),
-  RuleTester = require('eslint').RuleTester;
+const rule = require('../../../lib/rules/filename-naming-convention');
+const RuleTester = require('eslint').RuleTester;
+
 const ruleTester = new RuleTester();
 
 ruleTester.run(
