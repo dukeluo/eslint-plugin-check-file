@@ -1,35 +1,66 @@
 # The filename should follow the filename naming convention (filename-naming-convention)
 
-Please describe the origin of the rule here.
+Allows you to enforce a consistent naming pattern for the filename of the specified file.
 
 ## Rule Details
 
-This rule aims to...
+This rule aims to format the filename of the specified file. This rule uses the glob match syntax to match a file and declare the naming pattern for the filename.
 
-Examples of **incorrect** code for this rule:
+There are six naming conventions built into this rule, including `CAMEL_CASE`, `PASCAL_CASE`, `SNAKE_CASE`, `KEBAB_CASE`, `SCREAMING_SNAKE_CASE` and `FLAT_CASE`.
 
+| Formatting | Name |
+|---|---|
+| helloWorld | `CAMEL_CASE` |
+| HelloWorld | `PASCAL_CASE` |
+| hello_world | `SNAKE_CASE` |
+| hello-world | `KEBAB_CASE` |
+| HELLO_WORLD | `SCREAMING_SNAKE_CASE` |
+| helloworld | `FLAT_CASE` |
+
+If the rule had been set as follows:
 ```js
-
-// fill me in
-
+...
+'check-file/filename-naming-convention': ['error', {'*.js': 'CAMEL_CASE'}],
+...
 ```
 
-Examples of **correct** code for this rule:
+Examples of **incorrect** filename for this rule:
+```sh
+calculate-price.js
+CalculatePrice.js
+calculate_price.js
+calculateprice.js
+```
 
+Examples of **correct** filename for this rule:
+```sh
+calculatePrice.js
+```
+
+In addition to the built-in naming conventions, you can also set custom naming patterns using glob match syntax. The following code shows an example of how to ensure that all your `js` files are named begin with `__`:
 ```js
-
-// fill me in
-
+...
+'check-file/filename-naming-convention': ['error', {'*.js': '__+([a-z])'}],
+...
 ```
 
 ### Options
+You need to specify a different naming pattern for different file extensions. The plugin will only check files with extensions you explicitly provided:
 
-If there are any options, describe them here. Otherwise, delete this section.
-
-## When Not To Use It
-
-Give a short description of when it would be appropriate to turn off this rule.
+```js
+module.exports = {
+  plugins: [
+    'check-file',
+  ],
+  rules: {
+    'check-file/filename-naming-convention': ['error', {
+      '*.{js,jsx,ts,tsx}': 'CAMEL_CASE',
+      '*.json': 'KEBAB_CASE',
+    }],
+  },
+};
+```
 
 ## Further Reading
-
-If there are other links that describe the issue this rule addresses, please include them here in a bulleted list.
+- [micromatch](https://github.com/micromatch/micromatch)
+- [glob](https://en.wikipedia.org/wiki/Glob_(programming))

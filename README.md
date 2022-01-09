@@ -49,5 +49,4 @@ Then configure the rules you want to use under the rules section.
 ## Supported Rules
 
 - [check-file/folder-match-with-fex](docs/rules/folder-match-with-fex.md): Enforce a consistent naming pattern for the folder of the specified file extension
-
-
+- [check-file/filename-naming-convention](docs/rules/filename-naming-convention.md): Enforce a consistent naming pattern for the filename of the specified file extension
