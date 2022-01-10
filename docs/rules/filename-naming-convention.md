@@ -54,8 +54,8 @@ module.exports = {
   ],
   rules: {
     'check-file/filename-naming-convention': ['error', {
-      '*.{js,jsx,ts,tsx}': 'CAMEL_CASE',
-      '*.json': 'KEBAB_CASE',
+      '*.{jsx,tsx}': 'CAMEL_CASE',
+      '*.{js,ts}': 'KEBAB_CASE',
     }],
   },
 };

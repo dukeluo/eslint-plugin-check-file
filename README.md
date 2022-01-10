@@ -45,8 +45,8 @@ Then configure the rules you want to use under the rules section.
       "check-file/filename-naming-convention":[
          "error",
          {
-            "*.{js,jsx,ts,tsx}":"CAMEL_CASE",
-            "*.json":"KEBAB_CASE"
+            "*.{jsx,tsx}":"CAMEL_CASE",
+            "*.{js,ts}":"KEBAB_CASE",
          }
       ],
       "check-file/no-index":"error"
