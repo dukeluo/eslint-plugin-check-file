@@ -1,7 +1,7 @@
 {
   "name": "eslint-plugin-check-file",
-  "version": "0.0.0",
-  "description": "ESLint rules for consistent filename and folder",
+  "version": "1.0.0",
+  "description": "ESLint rules for consistent filename and folder. Allows you to enforce a consistent naming pattern for the filename and folder",
   "keywords": [
     "eslint",
     "eslintplugin",
@@ -9,9 +9,20 @@
     "folder",
     "path",
     "file",
-    "filename"
+    "filename",
+    "glob-matching",
+    "naming-conventions"
   ],
-  "author": "Duke Luo <dukeluo@outlook.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DukeLuo/eslint-plugin-check-file.git"
+  },
+  "author": "Duke Luo <dukeluo@outlook.com> (https://dukeluo.me)",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/DukeLuo/eslint-plugin-check-file/issues"
+  },
+  "homepage": "https://github.com/DukeLuo/eslint-plugin-check-file",
   "main": "lib/index.js",
   "scripts": {
     "lint": "eslint .",
@@ -36,6 +47,5 @@
   },
   "peerDependencies": {
     "eslint": ">=6"
-  },
-  "license": "Apache-2.0"
+  }
 }
