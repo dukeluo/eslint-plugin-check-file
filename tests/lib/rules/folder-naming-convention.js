@@ -95,7 +95,48 @@ ruleTester.run(
   }
 );
 
-// custom rule
+ruleTester.run(
+  "folder-naming-convention with option: [{ 'components/*/': '__+([a-z])' }]",
+  rule,
+  {
+    valid: [
+      {
+        code: "var foo = 'bar';",
+        filename: 'src/components/__displaylabel/index.js',
+        options: [{ 'components/*/': '__+([a-z])' }],
+      },
+    ],
+
+    invalid: [
+      {
+        code: "var foo = 'bar';",
+        filename: 'src/components/_displayLabel/index.js',
+        options: [{ 'components/*/': '__+([a-z])' }],
+        errors: [
+          {
+            message:
+              'The folder "_displayLabel" does not match the "__+([a-z])" style',
+            column: 1,
+            line: 1,
+          },
+        ],
+      },
+      {
+        code: "var foo = 'bar';",
+        filename: 'src/components/__displayLabel/index.js',
+        options: [{ 'components/*/': '__+([a-z])' }],
+        errors: [
+          {
+            message:
+              'The folder "__displayLabel" does not match the "__+([a-z])" style',
+            column: 1,
+            line: 1,
+          },
+        ],
+      },
+    ],
+  }
+);
 
 ruleTester.run(
   'folder-naming-convention with folder that has not been set',
