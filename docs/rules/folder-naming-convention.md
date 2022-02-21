@@ -1,35 +1,69 @@
 # The folder should follow the folder naming convention (folder-naming-convention)
 
-Please describe the origin of the rule here.
+Allows you to enforce a consistent naming pattern for the name of the specified folder.
 
 ## Rule Details
 
-This rule aims to...
+This rule aims to format the name of the specified folder. This rule uses the glob match syntax to match a folder and declare the naming pattern for the name.
 
-Examples of **incorrect** code for this rule:
+There are six naming conventions built into this rule, including `CAMEL_CASE`, `PASCAL_CASE`, `SNAKE_CASE`, `KEBAB_CASE`, `SCREAMING_SNAKE_CASE` and `FLAT_CASE`.
 
+| Formatting | Name |
+|---|---|
+| helloWorld | `CAMEL_CASE` |
+| HelloWorld | `PASCAL_CASE` |
+| hello_world | `SNAKE_CASE` |
+| hello-world | `KEBAB_CASE` |
+| HELLO_WORLD | `SCREAMING_SNAKE_CASE` |
+| helloworld | `FLAT_CASE` |
+
+If the rule had been set as follows:
 ```js
-
-// fill me in
-
+...
+'check-file/folder-naming-convention': ['error', { 'src/**/': 'CAMEL_CASE' }],
+...
 ```
 
-Examples of **correct** code for this rule:
+Examples of **incorrect** folder name for this rule:
 
+```sh
+src/Components/DisplayLabel/displayLabel.js
+src/components/DisplayLabel/displayLabel.js
+src/components/displayLabel/DisplayLabel.js
+```
+
+Examples of **correct** folder name for this rule:
+
+```sh
+src/components/displayLabel/displayLabel.js
+```
+
+In addition to the built-in naming conventions, you can also set custom naming patterns using glob match syntax. The following code shows an example of how to ensure that all the folders under the `components` folder are named begin with `__`:
 ```js
-
-// fill me in
-
+...
+'check-file/folder-naming-convention': ['error', [{ 'components/*/': '__+([a-z])' }]],
+...
 ```
 
 ### Options
 
-If there are any options, describe them here. Otherwise, delete this section.
+You need to specify a different naming pattern for different folder. The plugin will only check folders you explicitly provided:
 
-## When Not To Use It
-
-Give a short description of when it would be appropriate to turn off this rule.
+```js
+module.exports = {
+  plugins: [
+    'check-file',
+  ],
+  rules: {
+    'check-file/folder-naming-convention': ['error', {
+      'src/**/': 'CAMEL_CASE',
+      'mocks/*/': 'KEBAB_CASE',
+    }],
+  },
+};
+```
 
 ## Further Reading
 
-If there are other links that describe the issue this rule addresses, please include them here in a bulleted list.
+- [micromatch](https://github.com/micromatch/micromatch)
+- [glob](https://en.wikipedia.org/wiki/Glob_(programming))
