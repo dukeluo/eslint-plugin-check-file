@@ -17,7 +17,7 @@
     "type": "git",
     "url": "git+https://github.com/DukeLuo/eslint-plugin-check-file.git"
   },
-  "author": "Duke Luo <dukeluo@outlook.com> (https://dukeluo.me)",
+  "author": "Duke Luo <dukeluo@outlook.com> (https://shaiwang.life)",
   "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/DukeLuo/eslint-plugin-check-file/issues"
