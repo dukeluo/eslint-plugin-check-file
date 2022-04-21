@@ -44,6 +44,8 @@ In addition to the built-in naming conventions, you can also set custom naming p
 ...
 ```
 
+**Tip:** To exclude some config and test/spec files for all your `js` files, such as `babel.config.js` and `index.test.js`, use the glob expression `'!(*.spec|*.test|*.config).js'` to match the target files. This will exclude all `js` files with filenames containing `.spec`, `.test` or `.config`.
+
 ### Options
 You need to specify a different naming pattern for different file extensions. The plugin will only check files with extensions you explicitly provided:
 
