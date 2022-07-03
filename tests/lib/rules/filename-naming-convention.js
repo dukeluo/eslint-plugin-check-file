@@ -1003,3 +1003,219 @@ ruleTester.run(
     ],
   }
 );
+
+ruleTester.run(
+  "filename-naming-convention with option: [{ '**/*.js': 'CAMEL_CASE' }, { ignoreMiddleExtensions: true }]",
+  rule,
+  {
+    valid: [
+      {
+        code: "var foo = 'bar';",
+        filename: 'src/utils/date.js',
+        options: [
+          { '**/*.js': 'CAMEL_CASE' },
+          { ignoreMiddleExtensions: true },
+        ],
+      },
+      {
+        code: "var foo = 'bar';",
+        filename: 'src/utils/date.test.js',
+        options: [
+          { '**/*.js': 'CAMEL_CASE' },
+          { ignoreMiddleExtensions: true },
+        ],
+      },
+      {
+        code: "var foo = 'bar';",
+        filename: 'src/utils/date.spec.js',
+        options: [
+          { '**/*.js': 'CAMEL_CASE' },
+          { ignoreMiddleExtensions: true },
+        ],
+      },
+      {
+        code: "var foo = 'bar';",
+        filename: 'src/utils/date.spec.test.js',
+        options: [
+          { '**/*.js': 'CAMEL_CASE' },
+          { ignoreMiddleExtensions: true },
+        ],
+      },
+    ],
+
+    invalid: [
+      {
+        code: "var foo = 'bar';",
+        filename: 'src/utils/Date.js',
+        options: [
+          { '**/*.js': 'CAMEL_CASE' },
+          { ignoreMiddleExtensions: true },
+        ],
+        errors: [
+          {
+            message:
+              'The filename "src/utils/Date.js" does not match the "CAMEL_CASE" style',
+            column: 1,
+            line: 1,
+          },
+        ],
+      },
+      {
+        code: "var foo = 'bar';",
+        filename: 'src/utils/Date.test.js',
+        options: [
+          { '**/*.js': 'CAMEL_CASE' },
+          { ignoreMiddleExtensions: true },
+        ],
+        errors: [
+          {
+            message:
+              'The filename "src/utils/Date.test.js" does not match the "CAMEL_CASE" style',
+            column: 1,
+            line: 1,
+          },
+        ],
+      },
+      {
+        code: "var foo = 'bar';",
+        filename: 'src/utils/Date.spec.js',
+        options: [
+          { '**/*.js': 'CAMEL_CASE' },
+          { ignoreMiddleExtensions: true },
+        ],
+        errors: [
+          {
+            message:
+              'The filename "src/utils/Date.spec.js" does not match the "CAMEL_CASE" style',
+            column: 1,
+            line: 1,
+          },
+        ],
+      },
+      {
+        code: "var foo = 'bar';",
+        filename: 'src/utils/date_util.spec.js',
+        options: [
+          { '**/*.js': 'CAMEL_CASE' },
+          { ignoreMiddleExtensions: true },
+        ],
+        errors: [
+          {
+            message:
+              'The filename "src/utils/date_util.spec.js" does not match the "CAMEL_CASE" style',
+            column: 1,
+            line: 1,
+          },
+        ],
+      },
+      {
+        code: "var foo = 'bar';",
+        filename: 'src/utils/date_util.spec.test.js',
+        options: [
+          { '**/*.js': 'CAMEL_CASE' },
+          { ignoreMiddleExtensions: true },
+        ],
+        errors: [
+          {
+            message:
+              'The filename "src/utils/date_util.spec.test.js" does not match the "CAMEL_CASE" style',
+            column: 1,
+            line: 1,
+          },
+        ],
+      },
+    ],
+  }
+);
+
+ruleTester.run(
+  "filename-naming-convention with option: [{ '*.js': 'CAMEL_CASE', '*.jsx': 'CAMEL_CASE' }, { ignoreMiddleExtensions: false }]",
+  rule,
+  {
+    valid: [
+      {
+        code: "var foo = 'bar';",
+        filename: 'src/components/login.jsx',
+        options: [
+          { '*.js': 'CAMEL_CASE', '*.jsx': 'CAMEL_CASE' },
+          { ignoreMiddleExtensions: false },
+        ],
+      },
+      {
+        code: "var foo = 'bar';",
+        filename: 'src/utils/calculatePrice.js',
+        options: [
+          { '*.js': 'CAMEL_CASE', '*.jsx': 'CAMEL_CASE' },
+          { ignoreMiddleExtensions: false },
+        ],
+      },
+    ],
+
+    invalid: [
+      {
+        code: "var foo = 'bar';",
+        filename: 'src/utils/CalculatePrice.js',
+        options: [
+          { '*.js': 'CAMEL_CASE', '*.jsx': 'CAMEL_CASE' },
+          { ignoreMiddleExtensions: false },
+        ],
+        errors: [
+          {
+            message:
+              'The filename "CalculatePrice.js" does not match the "CAMEL_CASE" style',
+            column: 1,
+            line: 1,
+          },
+        ],
+      },
+      {
+        code: "var foo = 'bar';",
+        filename: 'src/utils/calculate_price.js',
+        options: [
+          { '*.js': 'CAMEL_CASE', '*.jsx': 'CAMEL_CASE' },
+          { ignoreMiddleExtensions: false },
+        ],
+        errors: [
+          {
+            message:
+              'The filename "calculate_price.js" does not match the "CAMEL_CASE" style',
+            column: 1,
+            line: 1,
+          },
+        ],
+      },
+      {
+        code: "var foo = 'bar';",
+        filename: 'src/utils/calculate-price.js',
+        options: [
+          { '*.js': 'CAMEL_CASE', '*.jsx': 'CAMEL_CASE' },
+          { ignoreMiddleExtensions: false },
+        ],
+        errors: [
+          {
+            message:
+              'The filename "calculate-price.js" does not match the "CAMEL_CASE" style',
+            column: 1,
+            line: 1,
+          },
+        ],
+      },
+      {
+        code: "var foo = 'bar';",
+        filename: 'src/utils/CALCULATE_PRICE.js',
+        options: [
+          { '*.js': 'CAMEL_CASE', '*.jsx': 'CAMEL_CASE' },
+          { ignoreMiddleExtensions: false },
+        ],
+        errors: [
+          {
+            message:
+              'The filename "CALCULATE_PRICE.js" does not match the "CAMEL_CASE" style',
+            column: 1,
+            line: 1,
+          },
+        ],
+      },
+    ],
+  }
+);
