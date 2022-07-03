@@ -24,6 +24,9 @@ bar/__tests__/foo.test.js
 ```
 
 ### Options
+
+#### naming pattern object
+
 You need to specify a different naming pattern for different file extensions. The plugin will only check files with extensions you explicitly provided:
 
 ```js
@@ -41,5 +44,7 @@ module.exports = {
 ```
 
 ## Further Reading
+
 - [micromatch](https://github.com/micromatch/micromatch)
 - [glob](https://en.wikipedia.org/wiki/Glob_(programming))
+- [testing glob expression online](https://globster.xyz)

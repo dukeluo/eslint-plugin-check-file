@@ -52,7 +52,9 @@ In addition to the built-in naming conventions, you can also set custom naming p
 
 
 ### Options
+
 #### naming pattern object
+
 You need to specify a different naming pattern for different file. The plugin will only check files you explicitly selected:
 
 ```js
@@ -70,7 +72,9 @@ module.exports = {
 ```
 
 #### rule configuration object
+
 ##### `ignoreMiddleExtensions`
+
 If `true`, the rule will ignore the middle extensions of the filename.
 
 In some cases, you may want to ignore the middle extensions of the filename. For example, you want to lint the base name of the config and test/spec files—e.g., `babel.config.js` and `date.test.js`, you can do so by setting the `ignoreMiddleExtensions` option to `true`, and the rule will only validate its base name, in this case the base name will be `babel` and `date`.
@@ -94,5 +98,7 @@ module.exports = {
 ```
 
 ## Further Reading
+
 - [micromatch](https://github.com/micromatch/micromatch)
 - [glob](https://en.wikipedia.org/wiki/Glob_(programming))
+- [testing glob expression online](https://globster.xyz)

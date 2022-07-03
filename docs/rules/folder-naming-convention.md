@@ -45,7 +45,11 @@ In addition to the built-in naming conventions, you can also set custom naming p
 ...
 ```
 
+**Tip:** To exclude `__tests__` folder in `src`, use the glob expression `src/!(__tests__)/**/` to get the target folders.
+
 ### Options
+
+#### naming pattern object
 
 You need to specify a different naming pattern for different folder. The plugin will only check folders you explicitly provided:
 
@@ -67,3 +71,4 @@ module.exports = {
 
 - [micromatch](https://github.com/micromatch/micromatch)
 - [glob](https://en.wikipedia.org/wiki/Glob_(programming))
+- [testing glob expression online](https://globster.xyz)
