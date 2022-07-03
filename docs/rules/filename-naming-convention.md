@@ -20,31 +20,38 @@ There are six naming conventions built into this rule, including `CAMEL_CASE`, `
 If the rule had been set as follows:
 ```js
 ...
-'check-file/filename-naming-convention': ['error', {'*.js': 'CAMEL_CASE'}],
+'check-file/filename-naming-convention': ['error', { 'src/services/*.js': 'PASCAL_CASE' }],
 ...
 ```
 
-Examples of **incorrect** filename for this rule:
+Examples of **incorrect** filename with path for this rule:
 ```sh
-calculate-price.js
-CalculatePrice.js
-calculate_price.js
-calculateprice.js
+src/services/downloadService.js
+src/services/downloadservice.js
+src/services/download-service.js
+src/services/download_service.js
 ```
 
-Examples of **correct** filename for this rule:
+Examples of **correct** filename with path for this rule:
 ```sh
-calculatePrice.js
+src/services/DownloadService.js
+src/download-service.js // this file is not be selected by the target pattern, so it is skipped
 ```
 
 In addition to the built-in naming conventions, you can also set custom naming patterns using glob match syntax. The following code shows an example of how to ensure that all your `js` files are named begin with `__`:
 ```js
 ...
-'check-file/filename-naming-convention': ['error', {'*.js': '__+([a-z])'}],
+'check-file/filename-naming-convention': ['error', {'**/*.js': '__+([a-z])'}],
 ...
 ```
 
-**Tip:** To exclude some config and test/spec files for all your `js` files, such as `babel.config.js` and `index.test.js`, use the glob expression `'!(*.spec|*.test|*.config).js'` to match the target files. This will exclude all `js` files with filenames containing `.spec`, `.test` or `.config`.
+**Tip 1:** To exclude some config and test/spec files for all your `js` files, such as `babel.config.js` and `index.test.js`, use the glob expression `'**/!(*.spec|*.test|*.config).js'` to match the target files. This will exclude all `js` files with filenames containing `.spec`, `.test` or `.config`.
+
+**Tip 2:** To selecte all your `js` files, your can use the glob expression `**/*.js`.
+
+:warning: :warning: :warning:
+**Versions below v1.2.0 can only select files by using their extensions. All `v1` versions will have this feature, but is will be removed in the future. Please select your target files by the file path. For example, using `**/*.js` instead of `*.js` to select all `js` files.**
+
 
 ### Options
 You need to specify a different naming pattern for different file extensions. The plugin will only check files with extensions you explicitly provided:
@@ -56,8 +63,8 @@ module.exports = {
   ],
   rules: {
     'check-file/filename-naming-convention': ['error', {
-      '*.{jsx,tsx}': 'CAMEL_CASE',
-      '*.{js,ts}': 'KEBAB_CASE',
+      '**/*.{jsx,tsx}': 'CAMEL_CASE',
+      '**/*.{js,ts}': 'KEBAB_CASE',
     }],
   },
 };
