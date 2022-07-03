@@ -45,16 +45,15 @@ In addition to the built-in naming conventions, you can also set custom naming p
 ...
 ```
 
-**Tip 1:** To exclude some config and test/spec files for all your `js` files, such as `babel.config.js` and `index.test.js`, use the glob expression `'**/!(*.spec|*.test|*.config).js'` to match the target files. This will exclude all `js` files with filenames containing `.spec`, `.test` or `.config`.
-
-**Tip 2:** To selecte all your `js` files, your can use the glob expression `**/*.js`.
+**Tip:** To selecte all your `js` files, your can use the glob expression `**/*.js`.
 
 :warning: :warning: :warning:
 **Versions below v1.2.0 can only select files by using their extensions. All `v1` versions will have this feature, but is will be removed in the future. Please select your target files by the file path. For example, using `**/*.js` instead of `*.js` to select all `js` files.**
 
 
 ### Options
-You need to specify a different naming pattern for different file extensions. The plugin will only check files with extensions you explicitly provided:
+#### naming pattern object
+You need to specify a different naming pattern for different file. The plugin will only check files you explicitly selected:
 
 ```js
 module.exports = {
@@ -66,6 +65,30 @@ module.exports = {
       '**/*.{jsx,tsx}': 'CAMEL_CASE',
       '**/*.{js,ts}': 'KEBAB_CASE',
     }],
+  },
+};
+```
+
+#### rule configuration object
+##### `ignoreMiddleExtensions`
+If `true`, the rule will ignore the middle extensions of the filename.
+
+In some cases, you may want to ignore the middle extensions of the filename. For example, you want to lint the base name of the config and test/spec files—e.g., `babel.config.js` and `date.test.js`, you can do so by setting the `ignoreMiddleExtensions` option to `true`, and the rule will only validate its base name, in this case the base name will be `babel` and `date`.
+
+```js
+module.exports = {
+  plugins: ['check-file'],
+  rules: {
+    'check-file/filename-naming-convention': [
+      'error',
+      {
+        '**/*.{jsx,tsx}': 'CAMEL_CASE',
+        '**/*.{js,ts}': 'KEBAB_CASE',
+      },
+      {
+        ignoreMiddleExtensions: true,
+      },
+    ],
   },
 };
 ```
