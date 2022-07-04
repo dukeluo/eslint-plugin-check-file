@@ -35,7 +35,7 @@ src/services/download_service.js
 Examples of **correct** filename with path for this rule:
 ```sh
 src/services/DownloadService.js
-src/download-service.js // this file is not be selected by the target pattern, so it is skipped
+src/download-service.js // this file is not be specified by the target pattern, so it is skipped
 ```
 
 In addition to the built-in naming conventions, you can also set custom naming patterns using glob match syntax. The following code shows an example of how to ensure that all your `js` files are named begin with `__`:
@@ -48,6 +48,7 @@ In addition to the built-in naming conventions, you can also set custom naming p
 **Tip:** To selecte all your `js` files, your can use the glob expression `**/*.js`.
 
 :warning: :warning: :warning:
+
 **Versions below v1.2.0 can only select files by using their extensions. All `v1` versions will have this feature, but is will be removed in the future. Please select your target files by the file path. For example, using `**/*.js` instead of `*.js` to select all `js` files.**
 
 
