@@ -25,6 +25,7 @@
   "homepage": "https://github.com/DukeLuo/eslint-plugin-check-file",
   "main": "lib/index.js",
   "scripts": {
+    "prepare": "husky install",
     "lint": "eslint .",
     "test": "mocha tests --recursive"
   },
@@ -34,11 +35,14 @@
     "requireindex": "^1.2.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.1.2",
+    "@commitlint/config-conventional": "^17.1.0",
     "eslint": "^8.0.1",
     "eslint-config-prettier": "8.3.0",
     "eslint-plugin-eslint-plugin": "^4.0.1",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "4.0.0",
+    "husky": "^8.0.1",
     "mocha": "^9.2.1",
     "prettier": "2.5.1"
   },
