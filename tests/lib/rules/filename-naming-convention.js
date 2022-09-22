@@ -277,6 +277,11 @@ ruleTester.run(
         filename: 'src/utils/calculate-price.js',
         options: [{ '*.js': 'KEBAB_CASE', '*.jsx': 'KEBAB_CASE' }],
       },
+      {
+        code: "var foo = 'bar';",
+        filename: 'src/utils/i18n-test.js',
+        options: [{ '*.js': 'KEBAB_CASE', '*.jsx': 'KEBAB_CASE' }],
+      },
     ],
 
     invalid: [
@@ -327,6 +332,19 @@ ruleTester.run(
           {
             message:
               'The filename "CALCULATE_PRICE.js" does not match the "KEBAB_CASE" style',
+            column: 1,
+            line: 1,
+          },
+        ],
+      },
+      {
+        code: "var foo = 'bar';",
+        filename: 'src/utils/18n-test.js',
+        options: [{ '*.js': 'KEBAB_CASE', '*.jsx': 'KEBAB_CASE' }],
+        errors: [
+          {
+            message:
+              'The filename "18n-test.js" does not match the "KEBAB_CASE" style',
             column: 1,
             line: 1,
           },
