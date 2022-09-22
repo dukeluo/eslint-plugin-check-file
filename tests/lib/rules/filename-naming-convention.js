@@ -185,6 +185,11 @@ ruleTester.run(
         filename: 'src/utils/calculate_price.js',
         options: [{ '*.js': 'SNAKE_CASE', '*.jsx': 'SNAKE_CASE' }],
       },
+      {
+        code: "var foo = 'bar';",
+        filename: 'src/utils/i18n_test.js',
+        options: [{ '*.js': 'SNAKE_CASE', '*.jsx': 'SNAKE_CASE' }],
+      },
     ],
 
     invalid: [
@@ -235,6 +240,19 @@ ruleTester.run(
           {
             message:
               'The filename "CALCULATE_PRICE.js" does not match the "SNAKE_CASE" style',
+            column: 1,
+            line: 1,
+          },
+        ],
+      },
+      {
+        code: "var foo = 'bar';",
+        filename: 'src/utils/18_test.js',
+        options: [{ '*.js': 'SNAKE_CASE', '*.jsx': 'SNAKE_CASE' }],
+        errors: [
+          {
+            message:
+              'The filename "18_test.js" does not match the "SNAKE_CASE" style',
             column: 1,
             line: 1,
           },
