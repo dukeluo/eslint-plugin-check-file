@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [1.2.3](https://github.com/DukeLuo/eslint-plugin-check-file/compare/v1.2.2...v1.2.3) -2022-09-22
+
+### Fixed
+- fix builtin `SNAKE_CASE`, `KEBAB_CASE` and `SCREAMING_SNAKE_CASE` glob expressions
+
+### Changed
+- reduce npm package size
+
 ## [1.2.2](https://github.com/DukeLuo/eslint-plugin-check-file/compare/v1.2.1...v1.2.2) -2022-07-15
 
 ### Fixed
