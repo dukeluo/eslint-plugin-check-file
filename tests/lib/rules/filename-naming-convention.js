@@ -355,6 +355,13 @@ ruleTester.run(
           { '*.js': 'SCREAMING_SNAKE_CASE', '*.jsx': 'SCREAMING_SNAKE_CASE' },
         ],
       },
+      {
+        code: "var foo = 'bar';",
+        filename: 'src/utils/CALCULATE100_PRICE.js',
+        options: [
+          { '*.js': 'SCREAMING_SNAKE_CASE', '*.jsx': 'SCREAMING_SNAKE_CASE' },
+        ],
+      },
     ],
 
     invalid: [
@@ -428,6 +435,21 @@ ruleTester.run(
           {
             message:
               'The filename "calculateprice.js" does not match the "SCREAMING_SNAKE_CASE" style',
+            column: 1,
+            line: 1,
+          },
+        ],
+      },
+      {
+        code: "var foo = 'bar';",
+        filename: 'src/utils/100CALCULATE_PRICE.js',
+        options: [
+          { '*.js': 'SCREAMING_SNAKE_CASE', '*.jsx': 'SCREAMING_SNAKE_CASE' },
+        ],
+        errors: [
+          {
+            message:
+              'The filename "100CALCULATE_PRICE.js" does not match the "SCREAMING_SNAKE_CASE" style',
             column: 1,
             line: 1,
           },
