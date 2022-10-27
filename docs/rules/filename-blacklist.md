@@ -1,16 +1,36 @@
 # The filename should not be blacklisted (filename-blacklist)
 
-Allows you to blacklist certain file patterns.
+Allows you to blacklist certain file name patterns.
 
 ## Rule Details
 
 This rule aims to maintain a consistent naming scheme.
 
+If the rule had been set as follows:
+```js
+...
+'check-file/filename-blacklist': ['error', { '**/*.model.ts': '*.models.ts' }],
+...
+```
+
+Examples of **incorrect** filename with path for this rule:
+```sh
+src/foo.model.ts
+src/bar.model.ts
+```
+
+Examples of **correct** filename with path for this rule:
+```sh
+src/foo.models.ts
+src/bar.models.ts
+```
+
+
 ### Options
 
-#### naming pattern object
+#### blacklist pattern object
 
-You need to specify a different naming pattern for different file. The plugin will only check files you explicitly selected:
+You need to specify a different naming pattern for each filename blacklist. The second pattern is used to hint at the correct file name that should be used instead.
 
 ```js
 module.exports = {
