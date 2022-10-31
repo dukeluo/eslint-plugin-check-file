@@ -30,7 +30,7 @@ ruleTester.run('filename-blacklist', rule, {
       errors: [
         {
           message:
-            'The filename "foo.models.ts" matches the blacklisted "*.models.ts" pattern. Use a pattern like *.model.ts instead.',
+            'The filename "foo.models.ts" matches the blacklisted "*.models.ts" pattern. Use a pattern like "*.model.ts" instead.',
           column: 1,
           line: 1,
         },
@@ -43,7 +43,7 @@ ruleTester.run('filename-blacklist', rule, {
       errors: [
         {
           message:
-            'The filename "foo.utils.ts" matches the blacklisted "*.utils.ts" pattern. Use a pattern like *.util.ts instead.',
+            'The filename "foo.utils.ts" matches the blacklisted "*.utils.ts" pattern. Use a pattern like "*.util.ts" instead.',
           column: 1,
           line: 1,
         },
