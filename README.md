@@ -23,9 +23,9 @@ Add `check-file` to the plugins section of your `.eslintrc` configuration file. 
 
 ```json
 {
-    "plugins": [
-        "check-file"
-    ]
+  "plugins": [
+    "check-file"
+  ]
 }
 ```
 
@@ -34,30 +34,37 @@ Then configure the rules you want to use under the rules section.
 
 ```json
 {
-   "rules":{
-      "check-file/folder-match-with-fex":[
-         "error",
-         {
-            "*.test.{js,jsx,ts,tsx}":"**/__tests__/",
-            "*.styled.{jsx,tsx}":"**/pages/"
-         }
-      ],
-      "check-file/filename-naming-convention":[
-         "error",
-         {
-            "**/*.{jsx,tsx}":"CAMEL_CASE",
-            "**/*.{js,ts}":"KEBAB_CASE"
-         }
-      ],
-      "check-file/no-index":"error",
-      "check-file/folder-naming-convention":[
-         "error",
-         {
-            "src/**/":"CAMEL_CASE",
-            "mocks/*/":"KEBAB_CASE"
-         }
-      ]
-   }
+  "rules": {
+    "check-file/folder-match-with-fex": [
+      "error",
+      {
+        "*.test.{js,jsx,ts,tsx}": "**/__tests__/",
+        "*.styled.{jsx,tsx}": "**/pages/"
+      }
+    ],
+    "check-file/filename-naming-convention": [
+      "error",
+      {
+        "**/*.{jsx,tsx}": "CAMEL_CASE",
+        "**/*.{js,ts}": "KEBAB_CASE"
+      }
+    ],
+    "check-file/no-index": "error",
+    "check-file/folder-naming-convention": [
+      "error",
+      {
+        "src/**/": "CAMEL_CASE",
+        "mocks/*/": "KEBAB_CASE"
+      }
+    ],
+    "check-file/filename-blacklist": [
+      "error",
+      {
+        "**/*.model.ts": "*.models.ts",
+        "**/*.util.ts": "*.utils.ts"
+      }
+    ]
+  }
 }
 ```
 
