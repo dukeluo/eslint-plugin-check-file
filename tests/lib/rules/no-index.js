@@ -1,5 +1,5 @@
 /**
- * @fileoverview A file cannot be named "index"
+ * @file A file cannot be named "index"
  * @author Duke Luo
  */
 'use strict';

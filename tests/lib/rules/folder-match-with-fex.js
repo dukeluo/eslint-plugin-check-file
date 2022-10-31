@@ -1,5 +1,5 @@
 /**
- * @fileoverview The folder should match the naming pattern specified by the file extension
+ * @file The folder should match the naming pattern specified by the file extension
  * @author Duke Luo
  */
 'use strict';

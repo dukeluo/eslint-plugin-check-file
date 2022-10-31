@@ -7,8 +7,9 @@ module.exports = {
     'plugin:eslint-plugin/recommended',
     'plugin:node/recommended',
     'prettier',
+    'plugin:jsdoc/recommended',
   ],
-  plugins: ['prettier'],
+  plugins: ['prettier', 'jsdoc'],
   rules: {
     'prettier/prettier': 'error',
   },

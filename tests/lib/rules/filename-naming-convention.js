@@ -1,5 +1,5 @@
 /**
- * @fileoverview The filename should follow the filename naming convention
+ * @file The filename should follow the filename naming convention
  * @author Duke Luo
  */
 'use strict';

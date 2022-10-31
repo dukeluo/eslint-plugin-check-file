@@ -1,5 +1,5 @@
 /**
- * @fileoverview The folder should follow the folder naming convention
+ * @file The folder should follow the folder naming convention
  * @author Duke Luo
  */
 'use strict';
