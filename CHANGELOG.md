@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [1.3.0](https://github.com/DukeLuo/eslint-plugin-check-file/compare/v1.2.3...v1.3.0) - 2022-11-05
+
+### Added
+- the rule `filename-blacklist` can blacklist file names by pattern
+
+
 ## [1.2.3](https://github.com/DukeLuo/eslint-plugin-check-file/compare/v1.2.2...v1.2.3) -2022-09-22
 
 ### Fixed
