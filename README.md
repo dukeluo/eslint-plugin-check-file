@@ -1,5 +1,8 @@
 # eslint-plugin-check-file
 
+[![NPM Version][npm-image]][npm-url]
+[![NPM Downloads][downloads-image]][downloads-url]
+
 ESLint rules for consistent filename and folder. Allows you to enforce a consistent naming pattern for the filename and folder.
 
 ## Installation
@@ -75,3 +78,9 @@ Then configure the rules you want to use under the rules section.
 - [check-file/no-index](docs/rules/no-index.md): A file cannot be named "index"
 - [check-file/folder-naming-convention](docs/rules/folder-naming-convention.md): Enforce a consistent naming pattern for the name of the specified folder
 - [check-file/filename-blacklist](docs/rules/filename-blacklist.md): Blacklist file names by pattern
+
+
+[npm-image]: https://img.shields.io/npm/v/eslint-plugin-check-file.svg
+[npm-url]: https://www.npmjs.com/package/eslint-plugin-check-file
+[downloads-image]: https://img.shields.io/npm/dm/eslint-plugin-check-file.svg
+[downloads-url]: https://www.npmjs.com/package/eslint-plugin-check-file
