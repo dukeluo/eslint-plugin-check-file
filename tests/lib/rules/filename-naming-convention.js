@@ -24,6 +24,11 @@ ruleTester.run(
         filename: 'src/utils/calculatePrice.js',
         options: [{ '*.js': 'CAMEL_CASE', '*.jsx': 'CAMEL_CASE' }],
       },
+      {
+        code: "var foo = 'bar';",
+        filename: 'src/classes/g2tClass.js',
+        options: [{ '*.js': 'CAMEL_CASE', '*.jsx': 'CAMEL_CASE' }],
+      },
     ],
 
     invalid: [
@@ -74,6 +79,19 @@ ruleTester.run(
           {
             message:
               'The filename "CALCULATE_PRICE.js" does not match the "CAMEL_CASE" style',
+            column: 1,
+            line: 1,
+          },
+        ],
+      },
+      {
+        code: "var foo = 'bar';",
+        filename: 'src/classes/2gtClass.js',
+        options: [{ '*.js': 'CAMEL_CASE', '*.jsx': 'CAMEL_CASE' }],
+        errors: [
+          {
+            message:
+              'The filename "2gtClass.js" does not match the "CAMEL_CASE" style',
             column: 1,
             line: 1,
           },
