@@ -1,7 +1,9 @@
 # eslint-plugin-check-file
 
-[![NPM Version][npm-image]][npm-url]
+[![NPM Version][npm-image]][downloads-url]
 [![NPM Downloads][downloads-image]][downloads-url]
+[![NPM License][license-image]][downloads-url]
+
 
 ESLint rules for consistent filename and folder. Allows you to enforce a consistent naming pattern for the filename and folder.
 
@@ -81,6 +83,6 @@ Then configure the rules you want to use under the rules section.
 
 
 [npm-image]: https://img.shields.io/npm/v/eslint-plugin-check-file.svg
-[npm-url]: https://www.npmjs.com/package/eslint-plugin-check-file
 [downloads-image]: https://img.shields.io/npm/dm/eslint-plugin-check-file.svg
+[license-image]: https://img.shields.io/npm/l/eslint-plugin-check-file
 [downloads-url]: https://www.npmjs.com/package/eslint-plugin-check-file
