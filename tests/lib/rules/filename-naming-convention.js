@@ -116,6 +116,11 @@ ruleTester.run(
         filename: 'src/utils/CalculatePrice.js',
         options: [{ '*.js': 'PASCAL_CASE', '*.jsx': 'PASCAL_CASE' }],
       },
+      {
+        code: "var foo = 'bar';",
+        filename: 'src/utils/Calculate2Price.js',
+        options: [{ '*.js': 'PASCAL_CASE', '*.jsx': 'PASCAL_CASE' }],
+      },
     ],
 
     invalid: [
@@ -179,6 +184,19 @@ ruleTester.run(
           {
             message:
               'The filename "calculateprice.js" does not match the "PASCAL_CASE" style',
+            column: 1,
+            line: 1,
+          },
+        ],
+      },
+      {
+        code: "var foo = 'bar';",
+        filename: 'src/utils/2CalculatePrice.js',
+        options: [{ '*.js': 'PASCAL_CASE', '*.jsx': 'PASCAL_CASE' }],
+        errors: [
+          {
+            message:
+              'The filename "2CalculatePrice.js" does not match the "PASCAL_CASE" style',
             column: 1,
             line: 1,
           },
