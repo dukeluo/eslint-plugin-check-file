@@ -26,8 +26,8 @@
   "main": "lib/index.js",
   "scripts": {
     "prepare": "husky install",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
+    "lint": "eslint . --ignore-pattern node_modules/",
+    "lint:fix": "eslint . --fix --ignore-pattern node_modules/",
     "test": "mocha tests --recursive"
   },
   "dependencies": {
