@@ -11,7 +11,12 @@ module.exports = {
   ],
   plugins: ['prettier', 'jsdoc'],
   rules: {
-    'prettier/prettier': 'error',
+    'prettier/prettier': [
+      'error',
+      {
+        endOfLine: 'auto',
+      },
+    ],
   },
   env: {
     node: true,
