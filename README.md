@@ -3,7 +3,8 @@
 [![NPM Version][npm-image]][downloads-url]
 [![NPM Downloads][downloads-image]][downloads-url]
 [![NPM License][license-image]][downloads-url]
-[![Test Workflow Status][test-workflow-image]][downloads-url]
+[![Test Workflow Status][test-workflow-image]][workflow-url]
+[![Test Coverage][test-coverage-image]][test-coverage-url]
 
 
 ESLint rules for consistent filename and folder. Allows you to enforce a consistent naming pattern for the filename and folder.
@@ -87,4 +88,8 @@ Then configure the rules you want to use under the rules section.
 [downloads-image]: https://img.shields.io/npm/dm/eslint-plugin-check-file.svg
 [license-image]: https://img.shields.io/npm/l/eslint-plugin-check-file
 [test-workflow-image]: https://img.shields.io/github/actions/workflow/status/DukeLuo/eslint-plugin-check-file/test.yml?label=test
+[test-coverage-image]: https://img.shields.io/codecov/c/gh/DukeLuo/eslint-plugin-check-file
+
 [downloads-url]: https://www.npmjs.com/package/eslint-plugin-check-file
+[workflow-url]: https://github.com/DukeLuo/eslint-plugin-check-file/actions
+[test-coverage-url]: https://app.codecov.io/gh/DukeLuo/eslint-plugin-check-file
