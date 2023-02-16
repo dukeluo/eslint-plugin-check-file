@@ -4,9 +4,13 @@
  */
 'use strict';
 
-const rule = require('../../../lib/rules/folder-naming-convention');
+const path = require('path');
+const proxyquire = require('proxyquire');
 const RuleTester = require('eslint').RuleTester;
 
+const rule = proxyquire('../../../lib/rules/folder-naming-convention', {
+  path: { ...path.posix, '@global': true },
+});
 const ruleTester = new RuleTester();
 
 ruleTester.run(

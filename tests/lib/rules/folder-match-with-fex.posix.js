@@ -4,9 +4,13 @@
  */
 'use strict';
 
-const rule = require('../../../lib/rules/folder-match-with-fex');
+const path = require('path');
+const proxyquire = require('proxyquire');
 const RuleTester = require('eslint').RuleTester;
 
+const rule = proxyquire('../../../lib/rules/folder-match-with-fex', {
+  path: { ...path.posix, '@global': true },
+});
 const ruleTester = new RuleTester();
 
 ruleTester.run(
