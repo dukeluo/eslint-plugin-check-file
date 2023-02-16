@@ -28,7 +28,8 @@
     "prepare": "husky install",
     "lint": "eslint . --ignore-pattern node_modules/",
     "lint:fix": "eslint . --fix --ignore-pattern node_modules/",
-    "test": "mocha tests --recursive"
+    "test": "nyc mocha tests --recursive",
+    "test:report": "nyc report --reporter=text-lcov > coverage.lcov"
   },
   "dependencies": {
     "is-glob": "^4.0.3",
@@ -46,6 +47,7 @@
     "eslint-plugin-prettier": "4.0.0",
     "husky": "^8.0.1",
     "mocha": "^10.1.0",
+    "nyc": "^15.1.0",
     "prettier": "2.5.1",
     "proxyquire": "^2.1.3"
   },

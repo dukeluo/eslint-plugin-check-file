@@ -14,3 +14,6 @@ jobs:
       - run: npm install
       - run: npm run lint
       - run: npm run test
+      - run: npm run test:report
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v3
