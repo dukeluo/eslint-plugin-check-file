@@ -1,5 +1,5 @@
 /**
- * @file The filename should follow the filename naming convention
+ * @file The filename should not be blacklisted
  * @author Duke Luo
  */
 'use strict';
