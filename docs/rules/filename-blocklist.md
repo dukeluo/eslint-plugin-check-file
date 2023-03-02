@@ -1,6 +1,6 @@
-# The filename should not be blacklisted (filename-blacklist)
+# The filename should be blocklisted (filename-blocklist)
 
-Allows you to blacklist certain file name patterns.
+Allows you to blocklist certain file name patterns.
 
 ## Rule Details
 
@@ -9,7 +9,7 @@ This rule aims to maintain a consistent naming scheme.
 If the rule had been set as follows:
 ```js
 ...
-'check-file/filename-blacklist': ['error', { '**/*.model.ts': '*.models.ts' }],
+'check-file/filename-blocklist': ['error', { '**/*.model.ts': '*.models.ts' }],
 ...
 ```
 
@@ -28,9 +28,9 @@ src/bar.models.ts
 
 ### Options
 
-#### blacklist pattern object
+#### blocklist pattern object
 
-You need to specify a different naming pattern for each filename blacklist. The second pattern is used to hint at the correct file name that should be used instead.
+You need to specify a different naming pattern for each filename blocklist. The second pattern is used to hint at the correct file name that should be used instead.
 
 ```js
 module.exports = {
@@ -38,7 +38,7 @@ module.exports = {
     'check-file',
   ],
   rules: {
-    'check-file/filename-blacklist': ['error', {
+    'check-file/filename-blocklist': ['error', {
       '**/*.model.ts': '*.models.ts',
       '**/*.util.ts': '*.utils.ts',
     }],

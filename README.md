@@ -64,7 +64,7 @@ Then configure the rules you want to use under the rules section.
         "mocks/*/": "KEBAB_CASE"
       }
     ],
-    "check-file/filename-blacklist": [
+    "check-file/filename-blocklist": [
       "error",
       {
         "**/*.model.ts": "*.models.ts",
@@ -81,7 +81,7 @@ Then configure the rules you want to use under the rules section.
 - [check-file/filename-naming-convention](docs/rules/filename-naming-convention.md): Enforce a consistent naming pattern for the filename of the specified file
 - [check-file/no-index](docs/rules/no-index.md): A file cannot be named "index"
 - [check-file/folder-naming-convention](docs/rules/folder-naming-convention.md): Enforce a consistent naming pattern for the name of the specified folder
-- [check-file/filename-blacklist](docs/rules/filename-blacklist.md): Blacklist file names by pattern
+- [check-file/filename-blocklist](docs/rules/filename-blocklist.md): Blocklist file names by pattern
 
 
 [npm-image]: https://img.shields.io/npm/v/eslint-plugin-check-file.svg
