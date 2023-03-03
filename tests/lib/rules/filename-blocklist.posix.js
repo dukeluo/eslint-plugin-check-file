@@ -1,6 +1,6 @@
 /**
- * @file The filename should not be blacklisted
- * @author Duke Luo
+ * @file The filename should be blocklisted
+ * @author Florian Ehmke, Duke Luo
  */
 'use strict';
 
@@ -8,37 +8,41 @@ const path = require('path');
 const proxyquire = require('proxyquire');
 const RuleTester = require('eslint').RuleTester;
 
-const rule = proxyquire('../../../lib/rules/filename-blacklist', {
-  path: { ...path.win32, '@global': true },
+const rule = proxyquire('../../../lib/rules/filename-blocklist', {
+  path: { ...path.posix, '@global': true },
 });
 const ruleTester = new RuleTester();
 
 ruleTester.run(
-  "filename-blacklist with option on Windows: [{ '*.models.ts': '*.model.ts' }]",
+  "filename-blocklist with option: [{ '*.models.ts': '*.model.ts', '*.utils.ts': '*.util.ts' }]",
   rule,
   {
     valid: [
       {
         code: "var foo = 'bar';",
-        filename: 'C:\\Users\\Administrator\\Downloads\\wai\\src\\foo.model.ts',
-        options: [{ '*.models.ts': '*.model.ts' }],
+        filename: 'src/foo.model.ts',
+        options: [{ '*.models.ts': '*.model.ts', '*.utils.ts': '*.util.ts' }],
       },
       {
         code: "var foo = 'bar';",
-        filename: 'src\\foo.model.ts',
-        options: [{ '*.models.ts': '*.model.ts' }],
+        filename: 'src/foo.util.ts',
+        options: [{ '*.models.ts': '*.model.ts', '*.utils.ts': '*.util.ts' }],
+      },
+      {
+        code: "var foo = 'bar';",
+        filename: 'src/foo.apis.ts',
+        options: [{ '*.models.ts': '*.model.ts', '*.utils.ts': '*.util.ts' }],
       },
     ],
     invalid: [
       {
         code: "var foo = 'bar';",
-        filename:
-          'C:\\Users\\Administrator\\Downloads\\wai\\src\\foo.models.ts',
-        options: [{ '*.models.ts': '*.model.ts' }],
+        filename: 'src/foo.models.ts',
+        options: [{ '*.models.ts': '*.model.ts', '*.utils.ts': '*.util.ts' }],
         errors: [
           {
             message:
-              'The filename "foo.models.ts" matches the blacklisted "*.models.ts" pattern. Use a pattern like "*.model.ts" instead.',
+              'The filename "foo.models.ts" matches the blocklisted "*.models.ts" pattern. Use a pattern like "*.model.ts" instead.',
             column: 1,
             line: 1,
           },
@@ -46,12 +50,12 @@ ruleTester.run(
       },
       {
         code: "var foo = 'bar';",
-        filename: 'src\\foo.models.ts',
-        options: [{ '*.models.ts': '*.model.ts' }],
+        filename: 'src/foo.utils.ts',
+        options: [{ '*.models.ts': '*.model.ts', '*.utils.ts': '*.util.ts' }],
         errors: [
           {
             message:
-              'The filename "foo.models.ts" matches the blacklisted "*.models.ts" pattern. Use a pattern like "*.model.ts" instead.',
+              'The filename "foo.utils.ts" matches the blocklisted "*.utils.ts" pattern. Use a pattern like "*.util.ts" instead.',
             column: 1,
             line: 1,
           },
@@ -62,7 +66,7 @@ ruleTester.run(
 );
 
 ruleTester.run(
-  "filename-blacklist with option on Windows: [{ '*.models.ts': 'FOO' }]",
+  "filename-blocklist with option: [{ '*.models.ts': 'FOO' }]",
   rule,
   {
     valid: [],
@@ -70,7 +74,7 @@ ruleTester.run(
     invalid: [
       {
         code: "var foo = 'bar';",
-        filename: 'src\\foo.models.ts',
+        filename: 'src/foo.models.ts',
         options: [{ '*.models.ts': 'FOO' }],
         errors: [
           {
@@ -85,7 +89,7 @@ ruleTester.run(
 );
 
 ruleTester.run(
-  "filename-blacklist with option on Windows: [{ 'models.ts': '*.model.ts' }]",
+  "filename-blocklist with option: [{ 'models.ts': '*.model.ts' }]",
   rule,
   {
     valid: [],
@@ -93,7 +97,7 @@ ruleTester.run(
     invalid: [
       {
         code: "var foo = 'bar';",
-        filename: 'src\\foo.models.ts',
+        filename: 'src/foo.models.ts',
         options: [{ 'models.ts': '*.model.ts' }],
         errors: [
           {
