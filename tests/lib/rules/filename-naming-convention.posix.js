@@ -14,24 +14,44 @@ const rule = proxyquire('../../../lib/rules/filename-naming-convention', {
 const ruleTester = new RuleTester();
 
 ruleTester.run(
-  "filename-naming-convention with option: [{ '*.js': 'CAMEL_CASE', '*.jsx': 'CAMEL_CASE' }]",
+  "filename-naming-convention with option: [{ '**/*.js': 'CAMEL_CASE', '**/*.jsx': 'CAMEL_CASE' }]",
   rule,
   {
     valid: [
       {
         code: "var foo = 'bar';",
         filename: 'src/components/login.jsx',
-        options: [{ '*.js': 'CAMEL_CASE', '*.jsx': 'CAMEL_CASE' }],
+        options: [{ '**/*.js': 'CAMEL_CASE', '**/*.jsx': 'CAMEL_CASE' }],
+      },
+      {
+        code: "var foo = 'bar';",
+        filename: 'src/login.jsx',
+        options: [{ '**/*.js': 'CAMEL_CASE', '**/*.jsx': 'CAMEL_CASE' }],
+      },
+      {
+        code: "var foo = 'bar';",
+        filename: 'login.jsx',
+        options: [{ '**/*.js': 'CAMEL_CASE', '**/*.jsx': 'CAMEL_CASE' }],
       },
       {
         code: "var foo = 'bar';",
         filename: 'src/utils/calculatePrice.js',
-        options: [{ '*.js': 'CAMEL_CASE', '*.jsx': 'CAMEL_CASE' }],
+        options: [{ '**/*.js': 'CAMEL_CASE', '**/*.jsx': 'CAMEL_CASE' }],
+      },
+      {
+        code: "var foo = 'bar';",
+        filename: 'src/calculatePrice.js',
+        options: [{ '**/*.js': 'CAMEL_CASE', '**/*.jsx': 'CAMEL_CASE' }],
+      },
+      {
+        code: "var foo = 'bar';",
+        filename: 'calculatePrice.js',
+        options: [{ '**/*.js': 'CAMEL_CASE', '**/*.jsx': 'CAMEL_CASE' }],
       },
       {
         code: "var foo = 'bar';",
         filename: 'src/classes/g2tClass.js',
-        options: [{ '*.js': 'CAMEL_CASE', '*.jsx': 'CAMEL_CASE' }],
+        options: [{ '**/*.js': 'CAMEL_CASE', '**/*.jsx': 'CAMEL_CASE' }],
       },
     ],
 
@@ -39,11 +59,11 @@ ruleTester.run(
       {
         code: "var foo = 'bar';",
         filename: 'src/utils/CalculatePrice.js',
-        options: [{ '*.js': 'CAMEL_CASE', '*.jsx': 'CAMEL_CASE' }],
+        options: [{ '**/*.js': 'CAMEL_CASE', '**/*.jsx': 'CAMEL_CASE' }],
         errors: [
           {
             message:
-              'The filename "CalculatePrice.js" does not match the "CAMEL_CASE" style',
+              'The filename "src/utils/CalculatePrice.js" does not match the "CAMEL_CASE" style',
             column: 1,
             line: 1,
           },
@@ -52,11 +72,11 @@ ruleTester.run(
       {
         code: "var foo = 'bar';",
         filename: 'src/utils/calculate_price.js',
-        options: [{ '*.js': 'CAMEL_CASE', '*.jsx': 'CAMEL_CASE' }],
+        options: [{ '**/*.js': 'CAMEL_CASE', '**/*.jsx': 'CAMEL_CASE' }],
         errors: [
           {
             message:
-              'The filename "calculate_price.js" does not match the "CAMEL_CASE" style',
+              'The filename "src/utils/calculate_price.js" does not match the "CAMEL_CASE" style',
             column: 1,
             line: 1,
           },
@@ -65,11 +85,11 @@ ruleTester.run(
       {
         code: "var foo = 'bar';",
         filename: 'src/utils/calculate-price.js',
-        options: [{ '*.js': 'CAMEL_CASE', '*.jsx': 'CAMEL_CASE' }],
+        options: [{ '**/*.js': 'CAMEL_CASE', '**/*.jsx': 'CAMEL_CASE' }],
         errors: [
           {
             message:
-              'The filename "calculate-price.js" does not match the "CAMEL_CASE" style',
+              'The filename "src/utils/calculate-price.js" does not match the "CAMEL_CASE" style',
             column: 1,
             line: 1,
           },
@@ -78,11 +98,11 @@ ruleTester.run(
       {
         code: "var foo = 'bar';",
         filename: 'src/utils/CALCULATE_PRICE.js',
-        options: [{ '*.js': 'CAMEL_CASE', '*.jsx': 'CAMEL_CASE' }],
+        options: [{ '**/*.js': 'CAMEL_CASE', '**/*.jsx': 'CAMEL_CASE' }],
         errors: [
           {
             message:
-              'The filename "CALCULATE_PRICE.js" does not match the "CAMEL_CASE" style',
+              'The filename "src/utils/CALCULATE_PRICE.js" does not match the "CAMEL_CASE" style',
             column: 1,
             line: 1,
           },
@@ -91,11 +111,11 @@ ruleTester.run(
       {
         code: "var foo = 'bar';",
         filename: 'src/classes/2gtClass.js',
-        options: [{ '*.js': 'CAMEL_CASE', '*.jsx': 'CAMEL_CASE' }],
+        options: [{ '**/*.js': 'CAMEL_CASE', '**/*.jsx': 'CAMEL_CASE' }],
         errors: [
           {
             message:
-              'The filename "2gtClass.js" does not match the "CAMEL_CASE" style',
+              'The filename "src/classes/2gtClass.js" does not match the "CAMEL_CASE" style',
             column: 1,
             line: 1,
           },
@@ -106,24 +126,24 @@ ruleTester.run(
 );
 
 ruleTester.run(
-  "filename-naming-convention with option: [{ '*.js': 'PASCAL_CASE', '*.jsx': 'PASCAL_CASE' }]",
+  "filename-naming-convention with option: [{ '**/*.js': 'PASCAL_CASE', '**/*.jsx': 'PASCAL_CASE' }]",
   rule,
   {
     valid: [
       {
         code: "var foo = 'bar';",
         filename: 'src/components/Login.jsx',
-        options: [{ '*.js': 'PASCAL_CASE', '*.jsx': 'PASCAL_CASE' }],
+        options: [{ '**/*.js': 'PASCAL_CASE', '**/*.jsx': 'PASCAL_CASE' }],
       },
       {
         code: "var foo = 'bar';",
         filename: 'src/utils/CalculatePrice.js',
-        options: [{ '*.js': 'PASCAL_CASE', '*.jsx': 'PASCAL_CASE' }],
+        options: [{ '**/*.js': 'PASCAL_CASE', '**/*.jsx': 'PASCAL_CASE' }],
       },
       {
         code: "var foo = 'bar';",
         filename: 'src/utils/Calculate2Price.js',
-        options: [{ '*.js': 'PASCAL_CASE', '*.jsx': 'PASCAL_CASE' }],
+        options: [{ '**/*.js': 'PASCAL_CASE', '**/*.jsx': 'PASCAL_CASE' }],
       },
     ],
 
@@ -131,11 +151,11 @@ ruleTester.run(
       {
         code: "var foo = 'bar';",
         filename: 'src/utils/calculatePrice.js',
-        options: [{ '*.js': 'PASCAL_CASE', '*.jsx': 'PASCAL_CASE' }],
+        options: [{ '**/*.js': 'PASCAL_CASE', '**/*.jsx': 'PASCAL_CASE' }],
         errors: [
           {
             message:
-              'The filename "calculatePrice.js" does not match the "PASCAL_CASE" style',
+              'The filename "src/utils/calculatePrice.js" does not match the "PASCAL_CASE" style',
             column: 1,
             line: 1,
           },
@@ -144,11 +164,11 @@ ruleTester.run(
       {
         code: "var foo = 'bar';",
         filename: 'src/utils/calculate_price.js',
-        options: [{ '*.js': 'PASCAL_CASE', '*.jsx': 'PASCAL_CASE' }],
+        options: [{ '**/*.js': 'PASCAL_CASE', '**/*.jsx': 'PASCAL_CASE' }],
         errors: [
           {
             message:
-              'The filename "calculate_price.js" does not match the "PASCAL_CASE" style',
+              'The filename "src/utils/calculate_price.js" does not match the "PASCAL_CASE" style',
             column: 1,
             line: 1,
           },
@@ -157,11 +177,11 @@ ruleTester.run(
       {
         code: "var foo = 'bar';",
         filename: 'src/utils/calculate-price.js',
-        options: [{ '*.js': 'PASCAL_CASE', '*.jsx': 'PASCAL_CASE' }],
+        options: [{ '**/*.js': 'PASCAL_CASE', '**/*.jsx': 'PASCAL_CASE' }],
         errors: [
           {
             message:
-              'The filename "calculate-price.js" does not match the "PASCAL_CASE" style',
+              'The filename "src/utils/calculate-price.js" does not match the "PASCAL_CASE" style',
             column: 1,
             line: 1,
           },
@@ -170,11 +190,11 @@ ruleTester.run(
       {
         code: "var foo = 'bar';",
         filename: 'src/utils/CALCULATE_PRICE.js',
-        options: [{ '*.js': 'PASCAL_CASE', '*.jsx': 'PASCAL_CASE' }],
+        options: [{ '**/*.js': 'PASCAL_CASE', '**/*.jsx': 'PASCAL_CASE' }],
         errors: [
           {
             message:
-              'The filename "CALCULATE_PRICE.js" does not match the "PASCAL_CASE" style',
+              'The filename "src/utils/CALCULATE_PRICE.js" does not match the "PASCAL_CASE" style',
             column: 1,
             line: 1,
           },
@@ -183,11 +203,11 @@ ruleTester.run(
       {
         code: "var foo = 'bar';",
         filename: 'src/utils/calculateprice.js',
-        options: [{ '*.js': 'PASCAL_CASE', '*.jsx': 'PASCAL_CASE' }],
+        options: [{ '**/*.js': 'PASCAL_CASE', '**/*.jsx': 'PASCAL_CASE' }],
         errors: [
           {
             message:
-              'The filename "calculateprice.js" does not match the "PASCAL_CASE" style',
+              'The filename "src/utils/calculateprice.js" does not match the "PASCAL_CASE" style',
             column: 1,
             line: 1,
           },
@@ -196,11 +216,11 @@ ruleTester.run(
       {
         code: "var foo = 'bar';",
         filename: 'src/utils/2CalculatePrice.js',
-        options: [{ '*.js': 'PASCAL_CASE', '*.jsx': 'PASCAL_CASE' }],
+        options: [{ '**/*.js': 'PASCAL_CASE', '**/*.jsx': 'PASCAL_CASE' }],
         errors: [
           {
             message:
-              'The filename "2CalculatePrice.js" does not match the "PASCAL_CASE" style',
+              'The filename "src/utils/2CalculatePrice.js" does not match the "PASCAL_CASE" style',
             column: 1,
             line: 1,
           },
@@ -211,24 +231,24 @@ ruleTester.run(
 );
 
 ruleTester.run(
-  "filename-naming-convention with option: [{ '*.js': 'SNAKE_CASE', '*.jsx': 'SNAKE_CASE' }]",
+  "filename-naming-convention with option: [{ '**/*.js': 'SNAKE_CASE', '**/*.jsx': 'SNAKE_CASE' }]",
   rule,
   {
     valid: [
       {
         code: "var foo = 'bar';",
         filename: 'src/components/login.jsx',
-        options: [{ '*.js': 'SNAKE_CASE', '*.jsx': 'SNAKE_CASE' }],
+        options: [{ '**/*.js': 'SNAKE_CASE', '**/*.jsx': 'SNAKE_CASE' }],
       },
       {
         code: "var foo = 'bar';",
         filename: 'src/utils/calculate_price.js',
-        options: [{ '*.js': 'SNAKE_CASE', '*.jsx': 'SNAKE_CASE' }],
+        options: [{ '**/*.js': 'SNAKE_CASE', '**/*.jsx': 'SNAKE_CASE' }],
       },
       {
         code: "var foo = 'bar';",
         filename: 'src/utils/i18n_test.js',
-        options: [{ '*.js': 'SNAKE_CASE', '*.jsx': 'SNAKE_CASE' }],
+        options: [{ '**/*.js': 'SNAKE_CASE', '**/*.jsx': 'SNAKE_CASE' }],
       },
     ],
 
@@ -236,11 +256,11 @@ ruleTester.run(
       {
         code: "var foo = 'bar';",
         filename: 'src/utils/calculatePrice.js',
-        options: [{ '*.js': 'SNAKE_CASE', '*.jsx': 'SNAKE_CASE' }],
+        options: [{ '**/*.js': 'SNAKE_CASE', '**/*.jsx': 'SNAKE_CASE' }],
         errors: [
           {
             message:
-              'The filename "calculatePrice.js" does not match the "SNAKE_CASE" style',
+              'The filename "src/utils/calculatePrice.js" does not match the "SNAKE_CASE" style',
             column: 1,
             line: 1,
           },
@@ -249,11 +269,11 @@ ruleTester.run(
       {
         code: "var foo = 'bar';",
         filename: 'src/utils/CalculatePrice.js',
-        options: [{ '*.js': 'SNAKE_CASE', '*.jsx': 'SNAKE_CASE' }],
+        options: [{ '**/*.js': 'SNAKE_CASE', '**/*.jsx': 'SNAKE_CASE' }],
         errors: [
           {
             message:
-              'The filename "CalculatePrice.js" does not match the "SNAKE_CASE" style',
+              'The filename "src/utils/CalculatePrice.js" does not match the "SNAKE_CASE" style',
             column: 1,
             line: 1,
           },
@@ -262,11 +282,11 @@ ruleTester.run(
       {
         code: "var foo = 'bar';",
         filename: 'src/utils/calculate-price.js',
-        options: [{ '*.js': 'SNAKE_CASE', '*.jsx': 'SNAKE_CASE' }],
+        options: [{ '**/*.js': 'SNAKE_CASE', '**/*.jsx': 'SNAKE_CASE' }],
         errors: [
           {
             message:
-              'The filename "calculate-price.js" does not match the "SNAKE_CASE" style',
+              'The filename "src/utils/calculate-price.js" does not match the "SNAKE_CASE" style',
             column: 1,
             line: 1,
           },
@@ -275,11 +295,11 @@ ruleTester.run(
       {
         code: "var foo = 'bar';",
         filename: 'src/utils/CALCULATE_PRICE.js',
-        options: [{ '*.js': 'SNAKE_CASE', '*.jsx': 'SNAKE_CASE' }],
+        options: [{ '**/*.js': 'SNAKE_CASE', '**/*.jsx': 'SNAKE_CASE' }],
         errors: [
           {
             message:
-              'The filename "CALCULATE_PRICE.js" does not match the "SNAKE_CASE" style',
+              'The filename "src/utils/CALCULATE_PRICE.js" does not match the "SNAKE_CASE" style',
             column: 1,
             line: 1,
           },
@@ -288,11 +308,11 @@ ruleTester.run(
       {
         code: "var foo = 'bar';",
         filename: 'src/utils/18_test.js',
-        options: [{ '*.js': 'SNAKE_CASE', '*.jsx': 'SNAKE_CASE' }],
+        options: [{ '**/*.js': 'SNAKE_CASE', '**/*.jsx': 'SNAKE_CASE' }],
         errors: [
           {
             message:
-              'The filename "18_test.js" does not match the "SNAKE_CASE" style',
+              'The filename "src/utils/18_test.js" does not match the "SNAKE_CASE" style',
             column: 1,
             line: 1,
           },
@@ -303,24 +323,24 @@ ruleTester.run(
 );
 
 ruleTester.run(
-  "filename-naming-convention with option: [{ '*.js': 'KEBAB_CASE', '*.jsx': 'KEBAB_CASE' }]",
+  "filename-naming-convention with option: [{ '**/*.js': 'KEBAB_CASE', '**/*.jsx': 'KEBAB_CASE' }]",
   rule,
   {
     valid: [
       {
         code: "var foo = 'bar';",
         filename: 'src/components/login.jsx',
-        options: [{ '*.js': 'KEBAB_CASE', '*.jsx': 'KEBAB_CASE' }],
+        options: [{ '**/*.js': 'KEBAB_CASE', '**/*.jsx': 'KEBAB_CASE' }],
       },
       {
         code: "var foo = 'bar';",
         filename: 'src/utils/calculate-price.js',
-        options: [{ '*.js': 'KEBAB_CASE', '*.jsx': 'KEBAB_CASE' }],
+        options: [{ '**/*.js': 'KEBAB_CASE', '**/*.jsx': 'KEBAB_CASE' }],
       },
       {
         code: "var foo = 'bar';",
         filename: 'src/utils/i18n-test.js',
-        options: [{ '*.js': 'KEBAB_CASE', '*.jsx': 'KEBAB_CASE' }],
+        options: [{ '**/*.js': 'KEBAB_CASE', '**/*.jsx': 'KEBAB_CASE' }],
       },
     ],
 
@@ -328,11 +348,11 @@ ruleTester.run(
       {
         code: "var foo = 'bar';",
         filename: 'src/utils/calculatePrice.js',
-        options: [{ '*.js': 'KEBAB_CASE', '*.jsx': 'KEBAB_CASE' }],
+        options: [{ '**/*.js': 'KEBAB_CASE', '**/*.jsx': 'KEBAB_CASE' }],
         errors: [
           {
             message:
-              'The filename "calculatePrice.js" does not match the "KEBAB_CASE" style',
+              'The filename "src/utils/calculatePrice.js" does not match the "KEBAB_CASE" style',
             column: 1,
             line: 1,
           },
@@ -341,11 +361,11 @@ ruleTester.run(
       {
         code: "var foo = 'bar';",
         filename: 'src/utils/CalculatePrice.js',
-        options: [{ '*.js': 'KEBAB_CASE', '*.jsx': 'KEBAB_CASE' }],
+        options: [{ '**/*.js': 'KEBAB_CASE', '**/*.jsx': 'KEBAB_CASE' }],
         errors: [
           {
             message:
-              'The filename "CalculatePrice.js" does not match the "KEBAB_CASE" style',
+              'The filename "src/utils/CalculatePrice.js" does not match the "KEBAB_CASE" style',
             column: 1,
             line: 1,
           },
@@ -354,11 +374,11 @@ ruleTester.run(
       {
         code: "var foo = 'bar';",
         filename: 'src/utils/calculate_price.js',
-        options: [{ '*.js': 'KEBAB_CASE', '*.jsx': 'KEBAB_CASE' }],
+        options: [{ '**/*.js': 'KEBAB_CASE', '**/*.jsx': 'KEBAB_CASE' }],
         errors: [
           {
             message:
-              'The filename "calculate_price.js" does not match the "KEBAB_CASE" style',
+              'The filename "src/utils/calculate_price.js" does not match the "KEBAB_CASE" style',
             column: 1,
             line: 1,
           },
@@ -367,11 +387,11 @@ ruleTester.run(
       {
         code: "var foo = 'bar';",
         filename: 'src/utils/CALCULATE_PRICE.js',
-        options: [{ '*.js': 'KEBAB_CASE', '*.jsx': 'KEBAB_CASE' }],
+        options: [{ '**/*.js': 'KEBAB_CASE', '**/*.jsx': 'KEBAB_CASE' }],
         errors: [
           {
             message:
-              'The filename "CALCULATE_PRICE.js" does not match the "KEBAB_CASE" style',
+              'The filename "src/utils/CALCULATE_PRICE.js" does not match the "KEBAB_CASE" style',
             column: 1,
             line: 1,
           },
@@ -380,11 +400,11 @@ ruleTester.run(
       {
         code: "var foo = 'bar';",
         filename: 'src/utils/18n-test.js',
-        options: [{ '*.js': 'KEBAB_CASE', '*.jsx': 'KEBAB_CASE' }],
+        options: [{ '**/*.js': 'KEBAB_CASE', '**/*.jsx': 'KEBAB_CASE' }],
         errors: [
           {
             message:
-              'The filename "18n-test.js" does not match the "KEBAB_CASE" style',
+              'The filename "src/utils/18n-test.js" does not match the "KEBAB_CASE" style',
             column: 1,
             line: 1,
           },
@@ -395,7 +415,7 @@ ruleTester.run(
 );
 
 ruleTester.run(
-  "filename-naming-convention with option: [{ '*.js': 'SCREAMING_SNAKE_CASE', '*.jsx': 'SCREAMING_SNAKE_CASE' }]",
+  "filename-naming-convention with option: [{ '**/*.js': 'SCREAMING_SNAKE_CASE', '**/*.jsx': 'SCREAMING_SNAKE_CASE' }]",
   rule,
   {
     valid: [
@@ -403,21 +423,30 @@ ruleTester.run(
         code: "var foo = 'bar';",
         filename: 'src/components/LOGIN.jsx',
         options: [
-          { '*.js': 'SCREAMING_SNAKE_CASE', '*.jsx': 'SCREAMING_SNAKE_CASE' },
+          {
+            '**/*.js': 'SCREAMING_SNAKE_CASE',
+            '**/*.jsx': 'SCREAMING_SNAKE_CASE',
+          },
         ],
       },
       {
         code: "var foo = 'bar';",
         filename: 'src/utils/CALCULATE_PRICE.js',
         options: [
-          { '*.js': 'SCREAMING_SNAKE_CASE', '*.jsx': 'SCREAMING_SNAKE_CASE' },
+          {
+            '**/*.js': 'SCREAMING_SNAKE_CASE',
+            '**/*.jsx': 'SCREAMING_SNAKE_CASE',
+          },
         ],
       },
       {
         code: "var foo = 'bar';",
         filename: 'src/utils/CALCULATE100_PRICE.js',
         options: [
-          { '*.js': 'SCREAMING_SNAKE_CASE', '*.jsx': 'SCREAMING_SNAKE_CASE' },
+          {
+            '**/*.js': 'SCREAMING_SNAKE_CASE',
+            '**/*.jsx': 'SCREAMING_SNAKE_CASE',
+          },
         ],
       },
     ],
@@ -427,12 +456,15 @@ ruleTester.run(
         code: "var foo = 'bar';",
         filename: 'src/utils/calculatePrice.js',
         options: [
-          { '*.js': 'SCREAMING_SNAKE_CASE', '*.jsx': 'SCREAMING_SNAKE_CASE' },
+          {
+            '**/*.js': 'SCREAMING_SNAKE_CASE',
+            '**/*.jsx': 'SCREAMING_SNAKE_CASE',
+          },
         ],
         errors: [
           {
             message:
-              'The filename "calculatePrice.js" does not match the "SCREAMING_SNAKE_CASE" style',
+              'The filename "src/utils/calculatePrice.js" does not match the "SCREAMING_SNAKE_CASE" style',
             column: 1,
             line: 1,
           },
@@ -442,12 +474,15 @@ ruleTester.run(
         code: "var foo = 'bar';",
         filename: 'src/utils/CalculatePrice.js',
         options: [
-          { '*.js': 'SCREAMING_SNAKE_CASE', '*.jsx': 'SCREAMING_SNAKE_CASE' },
+          {
+            '**/*.js': 'SCREAMING_SNAKE_CASE',
+            '**/*.jsx': 'SCREAMING_SNAKE_CASE',
+          },
         ],
         errors: [
           {
             message:
-              'The filename "CalculatePrice.js" does not match the "SCREAMING_SNAKE_CASE" style',
+              'The filename "src/utils/CalculatePrice.js" does not match the "SCREAMING_SNAKE_CASE" style',
             column: 1,
             line: 1,
           },
@@ -457,12 +492,15 @@ ruleTester.run(
         code: "var foo = 'bar';",
         filename: 'src/utils/calculate_price.js',
         options: [
-          { '*.js': 'SCREAMING_SNAKE_CASE', '*.jsx': 'SCREAMING_SNAKE_CASE' },
+          {
+            '**/*.js': 'SCREAMING_SNAKE_CASE',
+            '**/*.jsx': 'SCREAMING_SNAKE_CASE',
+          },
         ],
         errors: [
           {
             message:
-              'The filename "calculate_price.js" does not match the "SCREAMING_SNAKE_CASE" style',
+              'The filename "src/utils/calculate_price.js" does not match the "SCREAMING_SNAKE_CASE" style',
             column: 1,
             line: 1,
           },
@@ -472,12 +510,15 @@ ruleTester.run(
         code: "var foo = 'bar';",
         filename: 'src/utils/calculate-price.js',
         options: [
-          { '*.js': 'SCREAMING_SNAKE_CASE', '*.jsx': 'SCREAMING_SNAKE_CASE' },
+          {
+            '**/*.js': 'SCREAMING_SNAKE_CASE',
+            '**/*.jsx': 'SCREAMING_SNAKE_CASE',
+          },
         ],
         errors: [
           {
             message:
-              'The filename "calculate-price.js" does not match the "SCREAMING_SNAKE_CASE" style',
+              'The filename "src/utils/calculate-price.js" does not match the "SCREAMING_SNAKE_CASE" style',
             column: 1,
             line: 1,
           },
@@ -487,12 +528,15 @@ ruleTester.run(
         code: "var foo = 'bar';",
         filename: 'src/utils/calculateprice.js',
         options: [
-          { '*.js': 'SCREAMING_SNAKE_CASE', '*.jsx': 'SCREAMING_SNAKE_CASE' },
+          {
+            '**/*.js': 'SCREAMING_SNAKE_CASE',
+            '**/*.jsx': 'SCREAMING_SNAKE_CASE',
+          },
         ],
         errors: [
           {
             message:
-              'The filename "calculateprice.js" does not match the "SCREAMING_SNAKE_CASE" style',
+              'The filename "src/utils/calculateprice.js" does not match the "SCREAMING_SNAKE_CASE" style',
             column: 1,
             line: 1,
           },
@@ -502,12 +546,15 @@ ruleTester.run(
         code: "var foo = 'bar';",
         filename: 'src/utils/100CALCULATE_PRICE.js',
         options: [
-          { '*.js': 'SCREAMING_SNAKE_CASE', '*.jsx': 'SCREAMING_SNAKE_CASE' },
+          {
+            '**/*.js': 'SCREAMING_SNAKE_CASE',
+            '**/*.jsx': 'SCREAMING_SNAKE_CASE',
+          },
         ],
         errors: [
           {
             message:
-              'The filename "100CALCULATE_PRICE.js" does not match the "SCREAMING_SNAKE_CASE" style',
+              'The filename "src/utils/100CALCULATE_PRICE.js" does not match the "SCREAMING_SNAKE_CASE" style',
             column: 1,
             line: 1,
           },
@@ -518,19 +565,19 @@ ruleTester.run(
 );
 
 ruleTester.run(
-  "filename-naming-convention with option: [{ '*.js': 'FLAT_CASE', '*.jsx': 'FLAT_CASE' }]",
+  "filename-naming-convention with option: [{ '**/*.js': 'FLAT_CASE', '**/*.jsx': 'FLAT_CASE' }]",
   rule,
   {
     valid: [
       {
         code: "var foo = 'bar';",
         filename: 'src/components/login.jsx',
-        options: [{ '*.js': 'FLAT_CASE', '*.jsx': 'FLAT_CASE' }],
+        options: [{ '**/*.js': 'FLAT_CASE', '**/*.jsx': 'FLAT_CASE' }],
       },
       {
         code: "var foo = 'bar';",
         filename: 'src/utils/calculateprice.js',
-        options: [{ '*.js': 'FLAT_CASE', '*.jsx': 'FLAT_CASE' }],
+        options: [{ '**/*.js': 'FLAT_CASE', '**/*.jsx': 'FLAT_CASE' }],
       },
     ],
 
@@ -538,11 +585,11 @@ ruleTester.run(
       {
         code: "var foo = 'bar';",
         filename: 'src/utils/calculatePrice.js',
-        options: [{ '*.js': 'FLAT_CASE', '*.jsx': 'FLAT_CASE' }],
+        options: [{ '**/*.js': 'FLAT_CASE', '**/*.jsx': 'FLAT_CASE' }],
         errors: [
           {
             message:
-              'The filename "calculatePrice.js" does not match the "FLAT_CASE" style',
+              'The filename "src/utils/calculatePrice.js" does not match the "FLAT_CASE" style',
             column: 1,
             line: 1,
           },
@@ -551,11 +598,11 @@ ruleTester.run(
       {
         code: "var foo = 'bar';",
         filename: 'src/utils/CalculatePrice.js',
-        options: [{ '*.js': 'FLAT_CASE', '*.jsx': 'FLAT_CASE' }],
+        options: [{ '**/*.js': 'FLAT_CASE', '**/*.jsx': 'FLAT_CASE' }],
         errors: [
           {
             message:
-              'The filename "CalculatePrice.js" does not match the "FLAT_CASE" style',
+              'The filename "src/utils/CalculatePrice.js" does not match the "FLAT_CASE" style',
             column: 1,
             line: 1,
           },
@@ -564,11 +611,11 @@ ruleTester.run(
       {
         code: "var foo = 'bar';",
         filename: 'src/utils/calculate_price.js',
-        options: [{ '*.js': 'FLAT_CASE', '*.jsx': 'FLAT_CASE' }],
+        options: [{ '**/*.js': 'FLAT_CASE', '**/*.jsx': 'FLAT_CASE' }],
         errors: [
           {
             message:
-              'The filename "calculate_price.js" does not match the "FLAT_CASE" style',
+              'The filename "src/utils/calculate_price.js" does not match the "FLAT_CASE" style',
             column: 1,
             line: 1,
           },
@@ -577,11 +624,11 @@ ruleTester.run(
       {
         code: "var foo = 'bar';",
         filename: 'src/utils/calculate-price.js',
-        options: [{ '*.js': 'FLAT_CASE', '*.jsx': 'FLAT_CASE' }],
+        options: [{ '**/*.js': 'FLAT_CASE', '**/*.jsx': 'FLAT_CASE' }],
         errors: [
           {
             message:
-              'The filename "calculate-price.js" does not match the "FLAT_CASE" style',
+              'The filename "src/utils/calculate-price.js" does not match the "FLAT_CASE" style',
             column: 1,
             line: 1,
           },
@@ -590,11 +637,11 @@ ruleTester.run(
       {
         code: "var foo = 'bar';",
         filename: 'src/utils/CALCULATE_PRICE.js',
-        options: [{ '*.js': 'FLAT_CASE', '*.jsx': 'FLAT_CASE' }],
+        options: [{ '**/*.js': 'FLAT_CASE', '**/*.jsx': 'FLAT_CASE' }],
         errors: [
           {
             message:
-              'The filename "CALCULATE_PRICE.js" does not match the "FLAT_CASE" style',
+              'The filename "src/utils/CALCULATE_PRICE.js" does not match the "FLAT_CASE" style',
             column: 1,
             line: 1,
           },
@@ -605,19 +652,19 @@ ruleTester.run(
 );
 
 ruleTester.run(
-  "filename-naming-convention with option: [{ '*.js': '__+([a-z])', '*.jsx': '__+([a-z])' }]",
+  "filename-naming-convention with option: [{ '**/*.js': '__+([a-z])', '**/*.jsx': '__+([a-z])' }]",
   rule,
   {
     valid: [
       {
         code: "var foo = 'bar';",
         filename: 'src/components/__login.jsx',
-        options: [{ '*.js': '__+([a-z])', '*.jsx': '__+([a-z])' }],
+        options: [{ '**/*.js': '__+([a-z])', '**/*.jsx': '__+([a-z])' }],
       },
       {
         code: "var foo = 'bar';",
         filename: 'src/utils/__calculateprice.js',
-        options: [{ '*.js': '__+([a-z])', '*.jsx': '__+([a-z])' }],
+        options: [{ '**/*.js': '__+([a-z])', '**/*.jsx': '__+([a-z])' }],
       },
     ],
 
@@ -625,11 +672,11 @@ ruleTester.run(
       {
         code: "var foo = 'bar';",
         filename: 'src/utils/calculatePrice.js',
-        options: [{ '*.js': '__+([a-z])', '*.jsx': '__+([a-z])' }],
+        options: [{ '**/*.js': '__+([a-z])', '**/*.jsx': '__+([a-z])' }],
         errors: [
           {
             message:
-              'The filename "calculatePrice.js" does not match the "__+([a-z])" style',
+              'The filename "src/utils/calculatePrice.js" does not match the "__+([a-z])" style',
             column: 1,
             line: 1,
           },
@@ -638,11 +685,11 @@ ruleTester.run(
       {
         code: "var foo = 'bar';",
         filename: 'src/utils/CalculatePrice.js',
-        options: [{ '*.js': '__+([a-z])', '*.jsx': '__+([a-z])' }],
+        options: [{ '**/*.js': '__+([a-z])', '**/*.jsx': '__+([a-z])' }],
         errors: [
           {
             message:
-              'The filename "CalculatePrice.js" does not match the "__+([a-z])" style',
+              'The filename "src/utils/CalculatePrice.js" does not match the "__+([a-z])" style',
             column: 1,
             line: 1,
           },
@@ -651,11 +698,11 @@ ruleTester.run(
       {
         code: "var foo = 'bar';",
         filename: 'src/utils/calculate_price.js',
-        options: [{ '*.js': '__+([a-z])', '*.jsx': '__+([a-z])' }],
+        options: [{ '**/*.js': '__+([a-z])', '**/*.jsx': '__+([a-z])' }],
         errors: [
           {
             message:
-              'The filename "calculate_price.js" does not match the "__+([a-z])" style',
+              'The filename "src/utils/calculate_price.js" does not match the "__+([a-z])" style',
             column: 1,
             line: 1,
           },
@@ -664,11 +711,11 @@ ruleTester.run(
       {
         code: "var foo = 'bar';",
         filename: 'src/utils/calculate-price.js',
-        options: [{ '*.js': '__+([a-z])', '*.jsx': '__+([a-z])' }],
+        options: [{ '**/*.js': '__+([a-z])', '**/*.jsx': '__+([a-z])' }],
         errors: [
           {
             message:
-              'The filename "calculate-price.js" does not match the "__+([a-z])" style',
+              'The filename "src/utils/calculate-price.js" does not match the "__+([a-z])" style',
             column: 1,
             line: 1,
           },
@@ -677,11 +724,11 @@ ruleTester.run(
       {
         code: "var foo = 'bar';",
         filename: 'src/utils/CALCULATE_PRICE.js',
-        options: [{ '*.js': '__+([a-z])', '*.jsx': '__+([a-z])' }],
+        options: [{ '**/*.js': '__+([a-z])', '**/*.jsx': '__+([a-z])' }],
         errors: [
           {
             message:
-              'The filename "CALCULATE_PRICE.js" does not match the "__+([a-z])" style',
+              'The filename "src/utils/CALCULATE_PRICE.js" does not match the "__+([a-z])" style',
             column: 1,
             line: 1,
           },
@@ -699,7 +746,7 @@ ruleTester.run(
       {
         code: "var foo = 'bar';",
         filename: 'src/utils/CalculatePrice.ts',
-        options: [{ '*.js': 'CAMEL_CASE', '*.jsx': 'CAMEL_CASE' }],
+        options: [{ '**/*.js': 'CAMEL_CASE', '**/*.jsx': 'CAMEL_CASE' }],
       },
     ],
 
@@ -708,7 +755,7 @@ ruleTester.run(
 );
 
 ruleTester.run(
-  "filename-naming-convention with option: [{ '*.js': 'FOO', '.jsx': 'FLAT_CASE' }]",
+  "filename-naming-convention with option: [{ '**/*.js': 'FOO', '.jsx': 'FLAT_CASE' }]",
   rule,
   {
     valid: [],
@@ -717,7 +764,7 @@ ruleTester.run(
       {
         code: "var foo = 'bar';",
         filename: 'src/utils/calculatePrice.js',
-        options: [{ '*.js': 'FOO', '.jsx': 'FLAT_CASE' }],
+        options: [{ '**/*.js': 'FOO', '.jsx': 'FLAT_CASE' }],
         errors: [
           {
             message: 'There is an invalid pattern "FOO", please check it',
@@ -731,7 +778,7 @@ ruleTester.run(
 );
 
 ruleTester.run(
-  "filename-naming-convention with option: [{ '*.js': 'CAMEL_CASE', '.jsx': 'FLAT_CASE' }]",
+  "filename-naming-convention with option: [{ '**/*.js': 'CAMEL_CASE', '.jsx': 'FLAT_CASE' }]",
   rule,
   {
     valid: [],
@@ -740,7 +787,7 @@ ruleTester.run(
       {
         code: "var foo = 'bar';",
         filename: 'src/utils/calculatePrice.js',
-        options: [{ '*.js': 'CAMEL_CASE', '.jsx': 'FLAT_CASE' }],
+        options: [{ '**/*.js': 'CAMEL_CASE', '.jsx': 'FLAT_CASE' }],
         errors: [
           {
             message: 'There is an invalid pattern ".jsx", please check it',
@@ -994,115 +1041,6 @@ ruleTester.run(
 );
 
 ruleTester.run(
-  "filename-naming-convention with option: [{ '**/*.js': 'CAMEL_CASE', '**/*.jsx': 'CAMEL_CASE' }]",
-  rule,
-  {
-    valid: [
-      {
-        code: "var foo = 'bar';",
-        filename: 'src/components/login.jsx',
-        options: [{ '**/*.js': 'CAMEL_CASE', '**/*.jsx': 'CAMEL_CASE' }],
-      },
-      {
-        code: "var foo = 'bar';",
-        filename: 'src/login.jsx',
-        options: [{ '**/*.js': 'CAMEL_CASE', '**/*.jsx': 'CAMEL_CASE' }],
-      },
-      {
-        code: "var foo = 'bar';",
-        filename: 'login.jsx',
-        options: [{ '**/*.js': 'CAMEL_CASE', '**/*.jsx': 'CAMEL_CASE' }],
-      },
-      {
-        code: "var foo = 'bar';",
-        filename: 'src/components/logout.jsx',
-        options: [{ '**/*.js': 'CAMEL_CASE', '**/*.jsx': 'CAMEL_CASE' }],
-      },
-      {
-        code: "var foo = 'bar';",
-        filename: 'src/logout.jsx',
-        options: [{ '**/*.js': 'CAMEL_CASE', '**/*.jsx': 'CAMEL_CASE' }],
-      },
-      {
-        code: "var foo = 'bar';",
-        filename: 'logout.jsx',
-        options: [{ '**/*.js': 'CAMEL_CASE', '**/*.jsx': 'CAMEL_CASE' }],
-      },
-      {
-        code: "var foo = 'bar';",
-        filename: 'src/utils/calculatePrice.js',
-        options: [{ '**/*.js': 'CAMEL_CASE', '**/*.jsx': 'CAMEL_CASE' }],
-      },
-      {
-        code: "var foo = 'bar';",
-        filename: 'src/calculatePrice.js',
-        options: [{ '**/*.js': 'CAMEL_CASE', '**/*.jsx': 'CAMEL_CASE' }],
-      },
-      {
-        code: "var foo = 'bar';",
-        filename: 'calculatePrice.js',
-        options: [{ '**/*.js': 'CAMEL_CASE', '**/*.jsx': 'CAMEL_CASE' }],
-      },
-    ],
-
-    invalid: [
-      {
-        code: "var foo = 'bar';",
-        filename: 'src/utils/CalculatePrice.js',
-        options: [{ '**/*.js': 'CAMEL_CASE', '**/*.jsx': 'CAMEL_CASE' }],
-        errors: [
-          {
-            message:
-              'The filename "src/utils/CalculatePrice.js" does not match the "CAMEL_CASE" style',
-            column: 1,
-            line: 1,
-          },
-        ],
-      },
-      {
-        code: "var foo = 'bar';",
-        filename: 'src/utils/calculate_price.js',
-        options: [{ '**/*.js': 'CAMEL_CASE', '**/*.jsx': 'CAMEL_CASE' }],
-        errors: [
-          {
-            message:
-              'The filename "src/utils/calculate_price.js" does not match the "CAMEL_CASE" style',
-            column: 1,
-            line: 1,
-          },
-        ],
-      },
-      {
-        code: "var foo = 'bar';",
-        filename: 'src/utils/calculate-price.js',
-        options: [{ '**/*.js': 'CAMEL_CASE', '**/*.jsx': 'CAMEL_CASE' }],
-        errors: [
-          {
-            message:
-              'The filename "src/utils/calculate-price.js" does not match the "CAMEL_CASE" style',
-            column: 1,
-            line: 1,
-          },
-        ],
-      },
-      {
-        code: "var foo = 'bar';",
-        filename: 'src/utils/CALCULATE_PRICE.js',
-        options: [{ '**/*.js': 'CAMEL_CASE', '**/*.jsx': 'CAMEL_CASE' }],
-        errors: [
-          {
-            message:
-              'The filename "src/utils/CALCULATE_PRICE.js" does not match the "CAMEL_CASE" style',
-            column: 1,
-            line: 1,
-          },
-        ],
-      },
-    ],
-  }
-);
-
-ruleTester.run(
   "filename-naming-convention with option: [{ '**/*.js': 'CAMEL_CASE' }, { ignoreMiddleExtensions: true }]",
   rule,
   {
@@ -1227,7 +1165,7 @@ ruleTester.run(
 );
 
 ruleTester.run(
-  "filename-naming-convention with option: [{ '*.js': 'CAMEL_CASE', '*.jsx': 'CAMEL_CASE' }, { ignoreMiddleExtensions: false }]",
+  "filename-naming-convention with option: [{ '**/*.js': 'CAMEL_CASE', '**/*.jsx': 'CAMEL_CASE' }, { ignoreMiddleExtensions: false }]",
   rule,
   {
     valid: [
@@ -1235,7 +1173,7 @@ ruleTester.run(
         code: "var foo = 'bar';",
         filename: 'src/components/login.jsx',
         options: [
-          { '*.js': 'CAMEL_CASE', '*.jsx': 'CAMEL_CASE' },
+          { '**/*.js': 'CAMEL_CASE', '**/*.jsx': 'CAMEL_CASE' },
           { ignoreMiddleExtensions: false },
         ],
       },
@@ -1243,7 +1181,7 @@ ruleTester.run(
         code: "var foo = 'bar';",
         filename: 'src/utils/calculatePrice.js',
         options: [
-          { '*.js': 'CAMEL_CASE', '*.jsx': 'CAMEL_CASE' },
+          { '**/*.js': 'CAMEL_CASE', '**/*.jsx': 'CAMEL_CASE' },
           { ignoreMiddleExtensions: false },
         ],
       },
@@ -1254,13 +1192,13 @@ ruleTester.run(
         code: "var foo = 'bar';",
         filename: 'src/utils/CalculatePrice.js',
         options: [
-          { '*.js': 'CAMEL_CASE', '*.jsx': 'CAMEL_CASE' },
+          { '**/*.js': 'CAMEL_CASE', '**/*.jsx': 'CAMEL_CASE' },
           { ignoreMiddleExtensions: false },
         ],
         errors: [
           {
             message:
-              'The filename "CalculatePrice.js" does not match the "CAMEL_CASE" style',
+              'The filename "src/utils/CalculatePrice.js" does not match the "CAMEL_CASE" style',
             column: 1,
             line: 1,
           },
@@ -1270,13 +1208,13 @@ ruleTester.run(
         code: "var foo = 'bar';",
         filename: 'src/utils/calculate_price.js',
         options: [
-          { '*.js': 'CAMEL_CASE', '*.jsx': 'CAMEL_CASE' },
+          { '**/*.js': 'CAMEL_CASE', '**/*.jsx': 'CAMEL_CASE' },
           { ignoreMiddleExtensions: false },
         ],
         errors: [
           {
             message:
-              'The filename "calculate_price.js" does not match the "CAMEL_CASE" style',
+              'The filename "src/utils/calculate_price.js" does not match the "CAMEL_CASE" style',
             column: 1,
             line: 1,
           },
@@ -1286,13 +1224,13 @@ ruleTester.run(
         code: "var foo = 'bar';",
         filename: 'src/utils/calculate-price.js',
         options: [
-          { '*.js': 'CAMEL_CASE', '*.jsx': 'CAMEL_CASE' },
+          { '**/*.js': 'CAMEL_CASE', '**/*.jsx': 'CAMEL_CASE' },
           { ignoreMiddleExtensions: false },
         ],
         errors: [
           {
             message:
-              'The filename "calculate-price.js" does not match the "CAMEL_CASE" style',
+              'The filename "src/utils/calculate-price.js" does not match the "CAMEL_CASE" style',
             column: 1,
             line: 1,
           },
@@ -1302,13 +1240,29 @@ ruleTester.run(
         code: "var foo = 'bar';",
         filename: 'src/utils/CALCULATE_PRICE.js',
         options: [
-          { '*.js': 'CAMEL_CASE', '*.jsx': 'CAMEL_CASE' },
+          { '**/*.js': 'CAMEL_CASE', '**/*.jsx': 'CAMEL_CASE' },
           { ignoreMiddleExtensions: false },
         ],
         errors: [
           {
             message:
-              'The filename "CALCULATE_PRICE.js" does not match the "CAMEL_CASE" style',
+              'The filename "src/utils/CALCULATE_PRICE.js" does not match the "CAMEL_CASE" style',
+            column: 1,
+            line: 1,
+          },
+        ],
+      },
+      {
+        code: "var foo = 'bar';",
+        filename: 'src/utils/date.test.js',
+        options: [
+          { '**/*.js': 'CAMEL_CASE', '**/*.jsx': 'CAMEL_CASE' },
+          { ignoreMiddleExtensions: false },
+        ],
+        errors: [
+          {
+            message:
+              'The filename "src/utils/date.test.js" does not match the "CAMEL_CASE" style',
             column: 1,
             line: 1,
           },

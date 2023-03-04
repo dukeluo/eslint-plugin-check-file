@@ -49,7 +49,7 @@ In addition to the built-in naming conventions, you can also set custom naming p
 
 :warning: :warning: :warning:
 
-**Versions below v1.2.0 can only select files by using their extensions. All `v1` versions will have this feature, but is will be removed in the future. Please select your target files by the file path. For example, using `**/*.js` instead of `*.js` to select all `js` files.**
+**v1 versions have the legacy support for selecting target files based on their extensions. This legacy support has been removed since v2.0.0. Please select your target files by their file path. For example, using `**/*.js` instead of `*.js` to select all `js` files.**
 
 
 ### Options
