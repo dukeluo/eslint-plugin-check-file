@@ -2,6 +2,10 @@
 
 Allows you to blocklist certain file name patterns.
 
+:warning: :warning: :warning:
+
+**The rule was called `filename-blacklist` in versions below v2.0.0. This rule name has been abandoned since it is less inclusive. Please update to the latest rule name.**
+
 ## Rule Details
 
 This rule aims to maintain a consistent naming scheme.
@@ -30,7 +34,7 @@ src/bar.models.ts
 
 #### blocklist pattern object
 
-You need to specify a different naming pattern for each filename blocklist. The second pattern is used to hint at the correct file name that should be used instead.
+You need to specify a different naming pattern for each filename blocklist. The second pattern is used to hint at the correct file name that should be used instead. The plugin will only check blocklisted pattern you explicitly provided:
 
 ```js
 module.exports = {
