@@ -69,7 +69,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The filename "src/utils/CalculatePrice.js" does not match the "CAMEL_CASE" style',
+              'The filename "CalculatePrice.js" does not match the "CAMEL_CASE" style',
             column: 1,
             line: 1,
           },
@@ -83,7 +83,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The filename "Users/Administrator/Downloads/wai/src/utils/calculate_price.js" does not match the "CAMEL_CASE" style',
+              'The filename "calculate_price.js" does not match the "CAMEL_CASE" style',
             column: 1,
             line: 1,
           },
@@ -129,7 +129,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The filename "src/utils/calculatePrice.js" does not match the "PASCAL_CASE" style',
+              'The filename "calculatePrice.js" does not match the "PASCAL_CASE" style',
             column: 1,
             line: 1,
           },
@@ -143,7 +143,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The filename "Users/Administrator/Downloads/wai/src/utils/calculatePrice.js" does not match the "PASCAL_CASE" style',
+              'The filename "calculatePrice.js" does not match the "PASCAL_CASE" style',
             column: 1,
             line: 1,
           },
@@ -190,7 +190,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The filename "Users/Administrator/Downloads/wai/src/utils/calculatePrice.js" does not match the "SNAKE_CASE" style',
+              'The filename "calculatePrice.js" does not match the "SNAKE_CASE" style',
             column: 1,
             line: 1,
           },
@@ -203,7 +203,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The filename "src/utils/calculatePrice.js" does not match the "SNAKE_CASE" style',
+              'The filename "calculatePrice.js" does not match the "SNAKE_CASE" style',
             column: 1,
             line: 1,
           },
@@ -250,7 +250,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The filename "Users/Administrator/Downloads/wai/src/utils/calculatePrice.js" does not match the "KEBAB_CASE" style',
+              'The filename "calculatePrice.js" does not match the "KEBAB_CASE" style',
             column: 1,
             line: 1,
           },
@@ -263,7 +263,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The filename "src/utils/calculatePrice.js" does not match the "KEBAB_CASE" style',
+              'The filename "calculatePrice.js" does not match the "KEBAB_CASE" style',
             column: 1,
             line: 1,
           },
@@ -335,7 +335,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The filename "Users/Administrator/Downloads/wai/src/utils/calculatePrice.js" does not match the "SCREAMING_SNAKE_CASE" style',
+              'The filename "calculatePrice.js" does not match the "SCREAMING_SNAKE_CASE" style',
             column: 1,
             line: 1,
           },
@@ -353,7 +353,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The filename "src/utils/calculatePrice.js" does not match the "SCREAMING_SNAKE_CASE" style',
+              'The filename "calculatePrice.js" does not match the "SCREAMING_SNAKE_CASE" style',
             column: 1,
             line: 1,
           },
@@ -394,7 +394,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The filename "src/utils/calculatePrice.js" does not match the "FLAT_CASE" style',
+              'The filename "calculatePrice.js" does not match the "FLAT_CASE" style',
             column: 1,
             line: 1,
           },
@@ -408,7 +408,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The filename "Users/Administrator/Downloads/wai/src/utils/calculatePrice.js" does not match the "FLAT_CASE" style',
+              'The filename "calculatePrice.js" does not match the "FLAT_CASE" style',
             column: 1,
             line: 1,
           },
@@ -450,7 +450,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The filename "Users/Administrator/Downloads/wai/src/utils/calculatePrice.js" does not match the "__+([a-z])" style',
+              'The filename "calculatePrice.js" does not match the "__+([a-z])" style',
             column: 1,
             line: 1,
           },
@@ -463,7 +463,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The filename "src/utils/calculatePrice.js" does not match the "__+([a-z])" style',
+              'The filename "calculatePrice.js" does not match the "__+([a-z])" style',
             column: 1,
             line: 1,
           },
@@ -617,7 +617,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The filename "src/services/downloadService.js" does not match the "PASCAL_CASE" style',
+              'The filename "downloadService.js" does not match the "PASCAL_CASE" style',
             column: 1,
             line: 1,
           },
@@ -635,7 +635,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The filename "src/composables/UseDownloadApi.js" does not match the "CAMEL_CASE" style',
+              'The filename "UseDownloadApi.js" does not match the "CAMEL_CASE" style',
             column: 1,
             line: 1,
           },
@@ -695,7 +695,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The filename "src/utils/Date.js" does not match the "CAMEL_CASE" style',
+              'The filename "Date.js" does not match the "CAMEL_CASE" style',
             column: 1,
             line: 1,
           },
@@ -711,7 +711,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The filename "src/utils/Date.test.js" does not match the "CAMEL_CASE" style',
+              'The filename "Date.test.js" does not match the "CAMEL_CASE" style',
             column: 1,
             line: 1,
           },
@@ -727,7 +727,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The filename "src/utils/Date.spec.js" does not match the "CAMEL_CASE" style',
+              'The filename "Date.spec.js" does not match the "CAMEL_CASE" style',
             column: 1,
             line: 1,
           },
@@ -743,7 +743,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The filename "src/utils/date_util.spec.js" does not match the "CAMEL_CASE" style',
+              'The filename "date_util.spec.js" does not match the "CAMEL_CASE" style',
             column: 1,
             line: 1,
           },
@@ -759,7 +759,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The filename "src/utils/date_util.spec.test.js" does not match the "CAMEL_CASE" style',
+              'The filename "date_util.spec.test.js" does not match the "CAMEL_CASE" style',
             column: 1,
             line: 1,
           },
@@ -803,7 +803,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The filename "src/utils/CalculatePrice.js" does not match the "CAMEL_CASE" style',
+              'The filename "CalculatePrice.js" does not match the "CAMEL_CASE" style',
             column: 1,
             line: 1,
           },
@@ -819,7 +819,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The filename "src/utils/date.test.js" does not match the "CAMEL_CASE" style',
+              'The filename "date.test.js" does not match the "CAMEL_CASE" style',
             column: 1,
             line: 1,
           },
