@@ -828,3 +828,94 @@ ruleTester.run(
     ],
   }
 );
+
+ruleTester.run(
+  "filename-naming-convention with option: [{ '**/*/!(index).*': '<1>' }, { ignoreMiddleExtensions: true }]",
+  rule,
+  {
+    valid: [
+      {
+        code: "var foo = 'bar';",
+        filename: 'src\\components\\featureA\\index.js',
+        options: [
+          { '**/*/!(index).*': '<1>' },
+          { ignoreMiddleExtensions: true },
+        ],
+      },
+      {
+        code: "var foo = 'bar';",
+        filename: 'src\\components\\featureA\\featureA.jsx',
+        options: [
+          { '**/*/!(index).*': '<1>' },
+          { ignoreMiddleExtensions: true },
+        ],
+      },
+      {
+        code: "var foo = 'bar';",
+        filename: 'src\\components\\featureA\\featureA.specs.js',
+        options: [
+          { '**/*/!(index).*': '<1>' },
+          { ignoreMiddleExtensions: true },
+        ],
+      },
+    ],
+
+    invalid: [
+      {
+        code: "var foo = 'bar';",
+        filename: 'src\\components\\featureA\\featureB.jsx',
+        options: [
+          { '**/*/!(index).*': '<1>' },
+          { ignoreMiddleExtensions: true },
+        ],
+        errors: [
+          {
+            message:
+              'The filename "featureB.jsx" does not match the "<1>" style',
+            column: 1,
+            line: 1,
+          },
+        ],
+      },
+      {
+        code: "var foo = 'bar';",
+        filename: 'src\\components\\featureA\\featureB.specs.js',
+        options: [
+          { '**/*/!(index).*': '<1>' },
+          { ignoreMiddleExtensions: true },
+        ],
+        errors: [
+          {
+            message:
+              'The filename "featureB.specs.js" does not match the "<1>" style',
+            column: 1,
+            line: 1,
+          },
+        ],
+      },
+    ],
+  }
+);
+
+ruleTester.run(
+  "filename-naming-convention with option: [{ '**/*/!(index).*': '<9>' }]",
+  rule,
+  {
+    valid: [],
+    invalid: [
+      {
+        code: "var foo = 'bar';",
+        filename: 'src\\components\\featureA\\featureA.jsx',
+        options: [{ '**/*/!(index).*': '<9>' }],
+        errors: [
+          {
+            message:
+              'The capture group "<9>" is not found in the glob "**/*/!(index).*"',
+            column: 1,
+            line: 1,
+          },
+        ],
+      },
+    ],
+  }
+);
