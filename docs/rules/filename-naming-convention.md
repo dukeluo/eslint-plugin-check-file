@@ -72,6 +72,29 @@ module.exports = {
 };
 ```
 
+#### using capture groups
+
+You can use glob capture groups in you rule set using the `<index>` syntax. Read more about glob capture groups in the [micromatch documentation](https://github.com/micromatch/micromatch#capture).
+
+For example the following rule will only allow a file to be named the same as its parent folder :
+
+```js
+module.exports = {
+  plugins: ['check-file'],
+  rules: {
+    'check-file/filename-naming-convention': [
+      'error',
+      {
+        '**/*/*': '<1>',
+      },
+      {
+        ignoreMiddleExtensions: true,
+      },
+    ],
+  },
+};
+```
+
 #### rule configuration object
 
 ##### `ignoreMiddleExtensions`
