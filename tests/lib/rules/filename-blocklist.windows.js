@@ -62,6 +62,40 @@ ruleTester.run(
 );
 
 ruleTester.run(
+  "filename-blocklist with option on Windows: [{ 'src/*.models.ts': '*.model.ts' }]",
+  rule,
+  {
+    valid: [
+      {
+        code: "var foo = 'bar';",
+        filename: 'C:\\Users\\Administrator\\Downloads\\wai\\src\\foo.model.ts',
+        options: [{ 'src/*.models.ts': '*.model.ts' }],
+      },
+      {
+        code: "var foo = 'bar';",
+        filename: 'src\\foo.model.ts',
+        options: [{ 'src/*.models.ts': '*.model.ts' }],
+      },
+    ],
+    invalid: [
+      {
+        code: "var foo = 'bar';",
+        filename: 'src\\foo.models.ts',
+        options: [{ 'src/*.models.ts': '*.model.ts' }],
+        errors: [
+          {
+            message:
+              'The filename "foo.models.ts" matches the blocklisted "src/*.models.ts" pattern. Use a pattern like "*.model.ts" instead.',
+            column: 1,
+            line: 1,
+          },
+        ],
+      },
+    ],
+  }
+);
+
+ruleTester.run(
   "filename-blocklist with option on Windows: [{ '*.models.ts': 'FOO' }]",
   rule,
   {
