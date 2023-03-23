@@ -29,6 +29,10 @@ src/foo.models.ts
 src/bar.models.ts
 ```
 
+:warning: :warning: :warning:
+
+**Versions <= v2.0.0 can only select target files by their filenames, not by their paths. This support has been deprecated and will be removed  in the future. Please select your target files by their file path. For example, using `**/*.js` instead of `*.js` to select all `js` files.**
+
 
 ### Options
 
