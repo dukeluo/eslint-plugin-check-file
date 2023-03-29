@@ -45,12 +45,36 @@ In addition to the built-in naming conventions, you can also set custom naming p
 ...
 ```
 
-**Tip:** To selecte all your `js` files, your can use the glob expression `**/*.js`.
+**Tip 1:** To selecte all your `js` files, your can use the glob expression `**/*.js`.
 
-:warning: :warning: :warning:
+**Tip 2:** v1 versions have the legacy support for selecting target files based on their extensions. This legacy support has been removed since v2.0.0. Please select your target files by their file path. For example, using `**/*.js` instead of `*.js` to select all `js` files.
 
-**v1 versions have the legacy support for selecting target files based on their extensions. This legacy support has been removed since v2.0.0. Please select your target files by their file path. For example, using `**/*.js` instead of `*.js` to select all `js` files.**
+### Prefined match syntax
 
+Prefined match syntax allow you to capture specific part of the target file pattern and use it in your naming convention pattern. This syntax is particularly useful when you want to make a file to be named the same as its parent folder.
+
+To use prefined match in your rule set, you can use the `<index>` syntax. The index refers to the position where the glob matcher occurs in the target file pattern expression, starting with `0`. Read more about glob capture groups in the [micromatch documentation](https://github.com/micromatch/micromatch#capture).
+
+If the rule had been set as follows:
+```js
+...
+'check-file/filename-naming-convention': ['error', { '**/*/!(index).*': '<1>' }, { 'ignoreMiddleExtensions': true }],
+...
+```
+
+Examples of **incorrect** filename with path for this rule:
+```sh
+src/Portal/type.ts
+src/Portal/base.tsx
+```
+
+Examples of **correct** filename with path for this rule:
+```sh
+src/Portal/index.ts
+src/Portal/Portal.test.tsx
+src/Portal/Portal.tsx
+src/Portal/Portal.types.ts
+```
 
 ### Options
 
@@ -60,35 +84,13 @@ You need to specify a different naming pattern for different file. The plugin wi
 
 ```js
 module.exports = {
-  plugins: [
-    'check-file',
-  ],
-  rules: {
-    'check-file/filename-naming-convention': ['error', {
-      '**/*.{jsx,tsx}': 'CAMEL_CASE',
-      '**/*.{js,ts}': 'KEBAB_CASE',
-    }],
-  },
-};
-```
-
-#### using capture groups
-
-You can use glob capture groups in you rule set using the `<index>` syntax. Read more about glob capture groups in the [micromatch documentation](https://github.com/micromatch/micromatch#capture).
-
-For example the following rule will only allow a file to be named the same as its parent folder :
-
-```js
-module.exports = {
   plugins: ['check-file'],
   rules: {
     'check-file/filename-naming-convention': [
       'error',
       {
-        '**/*/*': '<1>',
-      },
-      {
-        ignoreMiddleExtensions: true,
+        '**/*.{jsx,tsx}': 'CAMEL_CASE',
+        '**/*.{js,ts}': 'KEBAB_CASE',
       },
     ],
   },
