@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-check-file",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "ESLint rules for consistent filename and folder. Allows you to enforce a consistent naming pattern for the filename and folder",
   "keywords": [
     "eslint",
