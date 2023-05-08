@@ -29,7 +29,8 @@
     "lint": "eslint . --ignore-pattern node_modules/",
     "lint:fix": "eslint . --fix --ignore-pattern node_modules/",
     "test": "nyc mocha tests --recursive",
-    "test:report": "nyc report --reporter=text-lcov > coverage.lcov"
+    "test:report": "nyc report --reporter=text-lcov > coverage.lcov",
+    "test:cli": "mocha"
   },
   "dependencies": {
     "is-glob": "^4.0.3",
