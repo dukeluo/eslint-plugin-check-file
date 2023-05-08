@@ -103,6 +103,89 @@ ruleTester.run(
 );
 
 ruleTester.run(
+  "folder-naming-convention with option on Windows: [{ 'src/!(pages)/**': 'CAMEL_CASE' }]",
+  rule,
+  {
+    valid: [
+      {
+        code: "var foo = 'bar';",
+        filename: 'src\\components\\displayLabel\\displayLabel.js',
+        options: [{ 'src/!(pages)/**': 'CAMEL_CASE' }],
+      },
+      {
+        code: "var foo = 'bar';",
+        filename: 'src\\components\\visual\\interactiveButton\\index.js',
+        options: [{ 'src/!(pages)/**': 'CAMEL_CASE' }],
+      },
+      {
+        code: "var foo = 'bar';",
+        filename: 'src\\pages\\home\\index.js',
+        options: [{ 'src/!(pages)/**': 'CAMEL_CASE' }],
+      },
+      {
+        code: "var foo = 'bar';",
+        filename: 'src\\pages\\Home\\index.js',
+        options: [{ 'src/!(pages)/**': 'CAMEL_CASE' }],
+      },
+    ],
+
+    invalid: [
+      {
+        code: "var foo = 'bar';",
+        filename: 'src\\Components\\DisplayLabel\\displayLabel.js',
+        options: [{ 'src/!(pages)/**': 'CAMEL_CASE' }],
+        errors: [
+          {
+            message:
+              'The folder "Components" does not match the "CAMEL_CASE" style',
+            column: 1,
+            line: 1,
+          },
+        ],
+      },
+      {
+        code: "var foo = 'bar';",
+        filename: 'src\\components\\DisplayLabel\\displayLabel.js',
+        options: [{ 'src/!(pages)/**': 'CAMEL_CASE' }],
+        errors: [
+          {
+            message:
+              'The folder "DisplayLabel" does not match the "CAMEL_CASE" style',
+            column: 1,
+            line: 1,
+          },
+        ],
+      },
+      {
+        code: "var foo = 'bar';",
+        filename: 'src\\components\\visual\\interactive-button\\index.js',
+        options: [{ 'src/!(pages)/**': 'CAMEL_CASE' }],
+        errors: [
+          {
+            message:
+              'The folder "interactive-button" does not match the "CAMEL_CASE" style',
+            column: 1,
+            line: 1,
+          },
+        ],
+      },
+      {
+        code: "var foo = 'bar';",
+        filename: 'src\\Pages\\home\\index.js',
+        options: [{ 'src/!(pages)/**': 'CAMEL_CASE' }],
+        errors: [
+          {
+            message: 'The folder "Pages" does not match the "CAMEL_CASE" style',
+            column: 1,
+            line: 1,
+          },
+        ],
+      },
+    ],
+  }
+);
+
+ruleTester.run(
   "folder-naming-convention with option on Windows: [{ 'components/*/': '__+([a-z])' }]",
   rule,
   {
