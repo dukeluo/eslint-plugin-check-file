@@ -212,3 +212,22 @@ ruleTester.run(
     ],
   }
 );
+
+ruleTester.run('filename-blocklist with option: []', rule, {
+  valid: [],
+
+  invalid: [
+    {
+      code: "var foo = 'bar';",
+      filename: 'src/foo.models.ts',
+      options: [],
+      errors: [
+        {
+          message: `The naming pattern object "undefined" doesn't appear to be an Object type, please double-check it and try again`,
+          column: 1,
+          line: 1,
+        },
+      ],
+    },
+  ],
+});

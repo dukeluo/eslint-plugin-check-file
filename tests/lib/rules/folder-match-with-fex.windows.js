@@ -307,3 +307,22 @@ ruleTester.run(
     ],
   }
 );
+
+ruleTester.run('folder-match-with-fex with option on Windows: []', rule, {
+  valid: [],
+
+  invalid: [
+    {
+      code: "var foo = 'bar';",
+      filename: 'bar\\__tests__\\foo.test.js',
+      options: [],
+      errors: [
+        {
+          message: `The naming pattern object "undefined" doesn't appear to be an Object type, please double-check it and try again`,
+          column: 1,
+          line: 1,
+        },
+      ],
+    },
+  ],
+});
