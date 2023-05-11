@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "checkJs": true,
+  },
+  "exclude": [
+    "node_modules",
+    ".nyc_output"
+  ]
+}
