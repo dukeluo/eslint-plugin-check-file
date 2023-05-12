@@ -27,4 +27,9 @@ module.exports = {
       env: { mocha: true },
     },
   ],
+  settings: {
+    jsdoc: {
+      mode: 'typescript',
+    },
+  },
 };
