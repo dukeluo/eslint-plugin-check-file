@@ -69,7 +69,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The filename "CalculatePrice.js" does not match the "CAMEL_CASE" style',
+              'The filename "CalculatePrice.js" does not match the "CAMEL_CASE" pattern',
             column: 1,
             line: 1,
           },
@@ -83,7 +83,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The filename "calculate_price.js" does not match the "CAMEL_CASE" style',
+              'The filename "calculate_price.js" does not match the "CAMEL_CASE" pattern',
             column: 1,
             line: 1,
           },
@@ -129,7 +129,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The filename "calculatePrice.js" does not match the "PASCAL_CASE" style',
+              'The filename "calculatePrice.js" does not match the "PASCAL_CASE" pattern',
             column: 1,
             line: 1,
           },
@@ -143,7 +143,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The filename "calculatePrice.js" does not match the "PASCAL_CASE" style',
+              'The filename "calculatePrice.js" does not match the "PASCAL_CASE" pattern',
             column: 1,
             line: 1,
           },
@@ -190,7 +190,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The filename "calculatePrice.js" does not match the "SNAKE_CASE" style',
+              'The filename "calculatePrice.js" does not match the "SNAKE_CASE" pattern',
             column: 1,
             line: 1,
           },
@@ -203,7 +203,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The filename "calculatePrice.js" does not match the "SNAKE_CASE" style',
+              'The filename "calculatePrice.js" does not match the "SNAKE_CASE" pattern',
             column: 1,
             line: 1,
           },
@@ -250,7 +250,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The filename "calculatePrice.js" does not match the "KEBAB_CASE" style',
+              'The filename "calculatePrice.js" does not match the "KEBAB_CASE" pattern',
             column: 1,
             line: 1,
           },
@@ -263,7 +263,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The filename "calculatePrice.js" does not match the "KEBAB_CASE" style',
+              'The filename "calculatePrice.js" does not match the "KEBAB_CASE" pattern',
             column: 1,
             line: 1,
           },
@@ -335,7 +335,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The filename "calculatePrice.js" does not match the "SCREAMING_SNAKE_CASE" style',
+              'The filename "calculatePrice.js" does not match the "SCREAMING_SNAKE_CASE" pattern',
             column: 1,
             line: 1,
           },
@@ -353,7 +353,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The filename "calculatePrice.js" does not match the "SCREAMING_SNAKE_CASE" style',
+              'The filename "calculatePrice.js" does not match the "SCREAMING_SNAKE_CASE" pattern',
             column: 1,
             line: 1,
           },
@@ -394,7 +394,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The filename "calculatePrice.js" does not match the "FLAT_CASE" style',
+              'The filename "calculatePrice.js" does not match the "FLAT_CASE" pattern',
             column: 1,
             line: 1,
           },
@@ -408,7 +408,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The filename "calculatePrice.js" does not match the "FLAT_CASE" style',
+              'The filename "calculatePrice.js" does not match the "FLAT_CASE" pattern',
             column: 1,
             line: 1,
           },
@@ -450,7 +450,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The filename "calculatePrice.js" does not match the "__+([a-z])" style',
+              'The filename "calculatePrice.js" does not match the "__+([a-z])" pattern',
             column: 1,
             line: 1,
           },
@@ -463,7 +463,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The filename "calculatePrice.js" does not match the "__+([a-z])" style',
+              'The filename "calculatePrice.js" does not match the "__+([a-z])" pattern',
             column: 1,
             line: 1,
           },
@@ -509,7 +509,8 @@ ruleTester.run(
         options: [{ '**/*.js': 'FOO', '.jsx': 'FLAT_CASE' }],
         errors: [
           {
-            message: 'There is an invalid pattern "FOO", please check it',
+            message:
+              'There is an invalid pattern "FOO", please double-check it and try again',
             column: 1,
             line: 1,
           },
@@ -521,7 +522,8 @@ ruleTester.run(
         options: [{ '**/*.js': 'FOO', '.jsx': 'FLAT_CASE' }],
         errors: [
           {
-            message: 'There is an invalid pattern "FOO", please check it',
+            message:
+              'There is an invalid pattern "FOO", please double-check it and try again',
             column: 1,
             line: 1,
           },
@@ -545,7 +547,8 @@ ruleTester.run(
         options: [{ '**/*.js': 'CAMEL_CASE', '.jsx': 'FLAT_CASE' }],
         errors: [
           {
-            message: 'There is an invalid pattern ".jsx", please check it',
+            message:
+              'There is an invalid pattern ".jsx", please double-check it and try again',
             column: 1,
             line: 1,
           },
@@ -557,7 +560,8 @@ ruleTester.run(
         options: [{ '**/*.js': 'CAMEL_CASE', '.jsx': 'FLAT_CASE' }],
         errors: [
           {
-            message: 'There is an invalid pattern ".jsx", please check it',
+            message:
+              'There is an invalid pattern ".jsx", please double-check it and try again',
             column: 1,
             line: 1,
           },
@@ -617,7 +621,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The filename "downloadService.js" does not match the "PASCAL_CASE" style',
+              'The filename "downloadService.js" does not match the "PASCAL_CASE" pattern',
             column: 1,
             line: 1,
           },
@@ -635,7 +639,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The filename "UseDownloadApi.js" does not match the "CAMEL_CASE" style',
+              'The filename "UseDownloadApi.js" does not match the "CAMEL_CASE" pattern',
             column: 1,
             line: 1,
           },
@@ -695,7 +699,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The filename "Date.js" does not match the "CAMEL_CASE" style',
+              'The filename "Date.js" does not match the "CAMEL_CASE" pattern',
             column: 1,
             line: 1,
           },
@@ -711,7 +715,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The filename "Date.test.js" does not match the "CAMEL_CASE" style',
+              'The filename "Date.test.js" does not match the "CAMEL_CASE" pattern',
             column: 1,
             line: 1,
           },
@@ -727,7 +731,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The filename "Date.spec.js" does not match the "CAMEL_CASE" style',
+              'The filename "Date.spec.js" does not match the "CAMEL_CASE" pattern',
             column: 1,
             line: 1,
           },
@@ -743,7 +747,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The filename "date_util.spec.js" does not match the "CAMEL_CASE" style',
+              'The filename "date_util.spec.js" does not match the "CAMEL_CASE" pattern',
             column: 1,
             line: 1,
           },
@@ -759,7 +763,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The filename "date_util.spec.test.js" does not match the "CAMEL_CASE" style',
+              'The filename "date_util.spec.test.js" does not match the "CAMEL_CASE" pattern',
             column: 1,
             line: 1,
           },
@@ -803,7 +807,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The filename "CalculatePrice.js" does not match the "CAMEL_CASE" style',
+              'The filename "CalculatePrice.js" does not match the "CAMEL_CASE" pattern',
             column: 1,
             line: 1,
           },
@@ -819,7 +823,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The filename "date.test.js" does not match the "CAMEL_CASE" style',
+              'The filename "date.test.js" does not match the "CAMEL_CASE" pattern',
             column: 1,
             line: 1,
           },
@@ -871,7 +875,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The filename "featureB.jsx" does not match the "<1>" style',
+              'The filename "featureB.jsx" does not match the "<1>" pattern',
             column: 1,
             line: 1,
           },
@@ -887,7 +891,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The filename "featureB.specs.js" does not match the "<1>" style',
+              'The filename "featureB.specs.js" does not match the "<1>" pattern',
             column: 1,
             line: 1,
           },
@@ -910,7 +914,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The capture group "<9>" is not found in the glob "**/*/!(index).*"',
+              'The prefined match "<9>" is not found in the pattern "**/*/!(index).*", please double-check it and try again',
             column: 1,
             line: 1,
           },
@@ -929,7 +933,7 @@ ruleTester.run('filename-naming-convention with option: []', rule, {
       options: [],
       errors: [
         {
-          message: `The naming pattern object "undefined" doesn't appear to be an Object type, please double-check it and try again`,
+          message: `The naming pattern object "undefined" does not appear to be an Object type, please double-check it and try again`,
           column: 1,
           line: 1,
         },

@@ -48,7 +48,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The folder of the file "bar/__test__/foo.test.js" does not match "**/__tests__/"',
+              'The folder of the file "bar/__test__/foo.test.js" does not match the "**/__tests__/" pattern',
             column: 1,
             line: 1,
           },
@@ -78,7 +78,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The folder of the file "__tests__/foo.test.js" does not match "*/__tests__/"',
+              'The folder of the file "__tests__/foo.test.js" does not match the "*/__tests__/" pattern',
             column: 1,
             line: 1,
           },
@@ -91,7 +91,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The folder of the file "__test__/foo.test.js" does not match "*/__tests__/"',
+              'The folder of the file "__test__/foo.test.js" does not match the "*/__tests__/" pattern',
             column: 1,
             line: 1,
           },
@@ -104,7 +104,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The folder of the file "__tests__/foo.test.js" does not match "*/__tests__/"',
+              'The folder of the file "__tests__/foo.test.js" does not match the "*/__tests__/" pattern',
             column: 1,
             line: 1,
           },
@@ -149,7 +149,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The folder of the file "bar/_tests_/foo.test.js" does not match "*/__tests__/"',
+              'The folder of the file "bar/_tests_/foo.test.js" does not match the "*/__tests__/" pattern',
             column: 1,
             line: 1,
           },
@@ -162,7 +162,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The folder of the file "bar/_tests_/foo.test.jsx" does not match "*/__tests__/"',
+              'The folder of the file "bar/_tests_/foo.test.jsx" does not match the "*/__tests__/" pattern',
             column: 1,
             line: 1,
           },
@@ -175,7 +175,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The folder of the file "bar/_tests_/foo.test.ts" does not match "*/__tests__/"',
+              'The folder of the file "bar/_tests_/foo.test.ts" does not match the "*/__tests__/" pattern',
             column: 1,
             line: 1,
           },
@@ -188,7 +188,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The folder of the file "bar/_tests_/foo.test.tsx" does not match "*/__tests__/"',
+              'The folder of the file "bar/_tests_/foo.test.tsx" does not match the "*/__tests__/" pattern',
             column: 1,
             line: 1,
           },
@@ -223,7 +223,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The folder of the file "bar/_tests_/foo.test.js" does not match "*/__tests__/"',
+              'The folder of the file "bar/_tests_/foo.test.js" does not match the "*/__tests__/" pattern',
             column: 1,
             line: 1,
           },
@@ -236,7 +236,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The folder of the file "bar/_tests_/foo.test.ts" does not match "*/__tests__/"',
+              'The folder of the file "bar/_tests_/foo.test.ts" does not match the "*/__tests__/" pattern',
             column: 1,
             line: 1,
           },
@@ -275,7 +275,8 @@ ruleTester.run(
         options: [{ '*.test.js': 'FOO', '*.test.ts': '*/__tests__/' }],
         errors: [
           {
-            message: 'There is an invalid pattern "FOO", please check it',
+            message:
+              'There is an invalid pattern "FOO", please double-check it and try again',
             column: 1,
             line: 1,
           },
@@ -298,7 +299,8 @@ ruleTester.run(
         options: [{ '*.test.js': '*/__tests__/', '.test.ts': '*/__tests__/' }],
         errors: [
           {
-            message: 'There is an invalid pattern ".test.ts", please check it',
+            message:
+              'There is an invalid pattern ".test.ts", please double-check it and try again',
             column: 1,
             line: 1,
           },
@@ -318,7 +320,7 @@ ruleTester.run('folder-match-with-fex with option on Windows: []', rule, {
       options: [],
       errors: [
         {
-          message: `The naming pattern object "undefined" doesn't appear to be an Object type, please double-check it and try again`,
+          message: `The naming pattern object "undefined" does not appear to be an Object type, please double-check it and try again`,
           column: 1,
           line: 1,
         },

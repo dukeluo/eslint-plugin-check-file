@@ -31,8 +31,7 @@ ruleTester.run('no-index', rule, {
       filename: 'src/utils/index.js',
       errors: [
         {
-          message:
-            'The filename "index" is not allowed, please use another one',
+          message: 'The filename "index" is not allowed',
           column: 1,
           line: 1,
         },
@@ -43,8 +42,7 @@ ruleTester.run('no-index', rule, {
       filename: 'src/utils/index.ts',
       errors: [
         {
-          message:
-            'The filename "index" is not allowed, please use another one',
+          message: 'The filename "index" is not allowed',
           column: 1,
           line: 1,
         },

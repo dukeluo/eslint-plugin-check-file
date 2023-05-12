@@ -33,7 +33,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The folder "Components" does not match the "CAMEL_CASE" style',
+              'The folder "Components" does not match the "CAMEL_CASE" pattern',
             column: 1,
             line: 1,
           },
@@ -46,7 +46,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The folder "displayLabel" does not match the "PASCAL_CASE" style',
+              'The folder "displayLabel" does not match the "PASCAL_CASE" pattern',
             column: 1,
             line: 1,
           },
@@ -76,7 +76,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The folder "Components" does not match the "CAMEL_CASE" style',
+              'The folder "Components" does not match the "CAMEL_CASE" pattern',
             column: 1,
             line: 1,
           },
@@ -89,7 +89,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The folder "DisplayLabel" does not match the "CAMEL_CASE" style',
+              'The folder "DisplayLabel" does not match the "CAMEL_CASE" pattern',
             column: 1,
             line: 1,
           },
@@ -134,7 +134,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The folder "Components" does not match the "CAMEL_CASE" style',
+              'The folder "Components" does not match the "CAMEL_CASE" pattern',
             column: 1,
             line: 1,
           },
@@ -147,7 +147,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The folder "DisplayLabel" does not match the "CAMEL_CASE" style',
+              'The folder "DisplayLabel" does not match the "CAMEL_CASE" pattern',
             column: 1,
             line: 1,
           },
@@ -160,7 +160,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The folder "interactive-button" does not match the "CAMEL_CASE" style',
+              'The folder "interactive-button" does not match the "CAMEL_CASE" pattern',
             column: 1,
             line: 1,
           },
@@ -172,7 +172,8 @@ ruleTester.run(
         options: [{ 'src/!(pages)/**': 'CAMEL_CASE' }],
         errors: [
           {
-            message: 'The folder "Pages" does not match the "CAMEL_CASE" style',
+            message:
+              'The folder "Pages" does not match the "CAMEL_CASE" pattern',
             column: 1,
             line: 1,
           },
@@ -202,7 +203,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The folder "_displayLabel" does not match the "__+([a-z])" style',
+              'The folder "_displayLabel" does not match the "__+([a-z])" pattern',
             column: 1,
             line: 1,
           },
@@ -215,7 +216,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The folder "__displayLabel" does not match the "__+([a-z])" style',
+              'The folder "__displayLabel" does not match the "__+([a-z])" pattern',
             column: 1,
             line: 1,
           },
@@ -254,7 +255,8 @@ ruleTester.run(
         options: [{ '*/__tests__/': 'FOO', 'src/*/': 'CAMEL_CASE' }],
         errors: [
           {
-            message: 'There is an invalid pattern "FOO", please check it',
+            message:
+              'There is an invalid pattern "FOO", please double-check it and try again',
             column: 1,
             line: 1,
           },
@@ -277,7 +279,8 @@ ruleTester.run(
         options: [{ '*/__tests__/': 'PASCAL_CASE', 'src/': 'CAMEL_CASE' }],
         errors: [
           {
-            message: 'There is an invalid pattern "src/", please check it',
+            message:
+              'There is an invalid pattern "src/", please double-check it and try again',
             column: 1,
             line: 1,
           },
@@ -297,7 +300,7 @@ ruleTester.run('filename-naming-convention with option: []', rule, {
       options: [],
       errors: [
         {
-          message: `The naming pattern object "undefined" doesn't appear to be an Object type, please double-check it and try again`,
+          message: `The naming pattern object "undefined" does not appear to be an Object type, please double-check it and try again`,
           column: 1,
           line: 1,
         },

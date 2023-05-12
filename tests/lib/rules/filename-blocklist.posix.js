@@ -62,7 +62,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The filename "foo.models.ts" matches the blocklisted "*.models.ts" pattern. Use a pattern like "*.model.ts" instead.',
+              'The filename "foo.models.ts" matches the blocklisted "*.models.ts" pattern, use a pattern like "*.model.ts" instead',
             column: 1,
             line: 1,
           },
@@ -80,7 +80,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The filename "foo.utils.ts" matches the blocklisted "*.utils.ts" pattern. Use a pattern like "*.util.ts" instead.',
+              'The filename "foo.utils.ts" matches the blocklisted "*.utils.ts" pattern, use a pattern like "*.util.ts" instead',
             column: 1,
             line: 1,
           },
@@ -139,7 +139,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The filename "foo.models.ts" matches the blocklisted "src/*.models.ts" pattern. Use a pattern like "*.model.ts" instead.',
+              'The filename "foo.models.ts" matches the blocklisted "src/*.models.ts" pattern, use a pattern like "*.model.ts" instead',
             column: 1,
             line: 1,
           },
@@ -157,7 +157,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The filename "foo.utils.ts" matches the blocklisted "src/*.utils.ts" pattern. Use a pattern like "*.util.ts" instead.',
+              'The filename "foo.utils.ts" matches the blocklisted "src/*.utils.ts" pattern, use a pattern like "*.util.ts" instead',
             column: 1,
             line: 1,
           },
@@ -180,7 +180,8 @@ ruleTester.run(
         options: [{ '*.models.ts': 'FOO' }],
         errors: [
           {
-            message: 'There is an invalid pattern "FOO", please check it',
+            message:
+              'There is an invalid pattern "FOO", please double-check it and try again',
             column: 1,
             line: 1,
           },
@@ -203,7 +204,8 @@ ruleTester.run(
         options: [{ 'models.ts': '*.model.ts' }],
         errors: [
           {
-            message: 'There is an invalid pattern "models.ts", please check it',
+            message:
+              'There is an invalid pattern "models.ts", please double-check it and try again',
             column: 1,
             line: 1,
           },
@@ -223,7 +225,7 @@ ruleTester.run('filename-blocklist with option: []', rule, {
       options: [],
       errors: [
         {
-          message: `The naming pattern object "undefined" doesn't appear to be an Object type, please double-check it and try again`,
+          message: `The naming pattern object "undefined" does not appear to be an Object type, please double-check it and try again`,
           column: 1,
           line: 1,
         },
