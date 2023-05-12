@@ -49,7 +49,7 @@ In addition to the built-in naming conventions, you can also set custom naming p
 
 **Tip 2:** v1 versions have the legacy support for selecting target files based on their extensions. This legacy support has been removed since v2.0.0. Please select your target files by their file path. For example, using `**/*.js` instead of `*.js` to select all `js` files.
 
-### Prefined match syntax
+### Prefined Match Syntax
 
 Prefined match syntax allow you to capture specific part of the target file pattern and use it in your naming convention pattern. This syntax is particularly useful when you want to make a file to be named the same as its parent folder.
 
