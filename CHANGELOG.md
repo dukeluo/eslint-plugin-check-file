@@ -5,6 +5,22 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.3.0](https://github.com/DukeLuo/eslint-plugin-check-file/compare/v2.2.0...v2.3.0) - 2023-05-13
+
+### Fixed
+- the rule `folder-naming-convention` can use a pattern with multiple matchers to select target folders
+
+### Added
+- the rule `filename-blocklist` should report an error when blocklist pattern object isn't an object type
+- the rule `filename-naming-convention` should report an error when naming pattern object isn't an object type
+- the rule `folder-match-with-fex` should report an error when naming pattern object isn't an object type
+- the rule `folder-naming-convention` should report an error when naming pattern object isn't an object type
+
+### Changed
+- unify the style of error messages for the existing rules
+- upgrade dependencies to the latest version
+
+
 ## [2.2.0](https://github.com/DukeLuo/eslint-plugin-check-file/compare/v2.1.0...v2.2.0) - 2023-04-01
 
 ### Added
