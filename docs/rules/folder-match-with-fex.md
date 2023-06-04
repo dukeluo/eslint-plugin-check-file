@@ -1,10 +1,10 @@
-# The folder should match the naming pattern specified by the file extension (folder-match-with-fex)
+# The folder should match the naming pattern specified by its file (folder-match-with-fex)
 
-Allows you to enforce a consistent naming pattern for the folder of the specified file.
+Allows you to enforce a consistent naming pattern for the specified files' folder names.
 
 ## Rule Details
 
-This rule aims to format the folder of the specified file. This rule uses the glob match syntax to match a file and declare the naming pattern for the folder.
+This rule aims to format the folder of the specified files. It will be useful when you want to group the specified files into a folder. This rule uses the glob match syntax to match target files and declare the naming pattern for their folder names.
 
 If the rule had been set as follows:
 ```js
@@ -27,8 +27,7 @@ bar/__tests__/foo.test.js
 
 #### naming pattern object
 
-You need to specify a different naming pattern for different file extensions. The plugin will only check files with extensions you explicitly provided:
-
+The key is used to select target files, while the value is used to declare the naming pattern for their folder names. You can specify a different folder naming pattern for different target files. The plugin will only check files you explicitly provided:
 ```js
 module.exports = {
   plugins: [
