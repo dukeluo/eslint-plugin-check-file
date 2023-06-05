@@ -4,7 +4,7 @@ Allows you to enforce a consistent naming pattern for the filename of the specif
 
 ## Rule Details
 
-This rule aims to format the filename of the specified file. This rule uses the glob match syntax to match a file and declare the naming pattern for the filename.
+This rule aims to format the filename of the specified file. This rule uses the glob match syntax to match target files and declare the naming pattern for the filename.
 
 There are six naming conventions built into this rule, including `CAMEL_CASE`, `PASCAL_CASE`, `SNAKE_CASE`, `KEBAB_CASE`, `SCREAMING_SNAKE_CASE` and `FLAT_CASE`.
 
@@ -80,7 +80,7 @@ src/Portal/Portal.types.ts
 
 #### naming pattern object
 
-You need to specify a different naming pattern for different file. The plugin will only check files you explicitly selected:
+The key is used to select target files, while the value is used to declare the naming pattern for the filename. You can specify a different naming pattern for different files. The plugin will only check files you explicitly selected:
 
 ```js
 module.exports = {
