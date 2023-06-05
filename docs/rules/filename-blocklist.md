@@ -8,7 +8,7 @@ Allows you to blocklist certain file name patterns.
 
 ## Rule Details
 
-This rule aims to maintain a consistent naming scheme.
+This rule aims to maintain a consistent naming scheme. This rule uses the glob match syntax to declare blocklisted and preferred filename patterns.
 
 If the rule had been set as follows:
 ```js
@@ -31,14 +31,14 @@ src/bar.models.ts
 
 :warning: :warning: :warning:
 
-**Versions <= v2.0.0 can only select target files by their filenames, not by their paths. This support has been deprecated and will be removed  in the future. Please select your target files by their file path. For example, using `**/*.js` instead of `*.js` to select all `js` files.**
+**Versions <= v2.0.0 can only select target files by their filenames, not by their paths. This support has been deprecated and will be removed in the future. Please select your target files by their file path. For example, using `**/*.js` instead of `*.js` to select all `js` files.**
 
 
 ### Options
 
 #### blocklist pattern object
 
-You need to specify a different naming pattern for each filename blocklist. The second pattern is used to hint at the correct file name that should be used instead. The plugin will only check blocklisted pattern you explicitly provided:
+The key is used to declare the blocklisted filename pattern, while the value is used to hint at the correct filename that should be used instead. Both the key and value in the blocklist pattern object are glob expressions. The plugin will only check blocklisted pattern you explicitly provided:
 
 ```js
 module.exports = {
