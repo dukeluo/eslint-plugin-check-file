@@ -4,7 +4,7 @@ Allows you to enforce a consistent naming pattern for the name of the specified 
 
 ## Rule Details
 
-This rule aims to format the name of the specified folder. This rule uses the glob match syntax to match a folder and declare the naming pattern for the name.
+This rule aims to format the name of the specified folder. This rule uses the glob match syntax to match target folders and declare the naming pattern for the folder name.
 
 There are six naming conventions built into this rule, including `CAMEL_CASE`, `PASCAL_CASE`, `SNAKE_CASE`, `KEBAB_CASE`, `SCREAMING_SNAKE_CASE` and `FLAT_CASE`.
 
@@ -51,7 +51,7 @@ In addition to the built-in naming conventions, you can also set custom naming p
 
 #### naming pattern object
 
-You need to specify a different naming pattern for different folder. The plugin will only check folders you explicitly provided:
+The key is used to select target folders, while the value is used to declare the naming pattern for the folder name. You can specify a different naming pattern for different target folders. The plugin will only check folders you explicitly provided:
 
 ```js
 module.exports = {
