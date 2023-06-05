@@ -43,6 +43,8 @@ Examples of **correct** folder name for this rule:
 src/components/displayLabel/displayLabel.js
 ```
 
+## Custom patterns
+
 In addition to the built-in naming conventions, you can also set custom naming patterns using glob match syntax. The following code shows an example of how to ensure that all the folders under the `components` folder are named begin with `__`:
 
 ```js
@@ -52,6 +54,24 @@ In addition to the built-in naming conventions, you can also set custom naming p
 ```
 
 **Tip:** To exclude `__tests__` folder in `src`, use the glob expression `src/!(__tests__)/**/` to get the target folders.
+
+### Next.js example
+
+If you would like to enforce a kebab-case naming convention for your folders, but also
+support Next.js' catch-all routes, dynamic segments, etc. that use square brackets, you could achieve that with a pattern such as this:
+
+```js
+...
+'check-file/folder-naming-convention': [
+  'error',
+  {
+    'src/**/': '@(+([a-z])*(-+([a-z]))|\\[+([a-z])*(-+([a-z]))\\])',
+  },
+],
+...
+```
+
+Note: If you don't use the `src` folder, then change the pattern to `'app/**/'` or `'pages/**/'`, according to your setup.
 
 ### Options
 
