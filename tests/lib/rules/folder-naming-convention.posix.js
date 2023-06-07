@@ -308,3 +308,59 @@ ruleTester.run('filename-naming-convention with option: []', rule, {
     },
   ],
 });
+
+ruleTester.run(
+  'filename-naming-convention with option: [{ "*": "KEBAB_CASE"}]',
+  rule,
+  {
+    valid: [
+      {
+        code: "var foo = 'bar';",
+        filename: 'src/Login/Utils/validationUtils.js',
+        options: [{ '*': 'KEBAB_CASE' }],
+      },
+      {
+        code: "var foo = 'bar';",
+        filename: 'src/login/utils/validation.js',
+        options: [{ '*': 'KEBAB_CASE' }],
+      },
+      {
+        code: "var foo = 'bar';",
+        filename: 'src/Index.js',
+        options: [{ '*': 'KEBAB_CASE' }],
+      },
+      {
+        code: "var foo = 'bar';",
+        filename: 'main.js',
+        options: [{ '*': 'KEBAB_CASE' }],
+      },
+    ],
+
+    invalid: [
+      {
+        code: "var foo = 'bar';",
+        filename: 'SRC/login/utils/validation.js',
+        options: [{ '*': 'KEBAB_CASE' }],
+        errors: [
+          {
+            message: 'The folder "SRC" does not match the "KEBAB_CASE" pattern',
+            column: 1,
+            line: 1,
+          },
+        ],
+      },
+      {
+        code: "var foo = 'bar';",
+        filename: 'Src/index.js',
+        options: [{ '*': 'KEBAB_CASE' }],
+        errors: [
+          {
+            message: 'The folder "Src" does not match the "KEBAB_CASE" pattern',
+            column: 1,
+            line: 1,
+          },
+        ],
+      },
+    ],
+  }
+);
