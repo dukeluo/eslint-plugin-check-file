@@ -77,7 +77,7 @@ Then configure the rules you want to use under the rules section.
 
 ## Supported Rules
 
-- [check-file/folder-match-with-fex](docs/rules/folder-match-with-fex.md): Enforce a consistent naming pattern for the folder of the specified file extension
+- [check-file/folder-match-with-fex](docs/rules/folder-match-with-fex.md): Enforce a consistent naming pattern for the folder of the specified file
 - [check-file/filename-naming-convention](docs/rules/filename-naming-convention.md): Enforce a consistent naming pattern for the filename of the specified file
 - [check-file/no-index](docs/rules/no-index.md): A file cannot be named "index"
 - [check-file/folder-naming-convention](docs/rules/folder-naming-convention.md): Enforce a consistent naming pattern for the name of the specified folder

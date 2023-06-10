@@ -1,5 +1,5 @@
 /**
- * @file The folder should match the naming pattern specified by the file extension
+ * @file The folder should match the naming pattern specified by its file
  * @author Huan Luo
  */
 'use strict';
