@@ -1,6 +1,6 @@
 /**
  * @file A file cannot be named "index"
- * @author Duke Luo
+ * @author Huan Luo
  */
 'use strict';
 

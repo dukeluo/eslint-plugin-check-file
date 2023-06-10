@@ -1,6 +1,6 @@
 /**
  * @file The filename should be blocklisted
- * @author Florian Ehmke, Duke Luo
+ * @author Florian Ehmke, Huan Luo
  */
 'use strict';
 

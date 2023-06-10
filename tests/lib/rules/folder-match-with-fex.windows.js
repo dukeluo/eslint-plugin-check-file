@@ -1,6 +1,6 @@
 /**
  * @file The folder should match the naming pattern specified by the file extension
- * @author Duke Luo
+ * @author Huan Luo
  */
 'use strict';
 

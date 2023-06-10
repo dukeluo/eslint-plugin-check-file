@@ -1,6 +1,6 @@
 /**
  * @file The filename should follow the filename naming convention
- * @author Duke Luo
+ * @author Huan Luo
  */
 'use strict';
 
