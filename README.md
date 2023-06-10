@@ -77,19 +77,22 @@ Then configure the rules you want to use under the rules section.
 
 ## Supported Rules
 
-- [check-file/folder-match-with-fex](docs/rules/folder-match-with-fex.md): Enforce a consistent naming pattern for the folder of the specified file
-- [check-file/filename-naming-convention](docs/rules/filename-naming-convention.md): Enforce a consistent naming pattern for the filename of the specified file
+- [check-file/folder-match-with-fex](docs/rules/folder-match-with-fex.md): Enforce a consistent naming pattern for folder names for specified files
+- [check-file/filename-naming-convention](docs/rules/filename-naming-convention.md): Enforce a consistent naming pattern for filenames for specified files
 - [check-file/no-index](docs/rules/no-index.md): A file cannot be named "index"
-- [check-file/folder-naming-convention](docs/rules/folder-naming-convention.md): Enforce a consistent naming pattern for the name of the specified folder
+- [check-file/folder-naming-convention](docs/rules/folder-naming-convention.md): Enforce a consistent naming pattern for folder names for specified folders
 - [check-file/filename-blocklist](docs/rules/filename-blocklist.md): Blocklist file names by pattern
 
+[![Donate][ko-fi-image]][ko-fi-url]
 
 [npm-image]: https://img.shields.io/npm/v/eslint-plugin-check-file.svg
 [downloads-image]: https://img.shields.io/npm/dm/eslint-plugin-check-file.svg
 [license-image]: https://img.shields.io/npm/l/eslint-plugin-check-file
 [test-workflow-image]: https://img.shields.io/github/actions/workflow/status/DukeLuo/eslint-plugin-check-file/test.yml?label=test
 [test-coverage-image]: https://img.shields.io/codecov/c/gh/DukeLuo/eslint-plugin-check-file
+[ko-fi-image]: https://ko-fi.com/img/githubbutton_sm.svg
 
 [downloads-url]: https://www.npmjs.com/package/eslint-plugin-check-file
 [workflow-url]: https://github.com/DukeLuo/eslint-plugin-check-file/actions
 [test-coverage-url]: https://app.codecov.io/gh/DukeLuo/eslint-plugin-check-file
+[ko-fi-url]: https://ko-fi.com/dukeluo
