@@ -23,6 +23,14 @@ ruleTester.run('no-index on Windows', rule, {
       code: "var foo = 'bar';",
       filename: 'src\\main.ts',
     },
+    {
+      code: "var foo = 'bar';",
+      filename: 'src\\utils\\index.config.js',
+    },
+    {
+      code: "var foo = 'bar';",
+      filename: 'index.config.ts',
+    },
   ],
 
   invalid: [
@@ -50,3 +58,73 @@ ruleTester.run('no-index on Windows', rule, {
     },
   ],
 });
+
+ruleTester.run(
+  'no-index with option on Windows: [{ ignoreMiddleExtensions: true }]',
+  rule,
+  {
+    valid: [
+      {
+        code: "var foo = 'bar';",
+        filename: 'src\\components\\login.jsx',
+        options: [{ ignoreMiddleExtensions: true }],
+      },
+      {
+        code: "var foo = 'bar';",
+        filename: 'calculatePrice.js',
+        options: [{ ignoreMiddleExtensions: true }],
+      },
+    ],
+
+    invalid: [
+      {
+        code: "var foo = 'bar';",
+        filename: 'src\\utils\\index.js',
+        options: [{ ignoreMiddleExtensions: true }],
+        errors: [
+          {
+            message: 'The filename "index" is not allowed',
+            column: 1,
+            line: 1,
+          },
+        ],
+      },
+      {
+        code: "var foo = 'bar';",
+        filename: 'index.ts',
+        options: [{ ignoreMiddleExtensions: true }],
+        errors: [
+          {
+            message: 'The filename "index" is not allowed',
+            column: 1,
+            line: 1,
+          },
+        ],
+      },
+      {
+        code: "var foo = 'bar';",
+        filename: 'src\\utils\\index.config.js',
+        options: [{ ignoreMiddleExtensions: true }],
+        errors: [
+          {
+            message: 'The filename "index" is not allowed',
+            column: 1,
+            line: 1,
+          },
+        ],
+      },
+      {
+        code: "var foo = 'bar';",
+        filename: 'index.config.ts',
+        options: [{ ignoreMiddleExtensions: true }],
+        errors: [
+          {
+            message: 'The filename "index" is not allowed',
+            column: 1,
+            line: 1,
+          },
+        ],
+      },
+    ],
+  }
+);
