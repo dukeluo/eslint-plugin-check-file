@@ -572,6 +572,30 @@ ruleTester.run(
 );
 
 ruleTester.run(
+  "filename-naming-convention with option on Windows: [{ '**/*.js': 'NEXT_JS_APP_ROUTER_CASE' }]",
+  rule,
+  {
+    valid: [],
+
+    invalid: [
+      {
+        code: "var foo = 'bar';",
+        filename: 'src\\utils\\calculatePrice.js',
+        options: [{ '**/*.js': 'NEXT_JS_APP_ROUTER_CASE' }],
+        errors: [
+          {
+            message:
+              'There is an invalid pattern "NEXT_JS_APP_ROUTER_CASE", please double-check it and try again',
+            column: 1,
+            line: 1,
+          },
+        ],
+      },
+    ],
+  }
+);
+
+ruleTester.run(
   "filename-naming-convention with option on Windows: [{ 'src/services/*.js': 'PASCAL_CASE', 'src/composables/*.js': 'CAMEL_CASE' }]",
   rule,
   {
