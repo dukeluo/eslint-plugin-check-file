@@ -366,44 +366,44 @@ ruleTester.run(
 );
 
 ruleTester.run(
-  "folder-naming-convention with option: [{ 'src/**/': 'NEXTJS_ROUTE_CASE' }]",
+  "folder-naming-convention with option: [{ 'src/**/': 'NEXT_JS_APP_ROUTER_CASE' }]",
   rule,
   {
     valid: [
       {
         code: "var foo = 'bar';",
         filename: 'src/app/page.ts',
-        options: [{ 'src/**/': 'NEXTJS_ROUTE_CASE' }],
+        options: [{ 'src/**/': 'NEXT_JS_APP_ROUTER_CASE' }],
       },
       {
         code: "var foo = 'bar';",
         filename: 'src/app/example-route/page.ts',
-        options: [{ 'src/**/': 'NEXTJS_ROUTE_CASE' }],
+        options: [{ 'src/**/': 'NEXT_JS_APP_ROUTER_CASE' }],
       },
       {
         code: "var foo = 'bar';",
         filename: 'src/app/users/[userId]/page.ts',
-        options: [{ 'src/**/': 'NEXTJS_ROUTE_CASE' }],
+        options: [{ 'src/**/': 'NEXT_JS_APP_ROUTER_CASE' }],
       },
       {
         code: "var foo = 'bar';",
         filename: 'src/app/[...auth]/route.ts',
-        options: [{ 'src/**/': 'NEXTJS_ROUTE_CASE' }],
+        options: [{ 'src/**/': 'NEXT_JS_APP_ROUTER_CASE' }],
       },
       {
         code: "var foo = 'bar';",
         filename: 'src/app/shop/[[...shopId]]/page.ts',
-        options: [{ 'src/**/': 'NEXTJS_ROUTE_CASE' }],
+        options: [{ 'src/**/': 'NEXT_JS_APP_ROUTER_CASE' }],
       },
       {
         code: "var foo = 'bar';",
         filename: 'src/app/@auth/page.ts',
-        options: [{ 'src/**/': 'NEXTJS_ROUTE_CASE' }],
+        options: [{ 'src/**/': 'NEXT_JS_APP_ROUTER_CASE' }],
       },
       {
         code: "var foo = 'bar';",
         filename: 'src/app/(marketing)/page.ts',
-        options: [{ 'src/**/': 'NEXTJS_ROUTE_CASE' }],
+        options: [{ 'src/**/': 'NEXT_JS_APP_ROUTER_CASE' }],
       },
     ],
 
@@ -411,11 +411,11 @@ ruleTester.run(
       {
         code: "var foo = 'bar';",
         filename: 'src/app/exampleRoute/page.ts',
-        options: [{ 'src/**/': 'NEXTJS_ROUTE_CASE' }],
+        options: [{ 'src/**/': 'NEXT_JS_APP_ROUTER_CASE' }],
         errors: [
           {
             message:
-              'The folder "exampleRoute" does not match the "NEXTJS_ROUTE_CASE" pattern',
+              'The folder "exampleRoute" does not match the "NEXT_JS_APP_ROUTER_CASE" pattern',
             column: 1,
             line: 1,
           },
@@ -424,11 +424,11 @@ ruleTester.run(
       {
         code: "var foo = 'bar';",
         filename: 'src/app/users/[userId/page.ts',
-        options: [{ 'src/**/': 'NEXTJS_ROUTE_CASE' }],
+        options: [{ 'src/**/': 'NEXT_JS_APP_ROUTER_CASE' }],
         errors: [
           {
             message:
-              'The folder "[userId" does not match the "NEXTJS_ROUTE_CASE" pattern',
+              'The folder "[userId" does not match the "NEXT_JS_APP_ROUTER_CASE" pattern',
             column: 1,
             line: 1,
           },
@@ -437,11 +437,11 @@ ruleTester.run(
       {
         code: "var foo = 'bar';",
         filename: 'src/app/users/userId]/page.ts',
-        options: [{ 'src/**/': 'NEXTJS_ROUTE_CASE' }],
+        options: [{ 'src/**/': 'NEXT_JS_APP_ROUTER_CASE' }],
         errors: [
           {
             message:
-              'The folder "userId]" does not match the "NEXTJS_ROUTE_CASE" pattern',
+              'The folder "userId]" does not match the "NEXT_JS_APP_ROUTER_CASE" pattern',
             column: 1,
             line: 1,
           },
@@ -450,11 +450,11 @@ ruleTester.run(
       {
         code: "var foo = 'bar';",
         filename: 'src/app/[..auth]/route.ts',
-        options: [{ 'src/**/': 'NEXTJS_ROUTE_CASE' }],
+        options: [{ 'src/**/': 'NEXT_JS_APP_ROUTER_CASE' }],
         errors: [
           {
             message:
-              'The folder "[..auth]" does not match the "NEXTJS_ROUTE_CASE" pattern',
+              'The folder "[..auth]" does not match the "NEXT_JS_APP_ROUTER_CASE" pattern',
             column: 1,
             line: 1,
           },
@@ -463,11 +463,11 @@ ruleTester.run(
       {
         code: "var foo = 'bar';",
         filename: 'src/app/[...auth/route.ts',
-        options: [{ 'src/**/': 'NEXTJS_ROUTE_CASE' }],
+        options: [{ 'src/**/': 'NEXT_JS_APP_ROUTER_CASE' }],
         errors: [
           {
             message:
-              'The folder "[...auth" does not match the "NEXTJS_ROUTE_CASE" pattern',
+              'The folder "[...auth" does not match the "NEXT_JS_APP_ROUTER_CASE" pattern',
             column: 1,
             line: 1,
           },
@@ -476,11 +476,11 @@ ruleTester.run(
       {
         code: "var foo = 'bar';",
         filename: 'src/app/...auth]/route.ts',
-        options: [{ 'src/**/': 'NEXTJS_ROUTE_CASE' }],
+        options: [{ 'src/**/': 'NEXT_JS_APP_ROUTER_CASE' }],
         errors: [
           {
             message:
-              'The folder "...auth]" does not match the "NEXTJS_ROUTE_CASE" pattern',
+              'The folder "...auth]" does not match the "NEXT_JS_APP_ROUTER_CASE" pattern',
             column: 1,
             line: 1,
           },
@@ -489,11 +489,11 @@ ruleTester.run(
       {
         code: "var foo = 'bar';",
         filename: 'src/app/shop/[[...shopId]/page.ts',
-        options: [{ 'src/**/': 'NEXTJS_ROUTE_CASE' }],
+        options: [{ 'src/**/': 'NEXT_JS_APP_ROUTER_CASE' }],
         errors: [
           {
             message:
-              'The folder "[[...shopId]" does not match the "NEXTJS_ROUTE_CASE" pattern',
+              'The folder "[[...shopId]" does not match the "NEXT_JS_APP_ROUTER_CASE" pattern',
             column: 1,
             line: 1,
           },
@@ -502,11 +502,11 @@ ruleTester.run(
       {
         code: "var foo = 'bar';",
         filename: 'src/app/shop/[...shopId]]/page.ts',
-        options: [{ 'src/**/': 'NEXTJS_ROUTE_CASE' }],
+        options: [{ 'src/**/': 'NEXT_JS_APP_ROUTER_CASE' }],
         errors: [
           {
             message:
-              'The folder "[...shopId]]" does not match the "NEXTJS_ROUTE_CASE" pattern',
+              'The folder "[...shopId]]" does not match the "NEXT_JS_APP_ROUTER_CASE" pattern',
             column: 1,
             line: 1,
           },
@@ -515,11 +515,11 @@ ruleTester.run(
       {
         code: "var foo = 'bar';",
         filename: 'src/app/shop/[[..shopId]]/page.ts',
-        options: [{ 'src/**/': 'NEXTJS_ROUTE_CASE' }],
+        options: [{ 'src/**/': 'NEXT_JS_APP_ROUTER_CASE' }],
         errors: [
           {
             message:
-              'The folder "[[..shopId]]" does not match the "NEXTJS_ROUTE_CASE" pattern',
+              'The folder "[[..shopId]]" does not match the "NEXT_JS_APP_ROUTER_CASE" pattern',
             column: 1,
             line: 1,
           },
@@ -528,11 +528,11 @@ ruleTester.run(
       {
         code: "var foo = 'bar';",
         filename: 'src/app/@authMarker/page.ts',
-        options: [{ 'src/**/': 'NEXTJS_ROUTE_CASE' }],
+        options: [{ 'src/**/': 'NEXT_JS_APP_ROUTER_CASE' }],
         errors: [
           {
             message:
-              'The folder "@authMarker" does not match the "NEXTJS_ROUTE_CASE" pattern',
+              'The folder "@authMarker" does not match the "NEXT_JS_APP_ROUTER_CASE" pattern',
             column: 1,
             line: 1,
           },
@@ -541,11 +541,11 @@ ruleTester.run(
       {
         code: "var foo = 'bar';",
         filename: 'src/app/(marketingSpeak)/page.ts',
-        options: [{ 'src/**/': 'NEXTJS_ROUTE_CASE' }],
+        options: [{ 'src/**/': 'NEXT_JS_APP_ROUTER_CASE' }],
         errors: [
           {
             message:
-              'The folder "(marketingSpeak)" does not match the "NEXTJS_ROUTE_CASE" pattern',
+              'The folder "(marketingSpeak)" does not match the "NEXT_JS_APP_ROUTER_CASE" pattern',
             column: 1,
             line: 1,
           },
