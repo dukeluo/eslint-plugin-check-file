@@ -6,7 +6,6 @@
 [![Test Workflow Status][test-workflow-image]][workflow-url]
 [![Test Coverage][test-coverage-image]][test-coverage-url]
 
-
 ESLint rules for consistent filename and folder. Allows you to enforce a consistent naming pattern for the filename and folder.
 
 ## Installation
@@ -30,12 +29,9 @@ Add `check-file` to the plugins section of your `.eslintrc` configuration file. 
 
 ```json
 {
-  "plugins": [
-    "check-file"
-  ]
+  "plugins": ["check-file"]
 }
 ```
-
 
 Then configure the rules you want to use under the rules section.
 
@@ -91,8 +87,7 @@ Then configure the rules you want to use under the rules section.
 [test-workflow-image]: https://img.shields.io/github/actions/workflow/status/DukeLuo/eslint-plugin-check-file/test.yml?label=test
 [test-coverage-image]: https://img.shields.io/codecov/c/gh/DukeLuo/eslint-plugin-check-file
 [ko-fi-image]: https://ko-fi.com/img/githubbutton_sm.svg
-
 [downloads-url]: https://www.npmjs.com/package/eslint-plugin-check-file
 [workflow-url]: https://github.com/DukeLuo/eslint-plugin-check-file/actions
 [test-coverage-url]: https://app.codecov.io/gh/DukeLuo/eslint-plugin-check-file
-[ko-fi-url]: https://ko-fi.com/dukeluo
+[ko-fi-url]: https://ko-fi.com/huanluo
