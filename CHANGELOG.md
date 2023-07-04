@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.5.0](https://github.com/DukeLuo/eslint-plugin-check-file/compare/v2.4.0...v2.5.0) - 2023-07-05
+
+### Added
+- the rule `folder-naming-convention` can be used with a new built-in naming convention `NEXT_JS_APP_ROUTER_CASE`
+
+
 ## [2.4.0](https://github.com/DukeLuo/eslint-plugin-check-file/compare/v2.3.0...v2.4.0) - 2023-06-12
 
 ### Fixed
