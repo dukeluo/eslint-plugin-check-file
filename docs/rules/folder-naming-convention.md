@@ -8,18 +8,21 @@ This rule aims to format the name of the specified folder. This rule uses the gl
 
 There are six basic naming conventions built into this rule, including `CAMEL_CASE`, `PASCAL_CASE`, `SNAKE_CASE`, `KEBAB_CASE`, `SCREAMING_SNAKE_CASE` and `FLAT_CASE`.
 
-| Formatting | Name |
-|---|---|
-| helloWorld | `CAMEL_CASE` |
-| HelloWorld | `PASCAL_CASE` |
-| hello_world | `SNAKE_CASE` |
-| hello-world | `KEBAB_CASE` |
-| HELLO_WORLD | `SCREAMING_SNAKE_CASE` |
-| helloworld | `FLAT_CASE` |
+**Additionally, there is a naming convention called `NEXT_JS_APP_ROUTER_CASE` used to format folder names in Next.js projects that used App Router.** `NEXT_JS_APP_ROUTER_CASE` aims to support a wide range of named constructs in Next.js App Router projects, including Standard routes, Dynamic segments, Catch-all segments, Optional Catch-all Segments, Route groups, and Named slots.
 
-And there are a naming convention `NEXT_JS_APP_ROUTER_CASE` for the Next.js app router, which is used to format its folder name.
+While `NEXT_JS_APP_ROUTER_CASE` covers many naming cases, it's possible that some cases may be missing. If you come across any missing cases, I encourage you to open an issue and provide the necessary details. Your feedback will help me improve and enhance the naming convention.
+
+| Formatting  | Name                   |
+| ----------- | ---------------------- |
+| helloWorld  | `CAMEL_CASE`           |
+| HelloWorld  | `PASCAL_CASE`          |
+| hello_world | `SNAKE_CASE`           |
+| hello-world | `KEBAB_CASE`           |
+| HELLO_WORLD | `SCREAMING_SNAKE_CASE` |
+| helloworld  | `FLAT_CASE`            |
 
 If the rule had been set as follows:
+
 ```js
 ...
 'check-file/folder-naming-convention': ['error', { 'src/**/': 'CAMEL_CASE' }],
@@ -41,6 +44,7 @@ src/components/displayLabel/displayLabel.js
 ```
 
 In addition to the built-in naming conventions, you can also set custom naming patterns using glob match syntax. The following code shows an example of how to ensure that all the folders under the `components` folder are named begin with `__`:
+
 ```js
 ...
 'check-file/folder-naming-convention': ['error', [{ 'components/*/': '__+([a-z])' }]],
@@ -57,14 +61,15 @@ The key is used to select target folders, while the value is used to declare the
 
 ```js
 module.exports = {
-  plugins: [
-    'check-file',
-  ],
+  plugins: ['check-file'],
   rules: {
-    'check-file/folder-naming-convention': ['error', {
-      'src/**/': 'CAMEL_CASE',
-      'mocks/*/': 'KEBAB_CASE',
-    }],
+    'check-file/folder-naming-convention': [
+      'error',
+      {
+        'src/**/': 'CAMEL_CASE',
+        'mocks/*/': 'KEBAB_CASE',
+      },
+    ],
   },
 };
 ```
@@ -72,5 +77,5 @@ module.exports = {
 ## Further Reading
 
 - [micromatch](https://github.com/micromatch/micromatch)
-- [glob](https://en.wikipedia.org/wiki/Glob_(programming))
+- [glob](<https://en.wikipedia.org/wiki/Glob_(programming)>)
 - [testing glob expression online](https://globster.xyz)
