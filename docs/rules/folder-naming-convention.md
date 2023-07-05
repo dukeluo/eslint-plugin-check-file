@@ -55,23 +55,38 @@ In addition to the built-in naming conventions, you can also set custom naming p
 
 **Tip:** To exclude `__tests__` folder in `src`, use the glob expression `src/!(__tests__)/**/` to get the target folders.
 
-### Next.js example
+## Built-in custom patterns
+
+Some patterns are complex enough that they warrant their own definition within the lib.
+
+### Next.js custom pattern
+
+There's a new pattern called `NEXT_JS_APP_ROUTER_CASE`.
 
 If you would like to enforce a kebab-case naming convention for your folders, but also
-support Next.js' catch-all routes, dynamic segments, etc. that use square brackets, you could achieve that with a pattern such as this:
+support Next.js' catch-all routes, dynamic segments, etc. that use square brackets, you could achieve that with this pattern.
 
-```js
-...
-'check-file/folder-naming-convention': [
-  'error',
-  {
-    'src/**/': '@(+([a-z])*(-+([a-z]))|\\[+([a-z])*(-+([a-z]))\\])',
-  },
-],
-...
+Now, all your folders need to be kebab-cased, but you can also do dynamic segments with camel case, so that it flows more natural with the code, i.e.
+
+```
+/src/app/help-pages/[pageId]
 ```
 
-Note: If you don't use the `src` folder, then change the pattern to `'app/**/'` or `'pages/**/'`, according to your setup.
+This is powerful because it allows you to have consistent link names, i.e. the links will be kebab cased, which is the most natural way of naming URL path segments.
+
+But when you get in code and the dynamic segment needs to be passed to your component, you'll have a camel cased variable, i.e.
+
+```
+// /src/app/help-pages/[pageId]/page.tsx
+
+// If we have named our parameter "page-id", then you'd get "page-id" inside of
+// the params object, and you'd have to escape it, which would look nasty
+export const Page({ params: { pageId } }) { ... }
+```
+
+Besides this, the custom pattern should support all other Next.js naming conventions.
+
+You can read more about them [here](https://github.com/DukeLuo/eslint-plugin-check-file/pull/27#issuecomment-1582551071).
 
 ### Options
 
