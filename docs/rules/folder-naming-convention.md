@@ -8,9 +8,7 @@ This rule aims to format the name of the specified folder. This rule uses the gl
 
 There are six basic naming conventions built into this rule, including `CAMEL_CASE`, `PASCAL_CASE`, `SNAKE_CASE`, `KEBAB_CASE`, `SCREAMING_SNAKE_CASE` and `FLAT_CASE`.
 
-**Additionally, there is a naming convention called `NEXT_JS_APP_ROUTER_CASE` used to format folder names in Next.js projects that used App Router.** `NEXT_JS_APP_ROUTER_CASE` aims to support a wide range of named constructs in Next.js App Router projects, including Standard routes, Dynamic segments, Catch-all segments, Optional Catch-all Segments, Route groups, and Named slots.
-
-While `NEXT_JS_APP_ROUTER_CASE` covers many naming cases, it's possible that some cases may be missing. If you come across any missing cases, I encourage you to open an issue and provide the necessary details. Your feedback will help me improve and enhance the naming convention.
+Additionally, there is a naming convention called `NEXT_JS_APP_ROUTER_CASE` used to format folder names in Next.js projects that use the App Router. You can read more about it under [Built-in custom patterns](#built-in-custom-patterns).
 
 | Formatting  | Name                   |
 | ----------- | ---------------------- |
@@ -61,12 +59,11 @@ Some patterns are complex enough that they warrant their own definition within t
 
 ### Next.js custom pattern
 
-There's a new pattern called `NEXT_JS_APP_ROUTER_CASE`.
+The `NEXT_JS_APP_ROUTER_CASE` aims to support a wide range of named constructs in Next.js App Router projects.
 
-If you would like to enforce a kebab-case naming convention for your folders, but also
-support Next.js' catch-all routes, dynamic segments, etc. that use square brackets, you could achieve that with this pattern.
+If you would like to enforce a kebab-case naming convention for your folders, but also support Next.js' Standard routes, Dynamic segments, Catch-all segments, Optional Catch-all Segments, Route groups, and Named slots, this pattern is for you.
 
-Now, all your folders need to be kebab-cased, but you can also do dynamic segments with camel case, so that it flows more natural with the code, i.e.
+When using the pattern, all your folders need to be kebab-cased, but you can also do dynamic segments with camel case, so that it flows more natural with the code, i.e.
 
 ```
 /src/app/help-pages/[pageId]
@@ -87,6 +84,9 @@ export const Page({ params: { pageId } }) { ... }
 Besides this, the custom pattern should support all other Next.js naming conventions.
 
 You can read more about them [here](https://github.com/DukeLuo/eslint-plugin-check-file/pull/27#issuecomment-1582551071).
+
+
+While `NEXT_JS_APP_ROUTER_CASE` covers many naming cases, it's possible that some cases may be missing. If you come across any missing cases, I encourage you to open an issue and provide the necessary details. Your feedback will help me improve and enhance the naming convention.
 
 ### Options
 
