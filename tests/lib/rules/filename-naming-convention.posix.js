@@ -2,15 +2,18 @@
  * @file The filename should follow the filename naming convention
  * @author Huan Luo
  */
-'use strict';
 
-const path = require('path');
-const proxyquire = require('proxyquire');
-const RuleTester = require('eslint').RuleTester;
+import { RuleTester } from 'eslint';
+import esmock from 'esmock';
+import { posix } from 'path';
 
-const rule = proxyquire('../../../lib/rules/filename-naming-convention', {
-  path: { ...path.posix, '@global': true },
-});
+const rule = await esmock(
+  '../../../lib/rules/filename-naming-convention.js',
+  {},
+  {
+    path: posix,
+  }
+);
 const ruleTester = new RuleTester();
 
 ruleTester.run(

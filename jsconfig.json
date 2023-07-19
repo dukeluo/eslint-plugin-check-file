@@ -1,15 +1,8 @@
 {
   "compilerOptions": {
     "checkJs": true,
-    "target": "es2015",
+    "target": "es2017",
+    "module": "node16"
   },
-  "exclude": [
-    "node_modules",
-    ".nyc_output",
-    ".idea",
-    ".vscode",
-    ".github",
-    ".husky",
-    "docs",
-  ]
+  "include": ["lib", "tests"]
 }

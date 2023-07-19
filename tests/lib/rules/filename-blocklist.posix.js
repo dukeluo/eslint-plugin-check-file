@@ -2,15 +2,18 @@
  * @file The filename should be blocklisted
  * @author Florian Ehmke, Huan Luo
  */
-'use strict';
 
-const path = require('path');
-const proxyquire = require('proxyquire');
-const RuleTester = require('eslint').RuleTester;
+import { RuleTester } from 'eslint';
+import esmock from 'esmock';
+import { posix } from 'path';
 
-const rule = proxyquire('../../../lib/rules/filename-blocklist', {
-  path: { ...path.posix, '@global': true },
-});
+const rule = await esmock(
+  '../../../lib/rules/filename-blocklist.js',
+  {},
+  {
+    path: posix,
+  }
+);
 const ruleTester = new RuleTester();
 
 ruleTester.run(

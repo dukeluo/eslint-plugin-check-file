@@ -2,15 +2,18 @@
  * @file A file cannot be named "index"
  * @author Huan Luo
  */
-'use strict';
 
-const path = require('path');
-const proxyquire = require('proxyquire');
-const RuleTester = require('eslint').RuleTester;
+import { RuleTester } from 'eslint';
+import esmock from 'esmock';
+import { win32 } from 'path';
 
-const rule = proxyquire('../../../lib/rules/no-index', {
-  path: { ...path.win32, '@global': true },
-});
+const rule = await esmock(
+  '../../../lib/rules/no-index.js',
+  {},
+  {
+    path: win32,
+  }
+);
 const ruleTester = new RuleTester();
 
 ruleTester.run('no-index on Windows', rule, {

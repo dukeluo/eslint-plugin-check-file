@@ -2,15 +2,18 @@
  * @file The folder should match the naming pattern specified by its file
  * @author Huan Luo
  */
-'use strict';
 
-const path = require('path');
-const proxyquire = require('proxyquire');
-const RuleTester = require('eslint').RuleTester;
+import { RuleTester } from 'eslint';
+import esmock from 'esmock';
+import { win32 } from 'path';
 
-const rule = proxyquire('../../../lib/rules/folder-match-with-fex', {
-  path: { ...path.win32, '@global': true },
-});
+const rule = await esmock(
+  '../../../lib/rules/folder-match-with-fex.js',
+  {},
+  {
+    path: win32,
+  }
+);
 const ruleTester = new RuleTester();
 
 ruleTester.run(
