@@ -33,5 +33,6 @@
     "jsdoc": {
       "mode": "typescript"
     }
-  }
+  },
+  "ignorePatterns": ["dist"]
 }

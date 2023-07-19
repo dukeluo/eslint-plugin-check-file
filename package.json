@@ -28,9 +28,14 @@
   },
   "homepage": "https://github.com/DukeLuo/eslint-plugin-check-file",
   "type": "module",
-  "main": "lib/index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "prepare": "husky install",
+    "build": "rollup -c",
     "lint": "eslint . --ignore-pattern node_modules/",
     "lint:fix": "eslint . --fix --ignore-pattern node_modules/",
     "test": "nyc mocha --loader=esmock tests --recursive",
@@ -44,6 +49,7 @@
   "devDependencies": {
     "@commitlint/cli": "^17.6.3",
     "@commitlint/config-conventional": "^17.6.3",
+    "@rollup/plugin-terser": "^0.4.3",
     "eslint": "^8.40.0",
     "eslint-config-prettier": "8.3.0",
     "eslint-plugin-eslint-plugin": "^4.4.1",
@@ -54,15 +60,13 @@
     "husky": "^8.0.3",
     "mocha": "^10.2.0",
     "nyc": "^15.1.0",
-    "prettier": "2.5.1"
+    "prettier": "2.5.1",
+    "rollup": "^3.26.3"
   },
   "engines": {
     "node": "14.x || >= 16"
   },
   "peerDependencies": {
     "eslint": ">=7.28.0"
-  },
-  "files": [
-    "lib"
-  ]
+  }
 }
