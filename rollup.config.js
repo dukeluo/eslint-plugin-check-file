@@ -10,13 +10,13 @@ export default {
   output: [
     {
       format: 'cjs',
-      file: 'dist/index.js',
+      file: 'dist/index.cjs',
       banner:
         '/*! @author Huan Luo <dukeluo@outlook.com> (https://shaiwang.life) */',
     },
     {
       format: 'es',
-      file: 'dist/index.es.js',
+      file: 'dist/index.js',
       banner:
         '/*! @author Huan Luo <dukeluo@outlook.com> (https://shaiwang.life) */',
     },

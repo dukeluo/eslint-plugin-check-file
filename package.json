@@ -28,8 +28,14 @@
   },
   "homepage": "https://github.com/DukeLuo/eslint-plugin-check-file",
   "type": "module",
-  "main": "dist/index.js",
-  "module": "dist/index.es.js",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js"
+    }
+  },
   "files": [
     "dist"
   ],
