@@ -38,6 +38,14 @@ Then configure the rules you want to use under the rules section.
 ```json
 {
   "rules": {
+    "check-file/no-index": "error",
+    "check-file/filename-blocklist": [
+      "error",
+      {
+        "**/*.model.ts": "*.models.ts",
+        "**/*.util.ts": "*.utils.ts"
+      }
+    ],
     "check-file/folder-match-with-fex": [
       "error",
       {
@@ -52,19 +60,11 @@ Then configure the rules you want to use under the rules section.
         "**/*.{js,ts}": "KEBAB_CASE"
       }
     ],
-    "check-file/no-index": "error",
     "check-file/folder-naming-convention": [
       "error",
       {
         "src/**/": "CAMEL_CASE",
         "mocks/*/": "KEBAB_CASE"
-      }
-    ],
-    "check-file/filename-blocklist": [
-      "error",
-      {
-        "**/*.model.ts": "*.models.ts",
-        "**/*.util.ts": "*.utils.ts"
       }
     ]
   }
@@ -73,11 +73,11 @@ Then configure the rules you want to use under the rules section.
 
 ## Supported Rules
 
+- [check-file/no-index](docs/rules/no-index.md): A file cannot be named "index"
+- [check-file/filename-blocklist](docs/rules/filename-blocklist.md): Blocklist file names by pattern
 - [check-file/folder-match-with-fex](docs/rules/folder-match-with-fex.md): Enforce a consistent naming pattern for folder names for specified files
 - [check-file/filename-naming-convention](docs/rules/filename-naming-convention.md): Enforce a consistent naming pattern for filenames for specified files
-- [check-file/no-index](docs/rules/no-index.md): A file cannot be named "index"
 - [check-file/folder-naming-convention](docs/rules/folder-naming-convention.md): Enforce a consistent naming pattern for folder names for specified folders
-- [check-file/filename-blocklist](docs/rules/filename-blocklist.md): Blocklist file names by pattern
 
 [![Donate][ko-fi-image]][ko-fi-url]
 
