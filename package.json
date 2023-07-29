@@ -42,8 +42,8 @@
   "scripts": {
     "prepare": "husky install",
     "build": "rollup -c",
-    "lint": "eslint . --ignore-pattern node_modules/",
-    "lint:fix": "eslint . --fix --ignore-pattern node_modules/",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "test": "c8 mocha --loader=esmock tests --recursive",
     "test:report": "c8 report -r=lcov",
     "test:cli": "mocha --loader=esmock"
