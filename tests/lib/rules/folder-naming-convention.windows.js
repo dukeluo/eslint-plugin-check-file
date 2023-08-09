@@ -411,6 +411,11 @@ ruleTester.run(
         filename: 'src\\app\\(marketing)\\page.ts',
         options: [{ 'src/**/': 'NEXT_JS_APP_ROUTER_CASE' }],
       },
+      {
+        code: "var foo = 'bar';",
+        filename: 'src\\app\\_components\\page.ts',
+        options: [{ 'src/**/': 'NEXT_JS_APP_ROUTER_CASE' }],
+      },
     ],
 
     invalid: [
