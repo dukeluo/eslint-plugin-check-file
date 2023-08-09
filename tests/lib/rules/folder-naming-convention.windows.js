@@ -413,7 +413,7 @@ ruleTester.run(
       },
       {
         code: "var foo = 'bar';",
-        filename: 'src/app/_components/page.ts',
+        filename: 'src\\app\\_components\\page.ts',
         options: [{ 'src/**/': 'NEXT_JS_APP_ROUTER_CASE' }],
       },
     ],
