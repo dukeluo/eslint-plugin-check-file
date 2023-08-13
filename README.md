@@ -6,6 +6,8 @@
 [![Test Workflow Status][test-workflow-image]][workflow-url]
 [![Test Coverage][test-coverage-image]][test-coverage-url]
 
+[![Donate][ko-fi-image]][ko-fi-url]
+
 ESLint rules for consistent filename and folder. Allows you to enforce a consistent naming pattern for the filename and folder.
 
 ## Installation
@@ -78,8 +80,6 @@ Then configure the rules you want to use under the rules section.
 - [check-file/folder-match-with-fex](docs/rules/folder-match-with-fex.md): Enforce a consistent naming pattern for folder names for specified files
 - [check-file/filename-naming-convention](docs/rules/filename-naming-convention.md): Enforce a consistent naming pattern for filenames for specified files
 - [check-file/folder-naming-convention](docs/rules/folder-naming-convention.md): Enforce a consistent naming pattern for folder names for specified folders
-
-[![Donate][ko-fi-image]][ko-fi-url]
 
 [npm-image]: https://img.shields.io/npm/v/eslint-plugin-check-file.svg
 [downloads-image]: https://img.shields.io/npm/dm/eslint-plugin-check-file.svg
