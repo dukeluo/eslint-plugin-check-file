@@ -236,3 +236,24 @@ ruleTester.run('filename-blocklist with option: []', rule, {
     },
   ],
 });
+
+ruleTester.run(
+  "filename-blocklist with option: [{'*.models.ts': 'Some Non Glob reason'}, true]",
+  rule,
+  {
+    valid: [
+      {
+        code: "var foo = 'bar';",
+        filename: 'src/foo.apis.ts',
+        options: [
+          {
+            '*.models.ts': 'Some Non Glob reason',
+          },
+          true,
+        ],
+      },
+    ],
+
+    invalid: [],
+  }
+);
