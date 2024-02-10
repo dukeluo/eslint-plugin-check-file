@@ -69,9 +69,6 @@
     "prettier": "2.5.1",
     "rollup": "^3.26.3"
   },
-  "engines": {
-    "node": ">= 16"
-  },
   "peerDependencies": {
     "eslint": ">=7.28.0"
   }
