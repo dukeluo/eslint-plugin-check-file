@@ -164,3 +164,41 @@ ruleTester.run('filename-blocklist with option on Windows: []', rule, {
     },
   ],
 });
+
+ruleTester.run(
+  "filename-blocklist with option on Windows: [{'*.models.ts': 'for some Non Glob related reason'}, { nonGlobSuggestion: true }]",
+  rule,
+  {
+    valid: [
+      {
+        code: "var foo = 'bar';",
+        filename: 'src\\foo.apis.ts',
+        options: [
+          {
+            '*.models.ts': 'for some Non Glob related reason',
+          },
+          { nonGlobSuggestion: true },
+        ],
+      },
+    ],
+
+    invalid: [
+      {
+        code: "var foo = 'bar';",
+        filename: 'src\\foo.models.ts',
+        options: [
+          { '*.models.ts': 'for some Non Glob related reason' },
+          { nonGlobSuggestion: true },
+        ],
+        errors: [
+          {
+            message:
+              'The filename "foo.models.ts" matches the blocklisted "*.models.ts" pattern, this is not allowed for some Non Glob related reason',
+            column: 1,
+            line: 1,
+          },
+        ],
+      },
+    ],
+  }
+);
