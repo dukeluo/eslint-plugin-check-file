@@ -54,6 +54,29 @@ module.exports = {
 };
 ```
 
+An optional "nonGlobSuggestion" argument can be passed that allows the blocklist reason to be any string, instead of a strict glob pattern
+
+```js
+module.exports = {
+  plugins: [
+    'check-file',
+  ],
+  rules: {
+    'check-file/filename-blocklist': ['error', {
+      '**/*.model.ts': 'see the repo rules at http://some/example.com',
+      '**/*.util.ts': 'for a non glob related reason',
+    },
+      { nonGlobSuggestion: true, }
+    ],
+  },
+};
+```
+
+These rules would produce errors that look like:
+1. 'The filename "model.ts" matches the blocklisted "**/*.model.ts" pattern,  this is not allowed see the repo rules at http://some/example.com'
+2. 'The filename "util.ts" matches the blocklisted "**/*.util.ts" pattern,  this is not allowed for a non glob related reason'
+
+
 ## Further Reading
 
 - [micromatch](https://github.com/micromatch/micromatch)
