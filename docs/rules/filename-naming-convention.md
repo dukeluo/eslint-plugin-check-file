@@ -8,16 +8,17 @@ This rule aims to format the filename of the specified file. This rule uses the 
 
 There are six naming conventions built into this rule, including `CAMEL_CASE`, `PASCAL_CASE`, `SNAKE_CASE`, `KEBAB_CASE`, `SCREAMING_SNAKE_CASE` and `FLAT_CASE`.
 
-| Formatting | Name |
-|---|---|
-| helloWorld | `CAMEL_CASE` |
-| HelloWorld | `PASCAL_CASE` |
-| hello_world | `SNAKE_CASE` |
-| hello-world | `KEBAB_CASE` |
+| Formatting  | Name                   |
+| ----------- | ---------------------- |
+| helloWorld  | `CAMEL_CASE`           |
+| HelloWorld  | `PASCAL_CASE`          |
+| hello_world | `SNAKE_CASE`           |
+| hello-world | `KEBAB_CASE`           |
 | HELLO_WORLD | `SCREAMING_SNAKE_CASE` |
-| helloworld | `FLAT_CASE` |
+| helloworld  | `FLAT_CASE`            |
 
 If the rule had been set as follows:
+
 ```js
 ...
 'check-file/filename-naming-convention': ['error', { 'src/services/*.js': 'PASCAL_CASE' }],
@@ -25,6 +26,7 @@ If the rule had been set as follows:
 ```
 
 Examples of **incorrect** filename with path for this rule:
+
 ```sh
 src/services/downloadService.js
 src/services/downloadservice.js
@@ -33,12 +35,14 @@ src/services/download_service.js
 ```
 
 Examples of **correct** filename with path for this rule:
+
 ```sh
 src/services/DownloadService.js
 src/download-service.js // this file is not be specified by the target pattern, so it is skipped
 ```
 
 In addition to the built-in naming conventions, you can also set custom naming patterns using glob match syntax. The following code shows an example of how to ensure that all your `js` files are named begin with `__`:
+
 ```js
 ...
 'check-file/filename-naming-convention': ['error', {'**/*.js': '__+([a-z])'}],
@@ -56,6 +60,7 @@ Prefined match syntax allow you to capture specific part of the target file patt
 To use prefined match in your rule set, you can use the `<index>` syntax. The index refers to the position where the glob matcher occurs in the target file pattern expression, starting with `0`. Read more about glob capture groups in the [micromatch documentation](https://github.com/micromatch/micromatch#capture).
 
 If the rule had been set as follows:
+
 ```js
 ...
 'check-file/filename-naming-convention': ['error', { '**/*/!(index).*': '<1>' }, { 'ignoreMiddleExtensions': true }],
@@ -63,12 +68,14 @@ If the rule had been set as follows:
 ```
 
 Examples of **incorrect** filename with path for this rule:
+
 ```sh
 src/Portal/type.ts
 src/Portal/base.tsx
 ```
 
 Examples of **correct** filename with path for this rule:
+
 ```sh
 src/Portal/index.ts
 src/Portal/Portal.test.tsx
@@ -126,5 +133,5 @@ module.exports = {
 ## Further Reading
 
 - [micromatch](https://github.com/micromatch/micromatch)
-- [glob](https://en.wikipedia.org/wiki/Glob_(programming))
+- [glob](<https://en.wikipedia.org/wiki/Glob_(programming)>)
 - [testing glob expression online](https://globster.xyz)
