@@ -166,7 +166,7 @@ ruleTester.run('filename-blocklist with option on Windows: []', rule, {
 });
 
 ruleTester.run(
-  "filename-blocklist with option: [{'*.models.ts': 'for some Non Glob related reason'}, { nonGlobSuggestion: true, }]  on Windows: []",
+  "filename-blocklist with option on Windows: [{'*.models.ts': 'for some Non Glob related reason'}, { nonGlobSuggestion: true }]",
   rule,
   {
     valid: [
@@ -181,16 +181,6 @@ ruleTester.run(
         ],
       },
     ],
-
-    invalid: [],
-  }
-);
-
-ruleTester.run(
-  "filename-blocklist with option: [{'*.models.ts': 'for some Non Glob related reason'}, { nonGlobSuggestion: true, }]  on Windows: []",
-  rule,
-  {
-    valid: [],
 
     invalid: [
       {

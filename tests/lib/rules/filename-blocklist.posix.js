@@ -238,7 +238,7 @@ ruleTester.run('filename-blocklist with option: []', rule, {
 });
 
 ruleTester.run(
-  "filename-blocklist with option: [{'*.models.ts': 'for some Non Glob related reason'}, true]",
+  "filename-blocklist with option: [{'*.models.ts': 'for some Non Glob related reason'}, { nonGlobSuggestion: true }]",
   rule,
   {
     valid: [
@@ -253,16 +253,6 @@ ruleTester.run(
         ],
       },
     ],
-
-    invalid: [],
-  }
-);
-
-ruleTester.run(
-  "filename-blocklist with option: [{'*.models.ts': 'for some Non Glob related reason'}, { nonGlobSuggestion: true, }]",
-  rule,
-  {
-    valid: [],
 
     invalid: [
       {
