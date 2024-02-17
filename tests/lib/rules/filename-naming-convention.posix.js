@@ -1392,6 +1392,35 @@ ruleTester.run(
   }
 );
 
+ruleTester.run(
+  "filename-naming-convention with option: [{ '**/*/!(index).*': '<1>' }, { errorMessage: 'The file \"{{ target }}\" does not match file naming convention defined(\"{{ pattern }}\") for this project, see contribute.md for details'}]",
+  rule,
+  {
+    valid: [],
+    invalid: [
+      {
+        code: "var foo = 'bar';",
+        filename: 'src/components/featureA/featureB.jsx',
+        options: [
+          { '**/*/!(index).*': '<1>' },
+          {
+            errorMessage:
+              'The file "{{ target }}" does not match file naming convention defined("{{ pattern }}") for this project, see contribute.md for details',
+          },
+        ],
+        errors: [
+          {
+            message:
+              'The file "featureB.jsx" does not match file naming convention defined("<1>") for this project, see contribute.md for details',
+            column: 1,
+            line: 1,
+          },
+        ],
+      },
+    ],
+  }
+);
+
 ruleTester.run('filename-naming-convention with option: []', rule, {
   valid: [],
   invalid: [

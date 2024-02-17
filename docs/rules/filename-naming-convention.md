@@ -130,6 +130,29 @@ module.exports = {
 };
 ```
 
+##### `errorMessage`
+
+Customizes the error message displayed when a file's filename doesn't match the declared naming pattern. It offers two placeholders for dynamic content:
+
+- `{{ target }}`: Represents the filename of the non-matching file.
+- `{{ pattern }}`: Represents the naming pattern.
+
+```js
+module.exports = {
+  plugins: ['check-file'],
+  rules: {
+    'check-file/filename-naming-convention': [
+      'error',
+      { '**/*/!(index).*': '<1>' },
+      {
+        errorMessage:
+          'The file "{{ target }}" does not match file naming convention defined("{{ pattern }}") for this project, see contribute.md for details',
+      },
+    ],
+  },
+};
+```
+
 ## Further Reading
 
 - [micromatch](https://github.com/micromatch/micromatch)
