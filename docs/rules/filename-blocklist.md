@@ -59,9 +59,12 @@ module.exports = {
 
 #### rule configuration object
 
-##### `nonGlobSuggestion`
+##### `errorMessage`
 
-If `true`, it allows the blocklist reason to be any string, instead of a strict glob pattern.
+Customizes the error message displayed when a file is blocked due to matching a blocklisted filename pattern. It offers two placeholders for dynamic content:
+
+- `{{ target }}`: Represents the filename of the blocked file.
+- `{{ pattern }}`: Represents the blocklisted filename pattern.
 
 ```js
 module.exports = {
@@ -69,20 +72,15 @@ module.exports = {
   rules: {
     'check-file/filename-blocklist': [
       'error',
+      { '*.models.ts': '*.model.ts' },
       {
-        '**/*.model.ts': 'see the repo rules at http://some/example.com',
-        '**/*.util.ts': 'for a non glob related reason',
+        errorMessage:
+          'The file "{{ target }}" is blocked since it since it matches the blocklisted pattern "{{ pattern }}", see contribute.md for details',
       },
-      { nonGlobSuggestion: true },
     ],
   },
 };
 ```
-
-These rules would produce errors that look like:
-
-- `The filename "model.ts" matches the blocklisted "**/*.model.ts" pattern, this is not allowed see the repo rules at http://some/example.com`
-- `The filename "util.ts" matches the blocklisted "**/*.util.ts" pattern, this is not allowed for a non glob related reason`
 
 ## Further Reading
 

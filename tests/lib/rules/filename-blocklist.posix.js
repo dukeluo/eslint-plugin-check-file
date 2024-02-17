@@ -238,7 +238,7 @@ ruleTester.run('filename-blocklist with option: []', rule, {
 });
 
 ruleTester.run(
-  "filename-blocklist with option: [{'*.models.ts': 'for some Non Glob related reason'}, { nonGlobSuggestion: true }]",
+  "filename-blocklist with option: [{'*.models.ts': '*.model.ts'}, { errorMessage: 'The file \"{{ target }}\" is blocked since it since it matches the blocklisted pattern \"{{ pattern }}\", see contribute.md for details' }]",
   rule,
   {
     valid: [
@@ -246,10 +246,11 @@ ruleTester.run(
         code: "var foo = 'bar';",
         filename: 'src/foo.apis.ts',
         options: [
+          { '*.models.ts': '*.model.ts' },
           {
-            '*.models.ts': 'for some Non Glob related reason',
+            errorMessage:
+              'The file "{{ target }}" is blocked since it since it matches the blocklisted pattern "{{ pattern }}", see contribute.md for details',
           },
-          { nonGlobSuggestion: true },
         ],
       },
     ],
@@ -259,15 +260,16 @@ ruleTester.run(
         code: "var foo = 'bar';",
         filename: 'src/foo.models.ts',
         options: [
+          { '*.models.ts': '*.model.ts' },
           {
-            '*.models.ts': 'for some Non Glob related reason',
+            errorMessage:
+              'The file "{{ target }}" is blocked since it since it matches the blocklisted pattern "{{ pattern }}", see contribute.md for details',
           },
-          { nonGlobSuggestion: true },
         ],
         errors: [
           {
             message:
-              'The filename "foo.models.ts" matches the blocklisted "*.models.ts" pattern, this is not allowed for some Non Glob related reason',
+              'The file "foo.models.ts" is blocked since it since it matches the blocklisted pattern "*.models.ts", see contribute.md for details',
             column: 1,
             line: 1,
           },
