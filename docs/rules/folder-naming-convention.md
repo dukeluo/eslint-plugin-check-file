@@ -83,7 +83,7 @@ export const Page({ params: { pageId } }) { ... }
 
 Besides this, the custom pattern should support all other Next.js naming conventions.
 
-You can read more about them [here](https://github.com/DukeLuo/eslint-plugin-check-file/pull/27#issuecomment-1582551071).
+You can read more about them [here](https://github.com/dukeluo/eslint-plugin-check-file/pull/27#issuecomment-1582551071).
 
 While `NEXT_JS_APP_ROUTER_CASE` covers many naming cases, it's possible that some cases may be missing. If you come across any missing cases, I encourage you to open an issue and provide the necessary details. Your feedback will help me improve and enhance the naming convention.
 

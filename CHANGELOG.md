@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [2.7.0](https://github.com/DukeLuo/eslint-plugin-check-file/compare/v2.6.2...v2.7.0) - 2024-02-18
+## [2.7.0](https://github.com/dukeluo/eslint-plugin-check-file/compare/v2.6.2...v2.7.0) - 2024-02-18
 
 ### Added
 
@@ -16,19 +16,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Node.js version should >= 18
 
-## [2.6.2](https://github.com/DukeLuo/eslint-plugin-check-file/compare/v2.6.1...v2.6.2) - 2023-08-13
+## [2.6.2](https://github.com/dukeluo/eslint-plugin-check-file/compare/v2.6.1...v2.6.2) - 2023-08-13
 
 ### Fixed
 
 - the naming convention `NEXT_JS_APP_ROUTER_CASE` can support Next.js Private Folders
 
-## [2.6.1](https://github.com/DukeLuo/eslint-plugin-check-file/compare/v2.6.0...v2.6.1) - 2023-07-30
+## [2.6.1](https://github.com/dukeluo/eslint-plugin-check-file/compare/v2.6.0...v2.6.1) - 2023-07-30
 
 ### Fixed
 
 - fix bundle mistake in v2.6.0
 
-## [2.6.0](https://github.com/DukeLuo/eslint-plugin-check-file/compare/v2.5.0...v2.6.0) - 2023-07-30
+## [2.6.0](https://github.com/dukeluo/eslint-plugin-check-file/compare/v2.5.0...v2.6.0) - 2023-07-30
 
 ### Added
 
@@ -38,13 +38,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - deprecated Node.js 14 support
 
-## [2.5.0](https://github.com/DukeLuo/eslint-plugin-check-file/compare/v2.4.0...v2.5.0) - 2023-07-05
+## [2.5.0](https://github.com/dukeluo/eslint-plugin-check-file/compare/v2.4.0...v2.5.0) - 2023-07-05
 
 ### Added
 
 - the rule `folder-naming-convention` can be used with a new built-in naming convention `NEXT_JS_APP_ROUTER_CASE`
 
-## [2.4.0](https://github.com/DukeLuo/eslint-plugin-check-file/compare/v2.3.0...v2.4.0) - 2023-06-12
+## [2.4.0](https://github.com/dukeluo/eslint-plugin-check-file/compare/v2.3.0...v2.4.0) - 2023-06-12
 
 ### Fixed
 
@@ -58,7 +58,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - improve documentation
 
-## [2.3.0](https://github.com/DukeLuo/eslint-plugin-check-file/compare/v2.2.0...v2.3.0) - 2023-05-13
+## [2.3.0](https://github.com/dukeluo/eslint-plugin-check-file/compare/v2.2.0...v2.3.0) - 2023-05-13
 
 ### Fixed
 
@@ -76,13 +76,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - unify the style of error messages for the existing rules
 - upgrade dependencies to the latest version
 
-## [2.2.0](https://github.com/DukeLuo/eslint-plugin-check-file/compare/v2.1.0...v2.2.0) - 2023-04-01
+## [2.2.0](https://github.com/dukeluo/eslint-plugin-check-file/compare/v2.1.0...v2.2.0) - 2023-04-01
 
 ### Added
 
 - the rule `filename-naming-convention` can use prefined match syntax
 
-## [2.1.0](https://github.com/DukeLuo/eslint-plugin-check-file/compare/v2.0.0...v2.1.0) - 2023-03-25
+## [2.1.0](https://github.com/dukeluo/eslint-plugin-check-file/compare/v2.0.0...v2.1.0) - 2023-03-25
 
 ### Fixed
 
@@ -92,7 +92,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - the rule `filename-blacklist` can specify the target file by its filename
 
-## [2.0.0](https://github.com/DukeLuo/eslint-plugin-check-file/compare/v1.3.1...v2.0.0) - 2023-03-05
+## [2.0.0](https://github.com/dukeluo/eslint-plugin-check-file/compare/v1.3.1...v2.0.0) - 2023-03-05
 
 ### Changed
 
@@ -103,19 +103,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - the rule `filename-naming-convention` can specify the target file by its extension
 
-## [1.3.1](https://github.com/DukeLuo/eslint-plugin-check-file/compare/v1.3.0...v1.3.1) - 2023-01-15
+## [1.3.1](https://github.com/dukeluo/eslint-plugin-check-file/compare/v1.3.0...v1.3.1) - 2023-01-15
 
 ### Fixed
 
 - fix builtin `CAMEL_CASE` glob expression
 
-## [1.3.0](https://github.com/DukeLuo/eslint-plugin-check-file/compare/v1.2.3...v1.3.0) - 2022-11-05
+## [1.3.0](https://github.com/dukeluo/eslint-plugin-check-file/compare/v1.2.3...v1.3.0) - 2022-11-05
 
 ### Added
 
 - the rule `filename-blacklist` can blacklist file names by pattern
 
-## [1.2.3](https://github.com/DukeLuo/eslint-plugin-check-file/compare/v1.2.2...v1.2.3) -2022-09-22
+## [1.2.3](https://github.com/dukeluo/eslint-plugin-check-file/compare/v1.2.2...v1.2.3) -2022-09-22
 
 ### Fixed
 
@@ -125,13 +125,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - reduce npm package size
 
-## [1.2.2](https://github.com/DukeLuo/eslint-plugin-check-file/compare/v1.2.1...v1.2.2) -2022-07-15
+## [1.2.2](https://github.com/dukeluo/eslint-plugin-check-file/compare/v1.2.1...v1.2.2) -2022-07-15
 
 ### Fixed
 
 - enhance support for the Windows operating system
 
-## [1.2.1](https://github.com/DukeLuo/eslint-plugin-check-file/compare/v1.2.0...v1.2.1) -2022-07-09
+## [1.2.1](https://github.com/dukeluo/eslint-plugin-check-file/compare/v1.2.0...v1.2.1) -2022-07-09
 
 ### Added
 
@@ -145,7 +145,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - fix get wrong folder issue when `eslint` is worked with processors
 
-## [1.2.0](https://github.com/DukeLuo/eslint-plugin-check-file/compare/v1.1.0...v1.2.0) - 2022-07-04
+## [1.2.0](https://github.com/dukeluo/eslint-plugin-check-file/compare/v1.1.0...v1.2.0) - 2022-07-04
 
 ### Added
 
@@ -160,13 +160,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - the rule `filename-naming-convention` can specify the target file by its extension
 
-## [1.1.0](https://github.com/DukeLuo/eslint-plugin-check-file/compare/v1.0.0...v1.1.0) - 2022-02-23
+## [1.1.0](https://github.com/dukeluo/eslint-plugin-check-file/compare/v1.0.0...v1.1.0) - 2022-02-23
 
 ### Added
 
 - `check-file/folder-naming-convention`: Enforce a consistent naming pattern for the name of the specified folder
 
-## [1.0.0](https://github.com/DukeLuo/eslint-plugin-check-file/releases/tag/v1.0.0) - 2022-01-11
+## [1.0.0](https://github.com/dukeluo/eslint-plugin-check-file/releases/tag/v1.0.0) - 2022-01-11
 
 ### Added
 

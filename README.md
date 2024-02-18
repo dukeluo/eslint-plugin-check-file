@@ -84,10 +84,10 @@ Then configure the rules you want to use under the rules section.
 [npm-image]: https://img.shields.io/npm/v/eslint-plugin-check-file.svg
 [downloads-image]: https://img.shields.io/npm/dm/eslint-plugin-check-file.svg
 [license-image]: https://img.shields.io/npm/l/eslint-plugin-check-file
-[test-workflow-image]: https://img.shields.io/github/actions/workflow/status/DukeLuo/eslint-plugin-check-file/test.yml?label=test
-[test-coverage-image]: https://img.shields.io/codecov/c/gh/DukeLuo/eslint-plugin-check-file
+[test-workflow-image]: https://img.shields.io/github/actions/workflow/status/dukeluo/eslint-plugin-check-file/test.yml?label=test
+[test-coverage-image]: https://img.shields.io/codecov/c/gh/dukeluo/eslint-plugin-check-file
 [ko-fi-image]: https://ko-fi.com/img/githubbutton_sm.svg
 [downloads-url]: https://www.npmjs.com/package/eslint-plugin-check-file
-[workflow-url]: https://github.com/DukeLuo/eslint-plugin-check-file/actions
-[test-coverage-url]: https://app.codecov.io/gh/DukeLuo/eslint-plugin-check-file
+[workflow-url]: https://github.com/dukeluo/eslint-plugin-check-file/actions
+[test-coverage-url]: https://app.codecov.io/gh/dukeluo/eslint-plugin-check-file
 [ko-fi-url]: https://ko-fi.com/huanluo

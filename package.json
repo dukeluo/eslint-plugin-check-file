@@ -15,7 +15,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DukeLuo/eslint-plugin-check-file.git"
+    "url": "git+https://github.com/dukeluo/eslint-plugin-check-file.git"
   },
   "author": "Huan Luo <dukeluo@outlook.com> (https://shaiwang.life)",
   "funding": {
@@ -24,9 +24,9 @@
   },
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/DukeLuo/eslint-plugin-check-file/issues"
+    "url": "https://github.com/dukeluo/eslint-plugin-check-file/issues"
   },
-  "homepage": "https://github.com/DukeLuo/eslint-plugin-check-file",
+  "homepage": "https://github.com/dukeluo/eslint-plugin-check-file",
   "type": "module",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
