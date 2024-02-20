@@ -8,7 +8,6 @@
     "eslint:recommended",
     "plugin:eslint-plugin/recommended",
     "plugin:node/recommended",
-    "prettier",
     "plugin:jsdoc/recommended"
   ],
   "plugins": ["prettier", "jsdoc"],
