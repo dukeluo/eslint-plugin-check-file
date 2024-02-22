@@ -76,7 +76,7 @@ Then configure the rules you want to use under the rules section.
 ## Supported Rules
 
 - [check-file/no-index](docs/rules/no-index.md): A file cannot be named "index"
-- [check-file/filename-blocklist](docs/rules/filename-blocklist.md): Blocklist file names by pattern
+- [check-file/filename-blocklist](docs/rules/filename-blocklist.md): Blocklist filenames by pattern
 - [check-file/folder-match-with-fex](docs/rules/folder-match-with-fex.md): Enforce a consistent naming pattern for folder names for specified files
 - [check-file/filename-naming-convention](docs/rules/filename-naming-convention.md): Enforce a consistent naming pattern for filenames for specified files
 - [check-file/folder-naming-convention](docs/rules/folder-naming-convention.md): Enforce a consistent naming pattern for folder names for specified folders

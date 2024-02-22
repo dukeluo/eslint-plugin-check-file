@@ -113,7 +113,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- the rule `filename-blacklist` can blacklist file names by pattern
+- the rule `filename-blacklist` can blacklist filenames by pattern
 
 ## [1.2.3](https://github.com/dukeluo/eslint-plugin-check-file/compare/v1.2.2...v1.2.3) -2022-09-22
 

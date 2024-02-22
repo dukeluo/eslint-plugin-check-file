@@ -1,6 +1,6 @@
 # The filename should be blocklisted (filename-blocklist)
 
-Allows you to blocklist certain file name patterns.
+Allows you to blocklist certain filename patterns.
 
 :warning: :warning: :warning:
 
