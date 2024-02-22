@@ -206,3 +206,69 @@ ruleTester.run(
     ],
   }
 );
+
+ruleTester.run(
+  "filename-blocklist with option on Windows: [{'*.models.ts': ''}, { errorMessage: 'The file \"{{ target }}\" is blocked since it since it matches the blocklisted pattern \"{{ pattern }}\", see contribute.md for details' }]",
+  rule,
+  {
+    valid: [
+      {
+        code: "var foo = 'bar';",
+        filename: 'src\\foo.apis.ts',
+        options: [
+          { '*.models.ts': '' },
+          {
+            errorMessage:
+              'The file "{{ target }}" is blocked since it since it matches the blocklisted pattern "{{ pattern }}", see contribute.md for details',
+          },
+        ],
+      },
+    ],
+
+    invalid: [
+      {
+        code: "var foo = 'bar';",
+        filename: 'src\\foo.models.ts',
+        options: [
+          { '*.models.ts': '' },
+          {
+            errorMessage:
+              'The file "{{ target }}" is blocked since it since it matches the blocklisted pattern "{{ pattern }}", see contribute.md for details',
+          },
+        ],
+        errors: [
+          {
+            message:
+              'The file "foo.models.ts" is blocked since it since it matches the blocklisted pattern "*.models.ts", see contribute.md for details',
+            column: 1,
+            line: 1,
+          },
+        ],
+      },
+    ],
+  }
+);
+
+ruleTester.run(
+  "filename-blocklist with option on Windows: [{'*.models.ts': ''}]",
+  rule,
+  {
+    valid: [],
+
+    invalid: [
+      {
+        code: "var foo = 'bar';",
+        filename: 'src\\foo.models.ts',
+        options: [{ '*.models.ts': '' }],
+        errors: [
+          {
+            message:
+              'There is an invalid pattern "", please double-check it and try again',
+            column: 1,
+            line: 1,
+          },
+        ],
+      },
+    ],
+  }
+);
