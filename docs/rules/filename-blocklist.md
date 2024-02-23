@@ -66,13 +66,15 @@ Customizes the error message displayed when a file is blocked due to matching a 
 - `{{ target }}`: Represents the filename of the blocked file.
 - `{{ pattern }}`: Represents the blocklisted filename pattern.
 
+When `errorMessage` is set, the suggested glob pattern is not necessary, it can be set as empty string.
+
 ```js
 module.exports = {
   plugins: ['check-file'],
   rules: {
     'check-file/filename-blocklist': [
       'error',
-      { '*.models.ts': '*.model.ts' },
+      { '*.models.ts': '' },
       {
         errorMessage:
           'The file "{{ target }}" is blocked since it since it matches the blocklisted pattern "{{ pattern }}", see contribute.md for details',
