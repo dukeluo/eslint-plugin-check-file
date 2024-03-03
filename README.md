@@ -5,6 +5,7 @@
 [![NPM License][license-image]][downloads-url]
 [![Test Workflow Status][test-workflow-image]][workflow-url]
 [![Test Coverage][test-coverage-image]][test-coverage-url]
+[![Follow Author on X][x-follow-image]][x-follow-url]
 
 [![Donate][ko-fi-image]][ko-fi-url]
 
@@ -87,7 +88,9 @@ Then configure the rules you want to use under the rules section.
 [test-workflow-image]: https://img.shields.io/github/actions/workflow/status/dukeluo/eslint-plugin-check-file/test.yml?label=test
 [test-coverage-image]: https://img.shields.io/codecov/c/gh/dukeluo/eslint-plugin-check-file
 [ko-fi-image]: https://ko-fi.com/img/githubbutton_sm.svg
+[x-follow-image]: https://img.shields.io/badge/follow-@ihuanluo-black
 [downloads-url]: https://www.npmjs.com/package/eslint-plugin-check-file
 [workflow-url]: https://github.com/dukeluo/eslint-plugin-check-file/actions
 [test-coverage-url]: https://app.codecov.io/gh/dukeluo/eslint-plugin-check-file
 [ko-fi-url]: https://ko-fi.com/huanluo
+[x-follow-url]: https://x.com/ihuanluo
