@@ -1,1 +1,1 @@
-npx --no -- commitlint --edit $1 && npm run lint
+npx --no -- commitlint --edit $1 && npm run lint:fix

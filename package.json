@@ -49,7 +49,7 @@
     "prepare": "husky",
     "build": "rollup -c",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
+    "lint:fix": "eslint . --fix && prettier --write **/*.md",
     "test": "c8 mocha --loader=esmock tests --recursive",
     "test:report": "c8 report -r=lcov",
     "test:cli": "mocha --loader=esmock"
