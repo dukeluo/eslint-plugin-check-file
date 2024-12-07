@@ -131,3 +131,42 @@ ruleTester.run(
     ],
   }
 );
+
+ruleTester.run(
+  'no-index with option on Windows: [{ errorMessage: "The file {{ target }} is not allowed to be named index" }]',
+  rule,
+  {
+    valid: [
+      {
+        code: "var foo = 'bar';",
+        filename: 'index.config.ts',
+        options: [
+          {
+            errorMessage:
+              'The file {{ target }} is not allowed to be named index',
+          },
+        ],
+      },
+    ],
+
+    invalid: [
+      {
+        code: "var foo = 'bar';",
+        filename: 'src\\utils\\index.js',
+        options: [
+          {
+            errorMessage:
+              'The file {{ target }} is not allowed to be named index',
+          },
+        ],
+        errors: [
+          {
+            message: 'The file index.js is not allowed to be named index',
+            column: 1,
+            line: 1,
+          },
+        ],
+      },
+    ],
+  }
+);
