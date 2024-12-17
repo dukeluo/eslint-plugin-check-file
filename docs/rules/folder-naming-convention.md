@@ -94,18 +94,54 @@ While `NEXT_JS_APP_ROUTER_CASE` covers many naming cases, it's possible that som
 The key is used to select target folders, while the value is used to declare the naming pattern for the folder name. You can specify a different naming pattern for different target folders. The plugin will only check folders you explicitly provided:
 
 ```js
-module.exports = {
-  plugins: ['check-file'],
-  rules: {
-    'check-file/folder-naming-convention': [
-      'error',
-      {
-        'src/**/': 'CAMEL_CASE',
-        'mocks/*/': 'KEBAB_CASE',
-      },
-    ],
+export default [
+  {
+    plugins: {
+      'check-file': checkFile,
+    },
+    rules: {
+      'check-file/folder-naming-convention': [
+        'error',
+        {
+          'src/**/': 'CAMEL_CASE',
+          'mocks/*/': 'KEBAB_CASE',
+        },
+      ],
+    },
   },
-};
+];
+```
+
+#### rule configuration object
+
+##### `errorMessage`
+
+Customizes the error message displayed when a folder does not match the naming pattern. It offers two placeholders for dynamic content:
+
+- `{{ target }}`: Represents the target folder.
+- `{{ pattern }}`: Represents the naming pattern for the target folder.
+
+```js
+export default [
+  {
+    plugins: {
+      'check-file': checkFile,
+    },
+    rules: {
+      'check-file/folder-naming-convention': [
+        'error',
+        {
+          'src/**/': 'CAMEL_CASE',
+          'mocks/*/': 'KEBAB_CASE',
+        },
+        {
+          errorMessage:
+            'The folder "{{ target }}" does not match the "{{ pattern }}" pattern, see contribute.md for details',
+        },
+      ],
+    },
+  },
+];
 ```
 
 ## Further Reading

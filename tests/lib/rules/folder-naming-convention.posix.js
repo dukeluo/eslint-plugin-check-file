@@ -562,3 +562,45 @@ ruleTester.run(
     ],
   }
 );
+
+ruleTester.run(
+  "folder-naming-convention with option: [{ 'src/**/': 'CAMEL_CASE' }, { errorMessage: 'The folder {{ target }} does not match the {{ pattern }} pattern, see contribute.md for details' }]",
+  rule,
+  {
+    valid: [
+      {
+        code: "var foo = 'bar';",
+        filename: 'src/components/displayLabel/displayLabel.js',
+        options: [
+          { 'src/**/': 'CAMEL_CASE' },
+          {
+            errorMessage:
+              'The folder {{ target }} does not match the {{ pattern }} pattern, see contribute.md for details',
+          },
+        ],
+      },
+    ],
+
+    invalid: [
+      {
+        code: "var foo = 'bar';",
+        filename: 'src/components/DisplayLabel/displayLabel.js',
+        options: [
+          { 'src/**/': 'CAMEL_CASE' },
+          {
+            errorMessage:
+              'The folder {{ target }} does not match the {{ pattern }} pattern, see contribute.md for details',
+          },
+        ],
+        errors: [
+          {
+            message:
+              'The folder DisplayLabel does not match the CAMEL_CASE pattern, see contribute.md for details',
+            column: 1,
+            line: 1,
+          },
+        ],
+      },
+    ],
+  }
+);
