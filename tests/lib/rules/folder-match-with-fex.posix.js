@@ -332,3 +332,45 @@ ruleTester.run('folder-match-with-fex with option: []', rule, {
     },
   ],
 });
+
+ruleTester.run(
+  "folder-match-with-fex with option: [{ '*.test.js': '*/__tests__/' }, { errorMessage: 'The folder of the file {{ target }} does not match the {{ pattern }} pattern, see contribute.md for details' }]",
+  rule,
+  {
+    valid: [
+      {
+        code: "var foo = 'bar';",
+        filename: 'bar/__tests__/foo.test.js',
+        options: [
+          { '*.test.js': '*/__tests__/' },
+          {
+            errorMessage:
+              'The folder of the file {{ target }} does not match the {{ pattern }} pattern, see contribute.md for details',
+          },
+        ],
+      },
+    ],
+
+    invalid: [
+      {
+        code: "var foo = 'bar';",
+        filename: 'bar/_tests_/foo.test.js',
+        options: [
+          { '*.test.js': '*/__tests__/' },
+          {
+            errorMessage:
+              'The folder of the file {{ target }} does not match the {{ pattern }} pattern, see contribute.md for details',
+          },
+        ],
+        errors: [
+          {
+            message:
+              'The folder of the file foo.test.js does not match the */__tests__/ pattern, see contribute.md for details',
+            column: 1,
+            line: 1,
+          },
+        ],
+      },
+    ],
+  }
+);

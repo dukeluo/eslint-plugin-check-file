@@ -33,18 +33,54 @@ bar/__tests__/foo.test.js
 The key is used to select target files, while the value is used to declare the naming pattern for their folder names. You can specify a different folder naming pattern for different target files. The plugin will only check files you explicitly provided:
 
 ```js
-module.exports = {
-  plugins: ['check-file'],
-  rules: {
-    'check-file/folder-match-with-fex': [
-      'error',
-      {
-        '*.test.{js,jsx,ts,tsx}': '**/__tests__/',
-        '*.styled.{jsx,tsx}': '**/pages/',
-      },
-    ],
+export default [
+  {
+    plugins: {
+      'check-file': checkFile,
+    },
+    rules: {
+      'check-file/folder-match-with-fex': [
+        'error',
+        {
+          '*.test.{js,jsx,ts,tsx}': '**/__tests__/',
+          '*.styled.{jsx,tsx}': '**/pages/',
+        },
+      ],
+    },
   },
-};
+];
+```
+
+#### rule configuration object
+
+##### `errorMessage`
+
+Customizes the error message displayed when a file's folder does not match the naming pattern. It offers two placeholders for dynamic content:
+
+- `{{ target }}`: Represents the target file.
+- `{{ pattern }}`: Represents the naming pattern for the target file's folder name.
+
+```js
+export default [
+  {
+    plugins: {
+      'check-file': checkFile,
+    },
+    rules: {
+      'check-file/folder-match-with-fex': [
+        'error',
+        {
+          '*.test.{js,jsx,ts,tsx}': '**/__tests__/',
+          '*.styled.{jsx,tsx}': '**/pages/',
+        },
+        {
+          errorMessage:
+            'The folder of the file "{{ target }}" does not match the "{{ pattern }}" pattern, see contribute.md for details',
+        },
+      ],
+    },
+  },
+];
 ```
 
 ## Further Reading
