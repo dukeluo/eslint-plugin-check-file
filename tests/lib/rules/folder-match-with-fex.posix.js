@@ -51,7 +51,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The folder of the file "/bar/__test__/foo.test.js" does not match the "**/__tests__/" pattern',
+              'The folder of the file "foo.test.js" does not match the "**/__tests__/" pattern',
             column: 1,
             line: 1,
           },
@@ -86,7 +86,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The folder of the file "/__test__/foo.test.js" does not match the "*/__tests__/" pattern',
+              'The folder of the file "foo.test.js" does not match the "*/__tests__/" pattern',
             column: 1,
             line: 1,
           },
@@ -99,7 +99,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The folder of the file "/bar/__tests__/foo.test.js" does not match the "*/__tests__/" pattern',
+              'The folder of the file "foo.test.js" does not match the "*/__tests__/" pattern',
             column: 1,
             line: 1,
           },
@@ -112,7 +112,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The folder of the file "__tests__/foo.test.js" does not match the "*/__tests__/" pattern',
+              'The folder of the file "foo.test.js" does not match the "*/__tests__/" pattern',
             column: 1,
             line: 1,
           },
@@ -157,7 +157,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The folder of the file "bar/_tests_/foo.test.js" does not match the "*/__tests__/" pattern',
+              'The folder of the file "foo.test.js" does not match the "*/__tests__/" pattern',
             column: 1,
             line: 1,
           },
@@ -170,7 +170,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The folder of the file "bar/_tests_/foo.test.jsx" does not match the "*/__tests__/" pattern',
+              'The folder of the file "foo.test.jsx" does not match the "*/__tests__/" pattern',
             column: 1,
             line: 1,
           },
@@ -183,7 +183,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The folder of the file "bar/_tests_/foo.test.ts" does not match the "*/__tests__/" pattern',
+              'The folder of the file "foo.test.ts" does not match the "*/__tests__/" pattern',
             column: 1,
             line: 1,
           },
@@ -196,7 +196,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The folder of the file "bar/_tests_/foo.test.tsx" does not match the "*/__tests__/" pattern',
+              'The folder of the file "foo.test.tsx" does not match the "*/__tests__/" pattern',
             column: 1,
             line: 1,
           },
@@ -231,7 +231,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The folder of the file "bar/_tests_/foo.test.js" does not match the "*/__tests__/" pattern',
+              'The folder of the file "foo.test.js" does not match the "*/__tests__/" pattern',
             column: 1,
             line: 1,
           },
@@ -244,7 +244,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The folder of the file "bar/_tests_/foo.test.ts" does not match the "*/__tests__/" pattern',
+              'The folder of the file "foo.test.ts" does not match the "*/__tests__/" pattern',
             column: 1,
             line: 1,
           },
