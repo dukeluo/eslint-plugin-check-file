@@ -2,10 +2,11 @@ import checkFile from '../../lib/index.js';
 
 export default [
   {
-    files: ['src/**/*'],
+    files: ['src/**/*.*'],
     plugins: {
       'check-file': checkFile,
     },
+    processor: 'check-file/eslint-processor-check-file',
     rules: {
       'check-file/no-index': 'error',
       'check-file/filename-blocklist': [
@@ -28,11 +29,13 @@ export default [
           '**/*.{jsx,tsx}': 'PASCAL_CASE',
           '**/*.{js,ts}': 'CAMEL_CASE',
         },
+        {
+          ignoreMiddleExtensions: true,
+        },
       ],
       'check-file/folder-naming-convention': [
         'error',
         {
-          'src/**/': 'CAMEL_CASE',
           'src/components/*/': 'PASCAL_CASE',
         },
       ],
