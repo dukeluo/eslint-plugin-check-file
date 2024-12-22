@@ -52,7 +52,8 @@
     "lint:fix": "eslint . --fix && prettier --write **/*.md",
     "test": "c8 mocha --loader=esmock tests --recursive",
     "test:report": "c8 report -r=lcov",
-    "test:cli": "mocha --loader=esmock"
+    "test:cli": "mocha --loader=esmock",
+    "example:lint": "npm run lint --workspace=basic"
   },
   "dependencies": {
     "is-glob": "^4.0.3",
@@ -80,5 +81,8 @@
   },
   "peerDependencies": {
     "eslint": ">=9.0.0"
-  }
+  },
+  "workspaces": [
+    "examples/basic"
+  ]
 }
