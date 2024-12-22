@@ -37,6 +37,7 @@ export default [
         'error',
         {
           'src/components/*/': 'PASCAL_CASE',
+          'src/!(components)/**/!(__tests__)/': 'CAMEL_CASE',
         },
       ],
     },

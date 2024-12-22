@@ -51,7 +51,7 @@ In addition to the built-in naming conventions, you can also set custom naming p
 ...
 ```
 
-**Tip:** To exclude `__tests__` folder in `src`, use the glob expression `src/!(__tests__)/**/` to get the target folders.
+**Tip:** To exclude `__tests__` folder in `src`, use the glob expression `src/**/!(__tests__)/` to get the target folders.
 
 ## Built-in custom patterns
 
