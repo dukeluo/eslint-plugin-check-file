@@ -89,7 +89,10 @@ Then configure the rules you want to use under the rules section.
 ```json
 {
   "rules": {
-    "check-file/no-index": "error",
+    "check-file/no-index": [
+      "error",
+      ["src/components/**", "src/utils/**"]
+    ],
     "check-file/filename-blocklist": [
       "error",
       {
