@@ -2,10 +2,6 @@
 
 Allows you to blocklist certain filename patterns.
 
-:warning: :warning: :warning:
-
-**The rule was called `filename-blacklist` in versions below v2.0.0. This rule name has been abandoned since it is less inclusive. Please update to the latest rule name.**
-
 ## Rule Details
 
 This rule aims to maintain a consistent naming scheme. This rule uses the glob match syntax to declare blocklisted and preferred filename patterns.
@@ -31,10 +27,6 @@ Examples of **correct** filename with path for this rule:
 src/foo.models.ts
 src/bar.models.ts
 ```
-
-:warning: :warning: :warning:
-
-**Versions <= v2.0.0 can only select target files by their filenames, not by their paths. This support has been deprecated and will be removed in the future. Please select your target files by their file path. For example, using `**/_.js`instead of`_.js`to select all`js` files.\*\*
 
 ### Options
 

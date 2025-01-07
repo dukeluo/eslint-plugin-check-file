@@ -17,83 +17,6 @@ const rule = await esmock(
 const ruleTester = new RuleTester();
 
 ruleTester.run(
-  "filename-blocklist with option: [{ '*.models.ts': '*.model.ts', '*.utils.ts': '*.util.ts' }]",
-  rule,
-  {
-    valid: [
-      {
-        code: "var foo = 'bar';",
-        filename: 'src/foo.model.ts',
-        options: [
-          {
-            '*.models.ts': '*.model.ts',
-            '*.utils.ts': '*.util.ts',
-          },
-        ],
-      },
-      {
-        code: "var foo = 'bar';",
-        filename: 'src/foo.util.ts',
-        options: [
-          {
-            '*.models.ts': '*.model.ts',
-            '*.utils.ts': '*.util.ts',
-          },
-        ],
-      },
-      {
-        code: "var foo = 'bar';",
-        filename: 'src/foo.apis.ts',
-        options: [
-          {
-            '*.models.ts': '*.model.ts',
-            '*.utils.ts': '*.util.ts',
-          },
-        ],
-      },
-    ],
-    invalid: [
-      {
-        code: "var foo = 'bar';",
-        filename: 'src/foo.models.ts',
-        options: [
-          {
-            '*.models.ts': '*.model.ts',
-            '*.utils.ts': '*.util.ts',
-          },
-        ],
-        errors: [
-          {
-            message:
-              'The filename "foo.models.ts" matches the blocklisted "*.models.ts" pattern, use a pattern like "*.model.ts" instead',
-            column: 1,
-            line: 1,
-          },
-        ],
-      },
-      {
-        code: "var foo = 'bar';",
-        filename: 'src/foo.utils.ts',
-        options: [
-          {
-            '*.models.ts': '*.model.ts',
-            '*.utils.ts': '*.util.ts',
-          },
-        ],
-        errors: [
-          {
-            message:
-              'The filename "foo.utils.ts" matches the blocklisted "*.utils.ts" pattern, use a pattern like "*.util.ts" instead',
-            column: 1,
-            line: 1,
-          },
-        ],
-      },
-    ],
-  }
-);
-
-ruleTester.run(
   "filename-blocklist with option: [{ 'src/*.models.ts': '*.model.ts', 'src/*.utils.ts': '*.util.ts' }]",
   rule,
   {
@@ -171,7 +94,7 @@ ruleTester.run(
 );
 
 ruleTester.run(
-  "filename-blocklist with option: [{ '*.models.ts': 'FOO' }]",
+  "filename-blocklist with option: [{ 'src/*.models.ts': 'FOO' }]",
   rule,
   {
     valid: [],
@@ -180,7 +103,7 @@ ruleTester.run(
       {
         code: "var foo = 'bar';",
         filename: 'src/foo.models.ts',
-        options: [{ '*.models.ts': 'FOO' }],
+        options: [{ 'src/*.models.ts': 'FOO' }],
         errors: [
           {
             message:
@@ -238,7 +161,7 @@ ruleTester.run('filename-blocklist with option: []', rule, {
 });
 
 ruleTester.run(
-  "filename-blocklist with option: [{'*.models.ts': '*.model.ts'}, { errorMessage: 'The file \"{{ target }}\" is blocked since it since it matches the blocklisted pattern \"{{ pattern }}\", see contribute.md for details' }]",
+  "filename-blocklist with option: [{'src/*.models.ts': '*.model.ts'}, { errorMessage: 'The file \"{{ target }}\" is blocked since it since it matches the blocklisted pattern \"{{ pattern }}\", see contribute.md for details' }]",
   rule,
   {
     valid: [
@@ -246,7 +169,7 @@ ruleTester.run(
         code: "var foo = 'bar';",
         filename: 'src/foo.apis.ts',
         options: [
-          { '*.models.ts': '*.model.ts' },
+          { 'src/*.models.ts': '*.model.ts' },
           {
             errorMessage:
               'The file "{{ target }}" is blocked since it since it matches the blocklisted pattern "{{ pattern }}", see contribute.md for details',
@@ -260,7 +183,7 @@ ruleTester.run(
         code: "var foo = 'bar';",
         filename: 'src/foo.models.ts',
         options: [
-          { '*.models.ts': '*.model.ts' },
+          { 'src/*.models.ts': '*.model.ts' },
           {
             errorMessage:
               'The file "{{ target }}" is blocked since it since it matches the blocklisted pattern "{{ pattern }}", see contribute.md for details',
@@ -269,7 +192,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The file "foo.models.ts" is blocked since it since it matches the blocklisted pattern "*.models.ts", see contribute.md for details',
+              'The file "foo.models.ts" is blocked since it since it matches the blocklisted pattern "src/*.models.ts", see contribute.md for details',
             column: 1,
             line: 1,
           },
@@ -280,7 +203,7 @@ ruleTester.run(
 );
 
 ruleTester.run(
-  "filename-blocklist with option: [{'*.models.ts': ''}, { errorMessage: 'The file \"{{ target }}\" is blocked since it since it matches the blocklisted pattern \"{{ pattern }}\", see contribute.md for details' }]",
+  "filename-blocklist with option: [{'src/*.models.ts': ''}, { errorMessage: 'The file \"{{ target }}\" is blocked since it since it matches the blocklisted pattern \"{{ pattern }}\", see contribute.md for details' }]",
   rule,
   {
     valid: [
@@ -288,7 +211,7 @@ ruleTester.run(
         code: "var foo = 'bar';",
         filename: 'src/foo.apis.ts',
         options: [
-          { '*.models.ts': '' },
+          { 'src/*.models.ts': '' },
           {
             errorMessage:
               'The file "{{ target }}" is blocked since it since it matches the blocklisted pattern "{{ pattern }}", see contribute.md for details',
@@ -302,7 +225,7 @@ ruleTester.run(
         code: "var foo = 'bar';",
         filename: 'src/foo.models.ts',
         options: [
-          { '*.models.ts': '' },
+          { 'src/*.models.ts': '' },
           {
             errorMessage:
               'The file "{{ target }}" is blocked since it since it matches the blocklisted pattern "{{ pattern }}", see contribute.md for details',
@@ -311,7 +234,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'The file "foo.models.ts" is blocked since it since it matches the blocklisted pattern "*.models.ts", see contribute.md for details',
+              'The file "foo.models.ts" is blocked since it since it matches the blocklisted pattern "src/*.models.ts", see contribute.md for details',
             column: 1,
             line: 1,
           },
@@ -321,22 +244,26 @@ ruleTester.run(
   }
 );
 
-ruleTester.run("filename-blocklist with option: [{'*.models.ts': ''}]", rule, {
-  valid: [],
+ruleTester.run(
+  "filename-blocklist with option: [{'src/*.models.ts': ''}]",
+  rule,
+  {
+    valid: [],
 
-  invalid: [
-    {
-      code: "var foo = 'bar';",
-      filename: 'src/foo.models.ts',
-      options: [{ '*.models.ts': '' }],
-      errors: [
-        {
-          message:
-            'There is an invalid pattern "", please double-check it and try again',
-          column: 1,
-          line: 1,
-        },
-      ],
-    },
-  ],
-});
+    invalid: [
+      {
+        code: "var foo = 'bar';",
+        filename: 'src/foo.models.ts',
+        options: [{ 'src/*.models.ts': '' }],
+        errors: [
+          {
+            message:
+              'There is an invalid pattern "", please double-check it and try again',
+            column: 1,
+            line: 1,
+          },
+        ],
+      },
+    ],
+  }
+);
