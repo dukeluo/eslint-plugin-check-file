@@ -35,18 +35,22 @@ src/bar.models.ts
 The key is used to declare the blocklisted filename pattern, while the value is used to hint at the correct filename that should be used instead. Both the key and value in the blocklist pattern object are glob expressions. The plugin will only check blocklisted pattern you explicitly provided:
 
 ```js
-module.exports = {
-  plugins: ['check-file'],
-  rules: {
-    'check-file/filename-blocklist': [
-      'error',
-      {
-        '**/*.model.ts': '*.models.ts',
-        '**/*.util.ts': '*.utils.ts',
-      },
-    ],
+export default [
+  {
+    plugins: {
+      'check-file': checkFile,
+    },
+    rules: {
+      'check-file/filename-blocklist': [
+        'error',
+        {
+          '**/*.model.ts': '*.models.ts',
+          '**/*.util.ts': '*.utils.ts',
+        },
+      ],
+    },
   },
-};
+];
 ```
 
 #### rule configuration object
@@ -61,19 +65,23 @@ Customizes the error message displayed when a file is blocked due to matching a 
 When `errorMessage` is set, the suggested glob pattern is not necessary, it can be set as empty string.
 
 ```js
-module.exports = {
-  plugins: ['check-file'],
-  rules: {
-    'check-file/filename-blocklist': [
-      'error',
-      { '*.models.ts': '' },
-      {
-        errorMessage:
-          'The file "{{ target }}" is blocked since it since it matches the blocklisted pattern "{{ pattern }}", see contribute.md for details',
-      },
-    ],
+export default [
+  {
+    plugins: {
+      'check-file': checkFile,
+    },
+    rules: {
+      'check-file/filename-blocklist': [
+        'error',
+        { '*.models.ts': '' },
+        {
+          errorMessage:
+            'The file "{{ target }}" is blocked since it since it matches the blocklisted pattern "{{ pattern }}", see contribute.md for details',
+        },
+      ],
+    },
   },
-};
+];
 ```
 
 ## Further Reading
