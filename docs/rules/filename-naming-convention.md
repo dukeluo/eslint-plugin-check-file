@@ -49,9 +49,7 @@ In addition to the built-in naming conventions, you can also set custom naming p
 ...
 ```
 
-**Tip 1:** To selecte all your `js` files, your can use the glob expression `**/*.js`.
-
-**Tip 2:** v1 versions have the legacy support for selecting target files based on their extensions. This legacy support has been removed since v2.0.0. Please select your target files by their file path. For example, using `**/*.js` instead of `*.js` to select all `js` files.
+**Tip:** To selecte all your `js` files, your can use the glob expression `**/*.js`.
 
 ### Prefined Match Syntax
 
@@ -90,18 +88,22 @@ src/Portal/Portal.types.ts
 The key is used to select target files, while the value is used to declare the naming pattern for the filename. You can specify a different naming pattern for different files. The plugin will only check files you explicitly selected:
 
 ```js
-module.exports = {
-  plugins: ['check-file'],
-  rules: {
-    'check-file/filename-naming-convention': [
-      'error',
-      {
-        '**/*.{jsx,tsx}': 'CAMEL_CASE',
-        '**/*.{js,ts}': 'KEBAB_CASE',
-      },
-    ],
+export default [
+  {
+    plugins: {
+      'check-file': checkFile,
+    },
+    rules: {
+      'check-file/filename-naming-convention': [
+        'error',
+        {
+          '**/*.{jsx,tsx}': 'CAMEL_CASE',
+          '**/*.{js,ts}': 'KEBAB_CASE',
+        },
+      ],
+    },
   },
-};
+];
 ```
 
 #### rule configuration object
@@ -113,21 +115,25 @@ If `true`, the rule will ignore the middle extensions of the filename.
 In some cases, you may want to ignore the middle extensions of the filename. For example, you want to lint the base name of the config and test/spec files—e.g., `babel.config.js` and `date.test.js`, you can do so by setting the `ignoreMiddleExtensions` option to `true`, and the rule will only validate its base name, in this case the base name will be `babel` and `date`.
 
 ```js
-module.exports = {
-  plugins: ['check-file'],
-  rules: {
-    'check-file/filename-naming-convention': [
-      'error',
-      {
-        '**/*.{jsx,tsx}': 'CAMEL_CASE',
-        '**/*.{js,ts}': 'KEBAB_CASE',
-      },
-      {
-        ignoreMiddleExtensions: true,
-      },
-    ],
+export default [
+  {
+    plugins: {
+      'check-file': checkFile,
+    },
+    rules: {
+      'check-file/filename-naming-convention': [
+        'error',
+        {
+          '**/*.{jsx,tsx}': 'CAMEL_CASE',
+          '**/*.{js,ts}': 'KEBAB_CASE',
+        },
+        {
+          ignoreMiddleExtensions: true,
+        },
+      ],
+    },
   },
-};
+];
 ```
 
 ##### `errorMessage`
@@ -138,19 +144,23 @@ Customizes the error message displayed when a file's filename doesn't match the 
 - `{{ pattern }}`: Represents the naming pattern.
 
 ```js
-module.exports = {
-  plugins: ['check-file'],
-  rules: {
-    'check-file/filename-naming-convention': [
-      'error',
-      { '**/*/!(index).*': '<1>' },
-      {
-        errorMessage:
-          'The file "{{ target }}" does not match file naming convention defined("{{ pattern }}") for this project, see contribute.md for details',
-      },
-    ],
+export default [
+  {
+    plugins: {
+      'check-file': checkFile,
+    },
+    rules: {
+      'check-file/filename-naming-convention': [
+        'error',
+        { '**/*/!(index).*': '<1>' },
+        {
+          errorMessage:
+            'The file "{{ target }}" does not match file naming convention defined("{{ pattern }}") for this project, see contribute.md for details',
+        },
+      ],
+    },
   },
-};
+];
 ```
 
 ## Further Reading
