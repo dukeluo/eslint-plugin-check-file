@@ -413,6 +413,11 @@ ruleTester.run(
         filename: 'src/app/_components/page.ts',
         options: [{ 'src/**/': 'NEXT_JS_APP_ROUTER_CASE' }],
       },
+      {
+        code: "var foo = 'bar';",
+        filename: 'src/app/rss.xml/route.ts',
+        options: [{ 'src/**/': 'NEXT_JS_APP_ROUTER_CASE' }],
+      },
     ],
 
     invalid: [
@@ -554,6 +559,32 @@ ruleTester.run(
           {
             message:
               'The folder "(marketingSpeak)" does not match the "NEXT_JS_APP_ROUTER_CASE" pattern',
+            column: 1,
+            line: 1,
+          },
+        ],
+      },
+      {
+        code: "var foo = 'bar';",
+        filename: 'src/app/rss.xml.xl/route.ts',
+        options: [{ 'src/**/': 'NEXT_JS_APP_ROUTER_CASE' }],
+        errors: [
+          {
+            message:
+              'The folder "rss.xml.xl" does not match the "NEXT_JS_APP_ROUTER_CASE" pattern',
+            column: 1,
+            line: 1,
+          },
+        ],
+      },
+      {
+        code: "var foo = 'bar';",
+        filename: 'src/app/Rss.xml/route.ts',
+        options: [{ 'src/**/': 'NEXT_JS_APP_ROUTER_CASE' }],
+        errors: [
+          {
+            message:
+              'The folder "Rss.xml" does not match the "NEXT_JS_APP_ROUTER_CASE" pattern',
             column: 1,
             line: 1,
           },
