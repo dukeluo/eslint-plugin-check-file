@@ -316,6 +316,30 @@ ruleTester.run('filename-naming-convention with option on Windows: []', rule, {
 });
 
 ruleTester.run(
+  "filename-naming-convention with option on Windows: [{ '**/*.js': 'NEXT_JS_PAGE_ROUTER_FILENAME_CASE' }]",
+  rule,
+  {
+    valid: [],
+
+    invalid: [
+      {
+        code: "var foo = 'bar';",
+        filename: 'src\\utils\\calculatePrice.js',
+        options: [{ '**/*.js': 'NEXT_JS_PAGE_ROUTER_FILENAME_CASE' }],
+        errors: [
+          {
+            message:
+              'There is an invalid pattern "NEXT_JS_PAGE_ROUTER_FILENAME_CASE", please double-check it and try again',
+            column: 1,
+            line: 1,
+          },
+        ],
+      },
+    ],
+  }
+);
+
+ruleTester.run(
   'filename-naming-convention with option on Windows: [{ "*": "KEBAB_CASE"}]',
   rule,
   {

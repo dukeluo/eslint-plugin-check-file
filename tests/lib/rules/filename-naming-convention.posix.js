@@ -655,6 +655,146 @@ ruleTester.run(
 );
 
 ruleTester.run(
+  "filename-naming-convention with option: [{ '**/*.js': 'NEXT_JS_PAGE_ROUTER_FILENAME_CASE', '**/*.jsx': 'NEXT_JS_PAGE_ROUTER_FILENAME_CASE' }]",
+  rule,
+  {
+    valid: [
+      {
+        code: "var foo = 'bar';",
+        filename: 'src/pages/_app.js',
+        options: [
+          {
+            '**/*.js': 'NEXT_JS_PAGE_ROUTER_FILENAME_CASE',
+            '**/*.jsx': 'NEXT_JS_PAGE_ROUTER_FILENAME_CASE',
+          },
+        ],
+      },
+      {
+        code: "var foo = 'bar';",
+        filename: 'src/pages/_document.js',
+        options: [
+          {
+            '**/*.js': 'NEXT_JS_PAGE_ROUTER_FILENAME_CASE',
+            '**/*.jsx': 'NEXT_JS_PAGE_ROUTER_FILENAME_CASE',
+          },
+        ],
+      },
+      {
+        code: "var foo = 'bar';",
+        filename: 'src/pages/_error.js',
+        options: [
+          {
+            '**/*.js': 'NEXT_JS_PAGE_ROUTER_FILENAME_CASE',
+            '**/*.jsx': 'NEXT_JS_PAGE_ROUTER_FILENAME_CASE',
+          },
+        ],
+      },
+      {
+        code: "var foo = 'bar';",
+        filename: 'src/pages/404.js',
+        options: [
+          {
+            '**/*.js': 'NEXT_JS_PAGE_ROUTER_FILENAME_CASE',
+            '**/*.jsx': 'NEXT_JS_PAGE_ROUTER_FILENAME_CASE',
+          },
+        ],
+      },
+      {
+        code: "var foo = 'bar';",
+        filename: 'src/pages/500.js',
+        options: [
+          {
+            '**/*.js': 'NEXT_JS_PAGE_ROUTER_FILENAME_CASE',
+            '**/*.jsx': 'NEXT_JS_PAGE_ROUTER_FILENAME_CASE',
+          },
+        ],
+      },
+      {
+        code: "var foo = 'bar';",
+        filename: 'src/pages/blog/index.js',
+        options: [
+          {
+            '**/*.js': 'NEXT_JS_PAGE_ROUTER_FILENAME_CASE',
+            '**/*.jsx': 'NEXT_JS_PAGE_ROUTER_FILENAME_CASE',
+          },
+        ],
+      },
+      {
+        code: "var foo = 'bar';",
+        filename: 'src/pages/blog/[post].js',
+        options: [
+          {
+            '**/*.js': 'NEXT_JS_PAGE_ROUTER_FILENAME_CASE',
+            '**/*.jsx': 'NEXT_JS_PAGE_ROUTER_FILENAME_CASE',
+          },
+        ],
+      },
+      {
+        code: "var foo = 'bar';",
+        filename: 'src/pages/blog/[blogPost].js',
+        options: [
+          {
+            '**/*.js': 'NEXT_JS_PAGE_ROUTER_FILENAME_CASE',
+            '**/*.jsx': 'NEXT_JS_PAGE_ROUTER_FILENAME_CASE',
+          },
+        ],
+      },
+      {
+        code: "var foo = 'bar';",
+        filename: 'src/pages/blog/[[...slug]].js',
+        options: [
+          {
+            '**/*.js': 'NEXT_JS_PAGE_ROUTER_FILENAME_CASE',
+            '**/*.jsx': 'NEXT_JS_PAGE_ROUTER_FILENAME_CASE',
+          },
+        ],
+      },
+      {
+        code: "var foo = 'bar';",
+        filename: 'src/pages/blog/[...params].js',
+        options: [
+          {
+            '**/*.js': 'NEXT_JS_PAGE_ROUTER_FILENAME_CASE',
+            '**/*.jsx': 'NEXT_JS_PAGE_ROUTER_FILENAME_CASE',
+          },
+        ],
+      },
+      {
+        code: "var foo = 'bar';",
+        filename: 'src/pages/blog/[category]/[post].js',
+        options: [
+          {
+            '**/*.js': 'NEXT_JS_PAGE_ROUTER_FILENAME_CASE',
+            '**/*.jsx': 'NEXT_JS_PAGE_ROUTER_FILENAME_CASE',
+          },
+        ],
+      },
+    ],
+
+    invalid: [
+      {
+        code: "var foo = 'bar';",
+        filename: 'src/utils/CALCULATE_PRICE.js',
+        options: [
+          {
+            '**/*.js': 'NEXT_JS_PAGE_ROUTER_FILENAME_CASE',
+            '**/*.jsx': 'NEXT_JS_PAGE_ROUTER_FILENAME_CASE',
+          },
+        ],
+        errors: [
+          {
+            message:
+              'The filename "CALCULATE_PRICE.js" does not match the "NEXT_JS_PAGE_ROUTER_FILENAME_CASE" pattern',
+            column: 1,
+            line: 1,
+          },
+        ],
+      },
+    ],
+  }
+);
+
+ruleTester.run(
   "filename-naming-convention with option: [{ '**/*.js': '__+([a-z])', '**/*.jsx': '__+([a-z])' }]",
   rule,
   {

@@ -6,7 +6,7 @@ Allows you to enforce a consistent naming pattern for the filename of the specif
 
 This rule aims to format the filename of the specified file. This rule uses the glob match syntax to match target files and declare the naming pattern for the filename.
 
-There are six naming conventions built into this rule, including `CAMEL_CASE`, `PASCAL_CASE`, `SNAKE_CASE`, `KEBAB_CASE`, `SCREAMING_SNAKE_CASE` and `FLAT_CASE`.
+There are six basic naming conventions built into this rule, including `CAMEL_CASE`, `PASCAL_CASE`, `SNAKE_CASE`, `KEBAB_CASE`, `SCREAMING_SNAKE_CASE` and `FLAT_CASE`.
 
 | Formatting  | Name                   |
 | ----------- | ---------------------- |
@@ -16,6 +16,8 @@ There are six naming conventions built into this rule, including `CAMEL_CASE`, `
 | hello-world | `KEBAB_CASE`           |
 | HELLO_WORLD | `SCREAMING_SNAKE_CASE` |
 | helloworld  | `FLAT_CASE`            |
+
+And there is also a special naming convention for Next.js page router project, which is `NEXT_JS_PAGE_ROUTER_FILENAME_CASE`, you can use it to ensure the filename of the page router is consistent with the naming convention.
 
 If the rule had been set as follows:
 
