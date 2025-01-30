@@ -88,4 +88,5 @@ export default [
 
 - [micromatch](https://github.com/micromatch/micromatch)
 - [glob](<https://en.wikipedia.org/wiki/Glob_(programming)>)
-- [testing glob expression online](https://globster.xyz)
+- [testing glob expression online 1](https://globster.xyz)
+- [testing glob expression online 2](https://www.digitalocean.com/community/tools/glob)
