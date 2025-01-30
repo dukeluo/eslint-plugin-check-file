@@ -5,6 +5,31 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.0.0](https://github.com/dukeluo/eslint-plugin-check-file/compare/v2.8.0...v3.0.0) - 2025-01-30
+
+### Added
+
+- the plugin can lint non-js/ts files (e.g., images, styles, etc.) with processor `eslint-processor-check-file`
+- the rule `filename-naming-convention` can be used with a new built-in naming convention `NEXT_JS_PAGE_ROUTER_FILENAME_CASE` which is used for Next.js page router project
+- the rule `no-index` can set `errorMessage` property to customize the error message
+- the rule `folder-match-with-fex` can set `errorMessage` property to customize the error message
+- the rule `folder-naming-convention` can set `errorMessage` property to customize the error message
+
+### Changed
+
+- the error message of the rule `folder-match-with-fex` uses filename without path
+- improve documentation
+
+### Fixed
+
+- `NEXT_JS_APP_ROUTER_CASE` can support filename route like `rss.xml`
+
+### Removed
+
+- remove legacy support for `context` object
+- remove legacy support for rule `filename-blocklist`
+- remove legacy configuration support
+
 ## [2.8.0](https://github.com/dukeluo/eslint-plugin-check-file/compare/v2.7.1...v2.8.0) - 2024-04-14
 
 ### Added
