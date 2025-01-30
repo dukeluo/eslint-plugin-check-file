@@ -8,7 +8,7 @@ This rule aims to format the name of the specified folder. This rule uses the gl
 
 There are six basic naming conventions built into this rule, including `CAMEL_CASE`, `PASCAL_CASE`, `SNAKE_CASE`, `KEBAB_CASE`, `SCREAMING_SNAKE_CASE` and `FLAT_CASE`.
 
-Additionally, there is a naming convention called `NEXT_JS_APP_ROUTER_CASE` used to format folder names in Next.js projects that use the App Router. You can read more about it under [Built-in custom patterns](#built-in-custom-patterns).
+Additionally, there is a naming convention called `NEXT_JS_APP_ROUTER_CASE` used to format folder names in Next.js projects that use the App Router. You can read more about it under [`NEXT_JS_APP_ROUTER_CASE`](#NEXT_JS_APP_ROUTER_CASE).
 
 | Formatting  | Name                   |
 | ----------- | ---------------------- |
@@ -41,8 +41,6 @@ Examples of **correct** folder name for this rule:
 src/components/displayLabel/displayLabel.js
 ```
 
-## Custom patterns
-
 In addition to the built-in naming conventions, you can also set custom naming patterns using glob match syntax. The following code shows an example of how to ensure that all the folders under the `components` folder are named begin with `__`:
 
 ```js
@@ -53,11 +51,7 @@ In addition to the built-in naming conventions, you can also set custom naming p
 
 **Tip:** To exclude `__tests__` folder in `src`, use the glob expression `src/**/!(__tests__)/` to get the target folders.
 
-## Built-in custom patterns
-
-Some patterns are complex enough that they warrant their own definition within the lib.
-
-### Next.js custom pattern
+### `NEXT_JS_APP_ROUTER_CASE`
 
 The `NEXT_JS_APP_ROUTER_CASE` aims to support a wide range of named constructs in Next.js App Router projects.
 
@@ -82,8 +76,6 @@ export const Page({ params: { pageId } }) { ... }
 ```
 
 Besides this, the custom pattern should support all other Next.js naming conventions.
-
-You can read more about them [here](https://github.com/dukeluo/eslint-plugin-check-file/pull/27#issuecomment-1582551071).
 
 While `NEXT_JS_APP_ROUTER_CASE` covers many naming cases, it's possible that some cases may be missing. If you come across any missing cases, I encourage you to open an issue and provide the necessary details. Your feedback will help me improve and enhance the naming convention.
 

@@ -8,6 +8,8 @@ This rule aims to format the filename of the specified file. This rule uses the 
 
 There are six basic naming conventions built into this rule, including `CAMEL_CASE`, `PASCAL_CASE`, `SNAKE_CASE`, `KEBAB_CASE`, `SCREAMING_SNAKE_CASE` and `FLAT_CASE`.
 
+And there is also a special naming convention for Next.js page router project, which is `NEXT_JS_PAGE_ROUTER_FILENAME_CASE`, you can use it to ensure the filename of the page router is consistent with the naming convention. You can read more about it under [`NEXT_JS_PAGE_ROUTER_FILENAME_CASE`](#NEXT_JS_PAGE_ROUTER_FILENAME_CASE).
+
 | Formatting  | Name                   |
 | ----------- | ---------------------- |
 | helloWorld  | `CAMEL_CASE`           |
@@ -16,8 +18,6 @@ There are six basic naming conventions built into this rule, including `CAMEL_CA
 | hello-world | `KEBAB_CASE`           |
 | HELLO_WORLD | `SCREAMING_SNAKE_CASE` |
 | helloworld  | `FLAT_CASE`            |
-
-And there is also a special naming convention for Next.js page router project, which is `NEXT_JS_PAGE_ROUTER_FILENAME_CASE`, you can use it to ensure the filename of the page router is consistent with the naming convention.
 
 If the rule had been set as follows:
 
@@ -52,6 +52,12 @@ In addition to the built-in naming conventions, you can also set custom naming p
 ```
 
 **Tip:** To selecte all your `js` files, your can use the glob expression `**/*.js`.
+
+### `NEXT_JS_PAGE_ROUTER_FILENAME_CASE`
+
+The `NEXT_JS_PAGE_ROUTER_FILENAME_CASE` aims to support a wide range of filename naming convention in Next.js Page Router projects. If you would like to enforce a camelCase naming convention for your filename, but also support Next.js' Dynamic segments, Catch-all segments and Optional Catch-all Segments, this pattern is for you.
+
+While `NEXT_JS_PAGE_ROUTER_FILENAME_CASE` covers many naming cases, it's possible that some cases may be missing. If you come across any missing cases, I encourage you to open an issue and provide the necessary details. Your feedback will help me improve and enhance the naming convention.
 
 ### Prefined Match Syntax
 

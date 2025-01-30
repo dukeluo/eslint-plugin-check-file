@@ -7,9 +7,7 @@
 [![Test Coverage][test-coverage-image]][test-coverage-url]
 [![Follow Author on X][x-follow-image]][x-follow-url]
 
-[![Donate][ko-fi-image]][ko-fi-url]
-
-ESLint rules for consistent filename and folder. Allows you to enforce a consistent naming pattern for the filename and folder.
+An ESLint plugin that enforces consistent naming conventions for files and folders in your project. It helps maintain a clean and organized codebase by allowing you to define and enforce specific patterns for filenames and directory structures.
 
 ## Installation
 
@@ -28,17 +26,19 @@ npm install eslint-plugin-check-file --save-dev
 
 ## Usage
 
-### Flat Config
+This plugin supports ESLint's [flat configuration](https://eslint.org/docs/latest/use/configure/configuration-files). Here's a complete example:
 
 ```javascript
 import checkFile from 'eslint-plugin-check-file';
 
 export default [
   {
-    files: ['src/**/*'],
+    files: ['src/**/*.*'],
     plugins: {
       'check-file': checkFile,
     },
+    // optional: add this processor if you want to lint non-js/ts files (images, styles, etc.)
+    processor: 'check-file/eslint-processor-check-file',
     rules: {
       'check-file/no-index': 'error',
       'check-file/filename-blocklist': [
@@ -52,74 +52,26 @@ export default [
         'error',
         {
           '*.test.{js,jsx,ts,tsx}': '**/__tests__/',
-          '*.styled.{jsx,tsx}': '**/pages/',
+          '*.styled.{jsx,tsx}': '**/components/',
         },
       ],
       'check-file/filename-naming-convention': [
         'error',
         {
-          '**/*.{jsx,tsx}': 'CAMEL_CASE',
-          '**/*.{js,ts}': 'KEBAB_CASE',
+          '**/*.{jsx,tsx}': 'PASCAL_CASE',
+          '**/*.{js,ts}': 'CAMEL_CASE',
         },
       ],
       'check-file/folder-naming-convention': [
         'error',
         {
-          'src/**/': 'CAMEL_CASE',
-          'mocks/*/': 'KEBAB_CASE',
+          'src/components/*/': 'PASCAL_CASE',
+          'src/!(components)/**/!(__tests__)/': 'CAMEL_CASE',
         },
       ],
     },
   },
 ];
-```
-
-### `eslintrc`
-
-Add `check-file` to the plugins section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
-
-```json
-{
-  "plugins": ["check-file"]
-}
-```
-
-Then configure the rules you want to use under the rules section.
-
-```json
-{
-  "rules": {
-    "check-file/no-index": "error",
-    "check-file/filename-blocklist": [
-      "error",
-      {
-        "**/*.model.ts": "*.models.ts",
-        "**/*.util.ts": "*.utils.ts"
-      }
-    ],
-    "check-file/folder-match-with-fex": [
-      "error",
-      {
-        "*.test.{js,jsx,ts,tsx}": "**/__tests__/",
-        "*.styled.{jsx,tsx}": "**/pages/"
-      }
-    ],
-    "check-file/filename-naming-convention": [
-      "error",
-      {
-        "**/*.{jsx,tsx}": "CAMEL_CASE",
-        "**/*.{js,ts}": "KEBAB_CASE"
-      }
-    ],
-    "check-file/folder-naming-convention": [
-      "error",
-      {
-        "src/**/": "CAMEL_CASE",
-        "mocks/*/": "KEBAB_CASE"
-      }
-    ]
-  }
-}
 ```
 
 ## Supported Rules
@@ -129,6 +81,18 @@ Then configure the rules you want to use under the rules section.
 - [check-file/folder-match-with-fex](docs/rules/folder-match-with-fex.md): Enforce a consistent naming pattern for folder names for specified files
 - [check-file/filename-naming-convention](docs/rules/filename-naming-convention.md): Enforce a consistent naming pattern for filenames for specified files
 - [check-file/folder-naming-convention](docs/rules/folder-naming-convention.md): Enforce a consistent naming pattern for folder names for specified folders
+
+## Version Compatibility
+
+Version 3.x and above only support ESLint's flat configuration. For legacy configuration support, please use version 2.x.
+
+## Support
+
+If you find this plugin helpful, consider supporting the project:
+
+[![GitHub Sponsors][github-sponsors-image]][github-sponsors-url]
+
+[![Ko-fi][ko-fi-image]][ko-fi-url]
 
 [npm-image]: https://img.shields.io/npm/v/eslint-plugin-check-file.svg
 [downloads-image]: https://img.shields.io/npm/dm/eslint-plugin-check-file.svg
@@ -142,3 +106,5 @@ Then configure the rules you want to use under the rules section.
 [test-coverage-url]: https://app.codecov.io/gh/dukeluo/eslint-plugin-check-file
 [ko-fi-url]: https://ko-fi.com/huanluo
 [x-follow-url]: https://x.com/ihuanluo
+[github-sponsors-image]: https://img.shields.io/github/sponsors/dukeluo?label=Sponsor%20me%20on%20GitHub%20Sponsors
+[github-sponsors-url]: https://github.com/sponsors/dukeluo
