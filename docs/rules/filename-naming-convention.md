@@ -57,6 +57,17 @@ In addition to the built-in naming conventions, you can also set custom naming p
 
 The `NEXT_JS_PAGE_ROUTER_FILENAME_CASE` aims to support a wide range of filename naming convention in Next.js Page Router projects. If you would like to enforce a camelCase naming convention for your filename, but also support Next.js' Dynamic segments, Catch-all segments and Optional Catch-all Segments, this pattern is for you.
 
+```js
+...
+'check-file/filename-naming-convention': [
+  'error',
+  {
+    'src/**/*': 'NEXT_JS_PAGE_ROUTER_FILENAME_CASE',
+  },
+],
+...
+```
+
 While `NEXT_JS_PAGE_ROUTER_FILENAME_CASE` covers many naming cases, it's possible that some cases may be missing. If you come across any missing cases, I encourage you to open an issue and provide the necessary details. Your feedback will help me improve and enhance the naming convention.
 
 ### Prefined Match Syntax

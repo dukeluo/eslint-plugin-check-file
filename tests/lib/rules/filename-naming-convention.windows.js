@@ -743,6 +743,16 @@ ruleTester.run(
       },
       {
         code: "var foo = 'bar';",
+        filename: 'src\\services\\getBlogPosts.js',
+        options: [
+          {
+            '**/*.js': 'NEXT_JS_PAGE_ROUTER_FILENAME_CASE',
+            '**/*.jsx': 'NEXT_JS_PAGE_ROUTER_FILENAME_CASE',
+          },
+        ],
+      },
+      {
+        code: "var foo = 'bar';",
         filename: 'src\\pages\\blog\\[post].js',
         options: [
           {
