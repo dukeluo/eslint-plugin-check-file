@@ -6,6 +6,7 @@
 [![Test Workflow Status][test-workflow-image]][workflow-url]
 [![Test Coverage][test-coverage-image]][test-coverage-url]
 [![Follow Author on X][x-follow-image]][x-follow-url]
+[<img src="https://api.gitsponsors.com/api/badge/img?id=439649936" height="20">](https://api.gitsponsors.com/api/badge/link?p=sWWrO/PDXbOZNiardp+OHaNz6UE+2Zpns/SZ+BJW5DKCJpv+39/7p5ee3SV24q2yEQvF9vHhsGs3enN4swtSQhVuXaBcXCJ9SQPi4u4lv4cwbzwb76zvwlIXy3gS6z+jhLF96Z+U8f3Rpr/QI2NLRA==)
 
 An ESLint plugin that enforces consistent naming conventions for files and folders in your project. It helps maintain a clean and organized codebase by allowing you to define and enforce specific patterns for filenames and directory structures.
 
