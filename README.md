@@ -34,12 +34,15 @@ import checkFile from 'eslint-plugin-check-file';
 
 export default [
   {
+    // optional: add this processor to files which not processed by other processors
+    files: ['**/*.yaml', '**/*.webp', '**/.gitignore'],
+    processor: 'check-file/eslint-processor-check-file',
+  },
+  {
     files: ['src/**/*.*'],
     plugins: {
       'check-file': checkFile,
     },
-    // optional: add this processor if you want to lint non-js/ts files (images, styles, etc.)
-    processor: 'check-file/eslint-processor-check-file',
     rules: {
       'check-file/no-index': 'error',
       'check-file/filename-blocklist': [
