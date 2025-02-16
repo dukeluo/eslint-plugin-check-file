@@ -13,6 +13,7 @@ jobs:
           node-version-file: .tool-versions
       - run: npm install
       - run: npm run lint
+      - run: npm run example:lint
       - run: npm run test
       - run: npm run test:report
       - name: Upload coverage reports to Codecov
