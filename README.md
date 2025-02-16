@@ -34,8 +34,8 @@ import checkFile from 'eslint-plugin-check-file';
 
 export default [
   {
-    // optional: add this processor to files which not processed by other processors
-    files: ['**/*.yaml', '**/*.webp', '**/.gitignore'],
+    // optional: add this processor to files which not processed by other processors but still require linting
+    files: ['**/*.yaml', '**/*.webp'],
     processor: 'check-file/eslint-processor-check-file',
   },
   {
