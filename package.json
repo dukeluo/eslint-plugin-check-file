@@ -36,10 +36,17 @@
   "type": "module",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
+  "types": "dist/index.d.ts",
   "exports": {
     ".": {
-      "require": "./dist/index.cjs",
-      "import": "./dist/index.js"
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      },
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
     }
   },
   "files": [
@@ -74,7 +81,9 @@
     "husky": "^9.1.7",
     "mocha": "^10.8.2",
     "prettier": "^3.3.3",
-    "rollup": "^4.27.4"
+    "rollup": "^4.27.4",
+    "rollup-plugin-dts": "^6.2.1",
+    "typescript": "^5.8.3"
   },
   "engines": {
     "node": ">=18"
