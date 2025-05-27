@@ -113,6 +113,36 @@ Customizes the error message displayed when a folder does not match the naming p
 - `{{ target }}`: Represents the target folder.
 - `{{ pattern }}`: Represents the naming pattern for the target folder.
 
+##### `ignoreWords`
+
+An array of folder names to ignore during naming convention validation. Folders whose names exactly match any string in this array will be skipped and not validated against the naming pattern.
+
+```js
+export default [
+  {
+    plugins: {
+      'check-file': checkFile,
+    },
+    rules: {
+      'check-file/folder-naming-convention': [
+        'error',
+        {
+          'src/**/': 'CAMEL_CASE',
+          'mocks/*/': 'KEBAB_CASE',
+        },
+        {
+          errorMessage:
+            'The folder "{{ target }}" does not match the "{{ pattern }}" pattern, see contribute.md for details',
+          ignoreWords: ['skip_word_a', 'skip_word_b'],
+        },
+      ],
+    },
+  },
+];
+```
+
+With this configuration, folders named `skip_word_a` or `skip_word_b` will not be validated against the naming pattern, allowing paths like `mocks/skip_word_a/app-mock.ts` to pass validation even though `skip_word_a` doesn't follow the `KEBAB_CASE` pattern.
+
 ```js
 export default [
   {

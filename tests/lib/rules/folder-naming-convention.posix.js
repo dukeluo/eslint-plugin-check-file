@@ -659,3 +659,55 @@ ruleTester.run(
     ],
   }
 );
+
+ruleTester.run(
+  "folder-naming-convention with option: [{ 'mocks/**/': 'KEBAB_CASE' }, { ignoreWords: ['skip_word_a', 'skip_word_b'] }]",
+  rule,
+  {
+    valid: [
+      {
+        code: "var foo = 'bar';",
+        filename: 'mocks/skip_word_a/app-mock.ts',
+        options: [
+          { 'mocks/**/': 'KEBAB_CASE' },
+          { ignoreWords: ['skip_word_a', 'skip_word_b'] },
+        ],
+      },
+      {
+        code: "var foo = 'bar';",
+        filename: 'mocks/skip_word_b/another-mock.ts',
+        options: [
+          { 'mocks/**/': 'KEBAB_CASE' },
+          { ignoreWords: ['skip_word_a', 'skip_word_b'] },
+        ],
+      },
+      {
+        code: "var foo = 'bar';",
+        filename: 'mocks/valid-kebab-case/mock.ts',
+        options: [
+          { 'mocks/**/': 'KEBAB_CASE' },
+          { ignoreWords: ['skip_word_a', 'skip_word_b'] },
+        ],
+      },
+    ],
+
+    invalid: [
+      {
+        code: "var foo = 'bar';",
+        filename: 'mocks/InvalidCamelCase/mock.ts',
+        options: [
+          { 'mocks/**/': 'KEBAB_CASE' },
+          { ignoreWords: ['skip_word_a', 'skip_word_b'] },
+        ],
+        errors: [
+          {
+            message:
+              'The folder "InvalidCamelCase" does not match the "KEBAB_CASE" pattern',
+            column: 1,
+            line: 1,
+          },
+        ],
+      },
+    ],
+  }
+);
