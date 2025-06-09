@@ -1,5 +1,8 @@
 name: Running test suite
 on: [push, pull_request]
+permissions:
+  contents: read
+  statuses: write
 jobs:
   test:
     strategy:
