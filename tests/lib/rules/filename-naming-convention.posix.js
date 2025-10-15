@@ -805,6 +805,82 @@ ruleTester.run(
 );
 
 ruleTester.run(
+  "filename-naming-convention with Next.js dynamic routes and option: [{ '**/*.{js,jsx,ts,tsx}': 'NEXT_JS_PAGE_ROUTER_FILENAME_CASE' }, { ignoreMiddleExtensions: true }]",
+  rule,
+  {
+    valid: [
+      {
+        code: "var foo = 'bar';",
+        filename: 'src/pages/blog/[[...userId]].tsx',
+        options: [
+          { '**/*.{js,jsx,ts,tsx}': 'NEXT_JS_PAGE_ROUTER_FILENAME_CASE' },
+          { ignoreMiddleExtensions: true },
+        ],
+      },
+      {
+        code: "var foo = 'bar';",
+        filename: 'src/pages/blog/[[...slug]].tsx',
+        options: [
+          { '**/*.{js,jsx,ts,tsx}': 'NEXT_JS_PAGE_ROUTER_FILENAME_CASE' },
+          { ignoreMiddleExtensions: true },
+        ],
+      },
+      {
+        code: "var foo = 'bar';",
+        filename: 'src/pages/blog/[...params].tsx',
+        options: [
+          { '**/*.{js,jsx,ts,tsx}': 'NEXT_JS_PAGE_ROUTER_FILENAME_CASE' },
+          { ignoreMiddleExtensions: true },
+        ],
+      },
+      {
+        code: "var foo = 'bar';",
+        filename: 'src/pages/user/[id].tsx',
+        options: [
+          { '**/*.{js,jsx,ts,tsx}': 'NEXT_JS_PAGE_ROUTER_FILENAME_CASE' },
+          { ignoreMiddleExtensions: true },
+        ],
+      },
+      {
+        code: "var foo = 'bar';",
+        filename: 'src/pages/post/[postId].test.tsx',
+        options: [
+          { '**/*.{js,jsx,ts,tsx}': 'NEXT_JS_PAGE_ROUTER_FILENAME_CASE' },
+          { ignoreMiddleExtensions: true },
+        ],
+      },
+      {
+        code: "var foo = 'bar';",
+        filename: 'src/pages/api/user.test.ts',
+        options: [
+          { '**/*.{js,jsx,ts,tsx}': 'NEXT_JS_PAGE_ROUTER_FILENAME_CASE' },
+          { ignoreMiddleExtensions: true },
+        ],
+      },
+    ],
+
+    invalid: [
+      {
+        code: "var foo = 'bar';",
+        filename: 'src/pages/blog/Invalid_Name.tsx',
+        options: [
+          { '**/*.{js,jsx,ts,tsx}': 'NEXT_JS_PAGE_ROUTER_FILENAME_CASE' },
+          { ignoreMiddleExtensions: true },
+        ],
+        errors: [
+          {
+            message:
+              'The filename "Invalid_Name.tsx" does not match the "NEXT_JS_PAGE_ROUTER_FILENAME_CASE" pattern',
+            column: 1,
+            line: 1,
+          },
+        ],
+      },
+    ],
+  }
+);
+
+ruleTester.run(
   "filename-naming-convention with option: [{ '**/*.js': '__+([a-z])', '**/*.jsx': '__+([a-z])' }]",
   rule,
   {
