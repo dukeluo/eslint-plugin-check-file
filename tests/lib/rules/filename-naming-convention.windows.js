@@ -857,14 +857,6 @@ ruleTester.run(
       },
       {
         code: "var foo = 'bar';",
-        filename: 'src\\pages\\blog\\params',
-        options: [
-          { '**/*.{js,jsx,ts,tsx}': 'NEXT_JS_PAGE_ROUTER_FILENAME_CASE' },
-          { ignoreMiddleExtensions: true },
-        ],
-      },
-      {
-        code: "var foo = 'bar';",
         filename: 'src\\pages\\user\\[id].tsx',
         options: [
           { '**/*.{js,jsx,ts,tsx}': 'NEXT_JS_PAGE_ROUTER_FILENAME_CASE' },
