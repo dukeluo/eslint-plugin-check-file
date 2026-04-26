@@ -57,9 +57,9 @@
     "build": "rollup -c",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix && prettier --write **/*.md",
-    "test": "c8 mocha --loader=esmock tests --recursive",
+    "test": "c8 mocha tests --recursive",
     "test:report": "c8 report -r=lcov",
-    "test:cli": "mocha --loader=esmock",
+    "test:cli": "mocha",
     "example:lint": "npm run lint --workspace=basic"
   },
   "dependencies": {
@@ -69,20 +69,21 @@
   "devDependencies": {
     "@commitlint/cli": "^19.6.0",
     "@commitlint/config-conventional": "^19.6.0",
-    "@eslint/js": "^9.15.0",
-    "@rollup/plugin-terser": "^0.4.4",
-    "c8": "^10.1.2",
-    "eslint": "^9.15.0",
+    "@eslint/js": "^9.39.4",
+    "@rollup/plugin-terser": "^1.0.0",
+    "c8": "^11.0.0",
+    "eslint": "^9.39.4",
     "eslint-plugin-eslint-plugin": "^6.3.2",
     "eslint-plugin-jsdoc": "^50.5.0",
-    "eslint-plugin-n": "^17.14.0",
+    "eslint-plugin-n": "^17.24.0",
+    "eslint-config-prettier": "^10.1.5",
     "eslint-plugin-prettier": "^5.2.1",
     "esmock": "^2.6.9",
     "husky": "^9.1.7",
-    "mocha": "^10.8.2",
+    "mocha": "^11.7.5",
     "prettier": "^3.3.3",
-    "rollup": "^4.27.4",
-    "rollup-plugin-dts": "^6.2.1",
+    "rollup": "^4.60.2",
+    "rollup-plugin-dts": "^6.4.1",
     "typescript": "^5.8.3"
   },
   "engines": {
@@ -93,5 +94,11 @@
   },
   "workspaces": [
     "examples/basic"
-  ]
+  ],
+  "overrides": {
+    "mocha": {
+      "diff": "^8.0.3",
+      "serialize-javascript": "^7.0.5"
+    }
+  }
 }
