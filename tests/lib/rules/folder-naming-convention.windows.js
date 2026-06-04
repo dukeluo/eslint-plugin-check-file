@@ -432,6 +432,16 @@ ruleTester.run(
       },
       {
         code: "var foo = 'bar';",
+        filename: 'src\\app\\@teamSettings\\page.ts',
+        options: [{ 'src/**/': 'NEXT_JS_APP_ROUTER_CASE' }],
+      },
+      {
+        code: "var foo = 'bar';",
+        filename: 'src\\app\\@userDashboard\\page.ts',
+        options: [{ 'src/**/': 'NEXT_JS_APP_ROUTER_CASE' }],
+      },
+      {
+        code: "var foo = 'bar';",
         filename: 'src\\app\\(marketing)\\page.ts',
         options: [{ 'src/**/': 'NEXT_JS_APP_ROUTER_CASE' }],
       },
@@ -567,12 +577,25 @@ ruleTester.run(
       },
       {
         code: "var foo = 'bar';",
-        filename: 'src\\app\\@authMarker\\page.ts',
+        filename: 'src\\app\\@AuthMarker\\page.ts',
         options: [{ 'src/**/': 'NEXT_JS_APP_ROUTER_CASE' }],
         errors: [
           {
             message:
-              'The folder "@authMarker" does not match the "NEXT_JS_APP_ROUTER_CASE" pattern',
+              'The folder "@AuthMarker" does not match the "NEXT_JS_APP_ROUTER_CASE" pattern',
+            column: 1,
+            line: 1,
+          },
+        ],
+      },
+      {
+        code: "var foo = 'bar';",
+        filename: 'src\\app\\@team-settings\\page.ts',
+        options: [{ 'src/**/': 'NEXT_JS_APP_ROUTER_CASE' }],
+        errors: [
+          {
+            message:
+              'The folder "@team-settings" does not match the "NEXT_JS_APP_ROUTER_CASE" pattern',
             column: 1,
             line: 1,
           },
