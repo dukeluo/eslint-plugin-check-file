@@ -1,0 +1,42 @@
+{
+  "jsPlugins": ["../../lib/index.js"],
+  "rules": {
+    // Note: Oxlint's jsPlugins feature is experimental and does not support ESLint processors for non-JS/TS files (like .css, .md, and .webp).
+    // These rules are defined below for structural parity with the basic ESLint example, but are silently ignored by Oxlint.
+    "check-file/no-index": "error",
+    "check-file/filename-blocklist": [
+      "error",
+      {
+        "**/*.model.ts": "*.models.ts",
+        "**/*.util.ts": "*.utils.ts"
+      }
+    ],
+    "check-file/folder-match-with-fex": [
+      "error",
+      {
+        "*.test.{js,jsx,ts,tsx}": "**/__tests__/",
+        "*.styled.{jsx,tsx}": "**/components/"
+      }
+    ],
+    "check-file/filename-naming-convention": [
+      "error",
+      {
+        "**/*.{jsx,tsx}": "PASCAL_CASE",
+        "**/*.{js,ts}": "CAMEL_CASE",
+        "**/*.css": "PASCAL_CASE",
+        "**/*.md": "FLAT_CASE",
+        "**/*.webp": "KEBAB_CASE"
+      },
+      {
+        "ignoreMiddleExtensions": true
+      }
+    ],
+    "check-file/folder-naming-convention": [
+      "error",
+      {
+        "src/components/*/": "PASCAL_CASE",
+        "src/!(components)/**/!(__tests__)/": "CAMEL_CASE"
+      }
+    ]
+  }
+}
