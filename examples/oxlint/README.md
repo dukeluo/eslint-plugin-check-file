@@ -6,7 +6,7 @@ This example demonstrates how to integrate `eslint-plugin-check-file` directly w
 
 Please note that Oxlint's `jsPlugins` feature is currently experimental and does not support ESLint processors for non-JS/TS files (such as `.css`, `.md`, and `.webp`).
 
-In the basic ESLint example, these files are processed via the custom processor. In this Oxlint configuration, the rules for these extensions are defined within `.oxlintrc.json` for structural parity with the basic example, but they are silently ignored by Oxlint.
+In the ESLint example, these files are processed via the custom processor. In this Oxlint configuration, the rules for these extensions are defined within `.oxlintrc.json` for structural parity with the ESLint example, but they are silently ignored by Oxlint.
 
 ## Standard Project Configuration Guide
 

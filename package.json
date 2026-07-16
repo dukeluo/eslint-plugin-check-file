@@ -60,9 +60,9 @@
     "test": "c8 mocha tests --recursive",
     "test:report": "c8 report -r=lcov",
     "test:cli": "mocha",
-    "example:lint:basic": "npm run lint --workspace=basic",
-    "example:lint:oxlint": "npm run lint --workspace=oxlint",
-    "example:lint": "npm run example:lint:basic && npm run example:lint:oxlint"
+    "example:lint:eslint": "npm run lint --workspace=eslint-example",
+    "example:lint:oxlint": "npm run lint --workspace=oxlint-example",
+    "example:lint": "npm run example:lint:eslint && npm run example:lint:oxlint"
   },
   "dependencies": {
     "is-glob": "^4.0.3",
@@ -95,7 +95,7 @@
     "eslint": ">=9.0.0"
   },
   "workspaces": [
-    "examples/basic",
+    "examples/eslint",
     "examples/oxlint"
   ],
   "overrides": {

@@ -2,7 +2,7 @@
   "jsPlugins": ["../../lib/index.js"],
   "rules": {
     // Note: Oxlint's jsPlugins feature is experimental and does not support ESLint processors for non-JS/TS files (like .css, .md, and .webp).
-    // These rules are defined below for structural parity with the basic ESLint example, but are silently ignored by Oxlint.
+    // These rules are defined below for structural parity with the ESLint example, but are silently ignored by Oxlint.
     "check-file/no-index": "error",
     "check-file/filename-blocklist": [
       "error",

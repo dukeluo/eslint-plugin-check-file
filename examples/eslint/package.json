@@ -1,4 +1,5 @@
 {
+  "name": "eslint-example",
   "private": true,
   "type": "module",
   "scripts": {

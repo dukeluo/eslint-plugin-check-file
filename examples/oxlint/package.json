@@ -1,4 +1,5 @@
 {
+  "name": "oxlint-example",
   "private": true,
   "type": "module",
   "scripts": {
