@@ -77,6 +77,13 @@ export default [
 ];
 ```
 
+## Examples
+
+Check out the following demo projects showing how to configure this plugin:
+
+- [ESLint Example](examples/eslint)
+- [Oxlint Example](examples/oxlint)
+
 ## Supported Rules
 
 - [check-file/no-index](docs/rules/no-index.md): A file cannot be named "index"
