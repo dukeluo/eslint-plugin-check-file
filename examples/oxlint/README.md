@@ -1,4 +1,4 @@
-# eslint-plugin-check-file + Oxlint Example
+# Oxlint Example
 
 This example demonstrates how to integrate `eslint-plugin-check-file` directly with Oxlint using its experimental JavaScript plugins feature (`jsPlugins`).
 
